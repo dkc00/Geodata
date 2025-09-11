@@ -21,10 +21,11 @@ source_crs = lyr.crs()            # die lagune war in 4326, gis in 3857
 target_crs = QgsCoordinateReferenceSystem("EPSG:3857")
 transform = QgsCoordinateTransform(source_crs, target_crs, QgsProject.instance())
 
-# Specify the geometry type
+# hier ist auch nochmal das kbs angegeben
 point_layer = QgsVectorLayer('Point?crs=epsg:3857', 'points' , 'memory')
  
-# Set the provider to accept the data source
+# wir arbeiten mit dem dataProvider
+
 prov = point_layer.dataProvider()
 prov.addAttributes([QgsField("id", QVariant.Int)])
 point_layer.updateFields()
