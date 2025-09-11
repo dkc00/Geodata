@@ -1,7 +1,9 @@
 """
 
-Bei Arbeit mit verschiedenen KBS taucht manchmal das Problem auf, dass ein Layer 
-nicht richtig angezeigt werden kann, da noch die '33' vor der Koordinate steht. 
+Bei Arbeit mit verschiedenen KBS tauchte manchmal das Problem auf, dass ein Layer 
+nicht richtig angezeigt werden kann, da noch die '33' (o.ä.) vor der Koordinate steht.
+Die Punkte werden dann bei 'Zoom to layer' im GIS irgendwo im Nichts angezeigt und nicht 
+an der richtigen Stelle. 
 Dieser Code entfernt die ersten zwei Zeichen der Nummer in der Funktion correct_coords.
 
 
