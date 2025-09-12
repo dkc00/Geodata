@@ -30,5 +30,8 @@ Dieser Code bedient sich der dplyr-Synthax und entfernt die ersten zwei Zeichen 
 05_raster_statistik_in_gis.py
 Ursprünglich wurde dieses Skript geschrieben, um durchschnittliche Flurabstände als 1x1m-Rasterwerte aus verschiedenen Grundwasserflurabstandskarten schnell abrufen zu können, sowohl von einem als auch vielen verschiedenen Rasterlayern. Das Skript gibt schnell Statistiken für einen aktiven GIS-Layer aus und generiert ggfs. Histogramme mit Matplotlib direkt in QGIS. Die Values werden dafür in einem Numpy-Array gespeichert. 
 
+06_IndexBerechnungSentinel.ipynb
+Ein etwas längeres Skript zur Erstellung von TIF-Dateien beliebiger Fernerkundungsindizes aus Sentinel-2-Daten. Der Benutzer gibt seinen Dateipfad zum Sentinelordner und den gewünschten Index an. Daraufhin geht das Programm in die Unterordner, wählt die Bänder in höchstmöglicher Auflösung aus und berechnet die Indizes.
+Generelle Formel: (Rx-Ry)/(Rx+Ry) Es können im Code beliebige 2-Band-Indices hinzugefügt werden, die sich aus den Sentinel-2-Bändern berechnen lassen! Grafisch wurde das Ganze mit tkinter recht einfach umgesetzt und könnte in Zukunft noch mit Qt Designer schöner gemacht werden. Ich nutze viele os.path-Befehle sowie rasterio.
 
 
