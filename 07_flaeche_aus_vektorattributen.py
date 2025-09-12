@@ -11,7 +11,7 @@ durch 10.000 geteilt werden.
 """
 
 from qgis.core import QgsProject
-from qgis.PyQt.QtCore import QVariant
+# from qgis.PyQt.QtCore import QVariant
 
 
 lyr = QgsProject.instance().mapLayersByName('Biotope_cut')[0] 
