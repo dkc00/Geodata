@@ -34,4 +34,5 @@ Ursprünglich wurde dieses Skript geschrieben, um durchschnittliche Flurabständ
 Ein etwas längeres Skript zur Erstellung von TIF-Dateien beliebiger Fernerkundungsindizes aus Sentinel-2-Daten. Der Benutzer gibt seinen Dateipfad zum Sentinelordner und den gewünschten Index an. Daraufhin geht das Programm in die Unterordner, wählt die Bänder in höchstmöglicher Auflösung aus und berechnet die Indizes.
 Generelle Formel: (Rx-Ry)/(Rx+Ry) Es können im Code beliebige 2-Band-Indices hinzugefügt werden, die sich aus den Sentinel-2-Bändern berechnen lassen! Grafisch wurde das Ganze mit tkinter recht einfach umgesetzt und könnte in Zukunft noch mit Qt Designer schöner gemacht werden. Ich nutze viele os.path-Befehle sowie rasterio.
 
-
+07_flaeche_aus_vektorattributen.py
+Das Skript sollte aus tausenden Biotop-Polygonen mit einer kategorisierten Information (Spalte in der Attributtabelle) die Gesamtfläche jedes Attributs ausgeben. Das spart umständlichere Arbeit mit $area im Feldrechner von QGIS. Das Ergebnis soll in Hektar angegeben werden, hierfür muss der m2-Wert durch 10.000 geteilt werden. Dies ist mit simpler PyQGIS-Synthax (QgsProject, .getFeatures(), .area()) umgesetzt worden.
