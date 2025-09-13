@@ -1,6 +1,6 @@
 
-install.packages("terra")
-library(sf)
+# install.packages("terra")
+
 library(terra)
 
 
