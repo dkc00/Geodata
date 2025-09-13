@@ -36,3 +36,9 @@ Generelle Formel: (Rx-Ry)/(Rx+Ry) Es können im Code beliebige 2-Band-Indices hi
 
 07_flaeche_aus_vektorattributen.py
 Das Skript sollte aus tausenden Biotop-Polygonen mit einer kategorisierten Information (Spalte in der Attributtabelle) die Gesamtfläche jedes Attributs ausgeben. Das spart umständlichere Arbeit mit $area im Feldrechner von QGIS. Das Ergebnis soll in Hektar angegeben werden, hierfür muss der m2-Wert durch 10.000 geteilt werden. Dies ist mit simpler PyQGIS-Synthax (QgsProject, .getFeatures(), .area()) umgesetzt worden.
+
+08_BAGLUVA_Wasserhaushaltsgleichung.R
+Mit ggplot2 wird in R ein Plot für reale Evapotranspiration und Gesamtabfluss erzeugt, welche im Vorfeld nach BAGLUVA-Methodik
+berechnet wurden. Außerdem werden die Niederschläge als blaue Linie geplottet und eine eigene Achse rechts im Plot hierfür 
+angelegt. Der Plot kann für belieblige ähnliche Fragestellungen angepasst werden, bei denen Balken- oder Linienelemente
+mit ggplot dargestellt werden sollen. 
