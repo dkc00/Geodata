@@ -42,3 +42,12 @@ Mit ggplot2 wird in R ein Plot für reale Evapotranspiration und Gesamtabfluss e
 berechnet wurden. Außerdem werden die Niederschläge als blaue Linie geplottet und eine eigene Achse rechts im Plot hierfür 
 angelegt. Der Plot kann für belieblige ähnliche Fragestellungen angepasst werden, bei denen Balken- oder Linienelemente
 mit ggplot dargestellt werden sollen. 
+
+09_rasterisieren_und_hochskalieren.R
+Alternativer Code zu v.to.rast aus GRASS-GIS, falls dieses Probleme bereitet (Vektordaten rasteisieren). Anschließend wird die Auflösung des Rasters hochskaliert (von 50 auf 1 m, kann beliebig angepasst werden), damit eine Verrechnung im Rasterrechner mit anderen Rastern dieser Auflösung möglich ist. Es wird standardmäßig die terra-Bibliothek sowie sf ("Simple Features for R") genutzt. Dann wird mit st_read() und st_transform() aus sf sowie vect(), rast() und rasterize() aus terra gearbeitet.
+
+10_raster_groeßer_und_nullwerte_einfuegen.R
+Kurzes Skript, um ein Raster räumlich größer zu machen, um es bspw. mit einem größeren Layer zu verrechnen. Die neuen Rasterzellen nehmen Nullwerte an. Aus der terra-Bibliothek werden rast(), ext(), extend() und crs() genutzt. 
+
+11_raster_auf_vektor_clippen.R
+Ein Raster wird auf die Ränder eines Vektors geclippt. Auch dies ist standardmäßig in GIS-Programmen enthalten, kann jedoch in Kombination mit anderem Code nützlich im Skript sein, um nicht zwischen manueller GIS-Arbeit und Skripten hin- und herzuspringen. Es werden wie bei Skript 09 und 10 die Bibliotheken sf mit st_read(), st_crs() und st_transform() sowie terra mit rast(), crs(), mask(), crop() und writeRaster(), wodurch das geclippte Raster bspw. in einem TIF-File gespeichert wird. 
