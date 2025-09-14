@@ -57,3 +57,7 @@ Verschiedene KBS können bei der Arbeit mit Vektor- und Rasterdaten häufig Prob
 lädt eine Liste von Shapefiles ein und gibt das jeweilige KBS des Shapefiles direkt als Messagebox im QGIS-Interface aus. (häufig z.B. 3857 Webmercator, 4326, 25832, 25833, 102329 etc.)
 Funktioniert für Vektor und Rasterlayer. Bei mir wurde nur .tif als Raster gebraucht, man könnte den Code leicht noch etwas robuster ausbauen, damit er auch für .tiff, .jp2 etc. funktioniert. 
 Es wurden QgsProject, QgsVectorLayer, QgsRasterLayer und os genutzt, die entscheidende Zeile Code benutzt vect_lyr.crs().authid(). Ohne die .authid()-Methode wird das gesamte QGIS-Objekt ausgegeben, also <QgsCoordinateReferenceSystem: EPSG:3857> statt EPSG:3857. 
+
+13_basemap_hinzufuegen.py
+Dieses Skript soll ebenfalls als Teil einer größeren Auswertungsroutine automatisiert OpenStreetMap einladen und als Gerüst für andere Karten von z.B. QuickMapServices dienen. Eigentlich sollte das API-Objekt des QGIS-Plugins angesprochen werden, das hat über PyQGIS aber nur unzureichend funktioniert. Daher ist diese Version stark vereinfacht worden, kann aber in Zukunft mit anderem Code kombiniert werden. Es werden QgsRasterLayer, QgsProject sowie iface.messageBar().pushMessage für das QGIS-Interface genutzt. 
+
