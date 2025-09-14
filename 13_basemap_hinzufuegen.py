@@ -5,7 +5,7 @@ automatisiert OpenStreetMap einladen und als Gerüst für andere Karten von
 z.B. QuickMapServices dienen. Eigentlich sollte das API-Objekt des QGIS-Plugins
 angesprochen werden, das hat über PyQGIS aber nur unzureichend funktioniert. 
 Daher ist diese Version stark vereinfacht worden, kann aber in Zukunft mit 
-anderem Code funktioniert werden. 
+anderem Code kombiniert werden. 
 
 """
 
