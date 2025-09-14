@@ -44,7 +44,7 @@ angelegt. Der Plot kann für belieblige ähnliche Fragestellungen angepasst werd
 mit ggplot dargestellt werden sollen. 
 
 09_rasterisieren_und_hochskalieren.R
-Alternativer Code zu v.to.rast aus GRASS-GIS, falls dieses Probleme bereitet (Vektordaten rasteisieren). Anschließend wird die Auflösung des Rasters hochskaliert (von 50 auf 1 m, kann beliebig angepasst werden), damit eine Verrechnung im Rasterrechner mit anderen Rastern dieser Auflösung möglich ist. Es wird standardmäßig die terra-Bibliothek sowie sf ("Simple Features for R") genutzt. Dann wird mit st_read() und st_transform() aus sf sowie vect(), rast() und rasterize() aus terra gearbeitet.
+Alternativer Code zu v.to.rast aus GRASS-GIS, falls dieses Probleme bereitet (Vektordaten rasterisieren). Anschließend wird die Auflösung des Rasters hochskaliert (von 50 auf 1 m, kann beliebig angepasst werden), damit eine Verrechnung im Rasterrechner mit anderen Rastern dieser Auflösung möglich ist. Es wird standardmäßig die terra-Bibliothek sowie sf ("Simple Features for R") genutzt. Dann wird mit st_read() und st_transform() aus sf sowie vect(), rast() und rasterize() aus terra gearbeitet.
 
 10_raster_groeßer_und_nullwerte_einfuegen.R
 Kurzes Skript, um ein Raster räumlich größer zu machen, um es bspw. mit einem größeren Layer zu verrechnen. Die neuen Rasterzellen nehmen Nullwerte an. Aus der terra-Bibliothek werden rast(), ext(), extend() und crs() genutzt. 
