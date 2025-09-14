@@ -4,9 +4,9 @@ entstanden sind. Über die Zeit werden hier Dateien zusammengetragen, um
 routinemäßig anfallende Arbeitsschritte zu beschleunigen. 
 
 Dies beinhaltet Skripte in Python (oft direkt für Anwendung in der QGIS-
-Python-Konsole), R, QGIS-Layouts und mehr. 
+Python-Konsole oder als Jupyter Notebooks), R, QGIS-Layouts und mehr. 
 
-Kurze Beschreibung: 
+Es folgt eine kurze Beschreibung aller Skripte. Hierbei liegt ein Fokus auf der Anwendung des Skripts, Problemen bei der Umsetzung und genutzten Bibliotheken, Methoden etc. Es wird empfohlen, direkt mit Strg+F z.B. nach "QgsRasterLayer", "KBS" oder "matplotlib" zu suchen, um schnell den passenden Code zu finden.  
 
 01_kerngeruest_layouts_laden.py: 
 Lädt ein erstelltes .qpt-Layout für QGIS zuverlässig mit PyQGIS-Synthax 
