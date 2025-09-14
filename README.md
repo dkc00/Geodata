@@ -51,3 +51,9 @@ Kurzes Skript, um ein Raster räumlich größer zu machen, um es bspw. mit einem
 
 11_raster_auf_vektor_clippen.R
 Ein Raster wird auf die Ränder eines Vektors geclippt. Auch dies ist standardmäßig in GIS-Programmen enthalten, kann jedoch in Kombination mit anderem Code nützlich im Skript sein, um nicht zwischen manueller GIS-Arbeit und Skripten hin- und herzuspringen. Es werden wie bei Skript 09 und 10 die Bibliotheken sf mit st_read(), st_crs() und st_transform() sowie terra mit rast(), crs(), mask(), crop() und writeRaster(), wodurch das geclippte Raster bspw. in einem TIF-File gespeichert wird. 
+
+12_layer_einladen_kbs_ausgabe.py 
+Verschiedene KBS können bei der Arbeit mit Vektor- und Rasterdaten häufig Probleme machen. Dieses Skript lässt sich mit anderen Codeblöcken kombinieren, 
+lädt eine Liste von Shapefiles ein und gibt das jeweilige KBS des Shapefiles direkt als Messagebox im QGIS-Interface aus. (häufig z.B. 3857 Webmercator, 4326, 25832, 25833, 102329 etc.)
+Funktioniert für Vektor und Rasterlayer. Bei mir wurde nur .tif als Raster gebraucht, man könnte den Code leicht noch etwas robuster ausbauen, damit er auch für .tiff, .jp2 etc. funktioniert. 
+Es wurden QgsProject, QgsVectorLayer, QgsRasterLayer und os genutzt, die entscheidende Zeile Code benutzt vect_lyr.crs().authid(). Ohne die .authid()-Methode wird das gesamte QGIS-Objekt ausgegeben, also <QgsCoordinateReferenceSystem: EPSG:3857> statt EPSG:3857. 
