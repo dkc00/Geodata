@@ -61,3 +61,7 @@ Es wurden QgsProject, QgsVectorLayer, QgsRasterLayer und os genutzt, die entsche
 13_basemap_hinzufuegen.py
 Dieses Skript soll ebenfalls als Teil einer größeren Auswertungsroutine automatisiert OpenStreetMap einladen und als Gerüst für andere Karten von z.B. QuickMapServices dienen. Eigentlich sollte das API-Objekt des QGIS-Plugins angesprochen werden, das hat über PyQGIS aber nur unzureichend funktioniert. Daher ist diese Version stark vereinfacht worden, kann aber in Zukunft mit anderem Code kombiniert werden. Es werden QgsRasterLayer, QgsProject sowie iface.messageBar().pushMessage für das QGIS-Interface genutzt. 
 
+14_layer_styles_kopieren.py
+Dieser Codeblock soll die manuelle Funktion in QGIS imitieren, alle Styles 
+eines Layers (quell_layer) zu kopieren und auf einen neuen anzuwenden (ziel_layer). Dafür wird QgsProject.instance() für die Layer und die Methode
+.styleManager().addStyle() sowie .styleManager().setCurrentStyle genutzt. 
