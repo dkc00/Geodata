@@ -29,17 +29,18 @@ for feat in lyr.getFeatures():
     att = feat.attributes()
     name = att[2]
     area = float(att[1])
-    print(f" Größe des Gewässers {name} in Hektar: {area/10000}")
-
+    print(f" Größe des Gewässers {name} in Hektar: {area/10000:.2f}")
+    # hier wurde nachträglich :.2f eingefügt, um eine auf zwei Dezimalstellen 
+    # nach dem Komma gerundete Hektarangabe zu haben. 
 features = list(lyr.getFeatures())
 
 areas = [feat['area'] for feat in lyr.getFeatures()]
-print(f"Die Durchschnittsfläche beträgt{np.mean(areas)/10000} Hektar.")
+print(f"Die Durchschnittsfläche beträgt{np.mean(areas)/10000:.2f} Hektar.")
 
 min_feat = min(features, key=lambda f: f['area'])
 max_feat = max(features, key=lambda f: f['area'])
 
-print(f"Die kleinste Fläche hat der See {min_feat['Name']} mit {min_feat['area']/10000} ha")
-print(f"Die größte Fläche hat der See {max_feat['Name']} mit {max_feat['area']/10000} ha")
+print(f"Die kleinste Fläche hat der See {min_feat['Name']} mit {min_feat['area']/10000:.2f} ha")
+print(f"Die größte Fläche hat der See {max_feat['Name']} mit {max_feat['area']/10000:.2f} ha")
 
     
