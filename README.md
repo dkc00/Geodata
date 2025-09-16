@@ -65,3 +65,6 @@ Dieses Skript soll ebenfalls als Teil einer größeren Auswertungsroutine automa
 Dieser Codeblock soll die manuelle Funktion in QGIS imitieren, alle Styles 
 eines Layers (quell_layer) zu kopieren und auf einen neuen anzuwenden (ziel_layer). Dafür wird QgsProject.instance() für die Layer und die Methode
 .styleManager().addStyle() sowie .styleManager().setCurrentStyle genutzt. 
+
+15_flaechen_auslesen.py 
+Dieses Skript ist ergänzend zu 07_flaeche_aus_vektorattributen.py zu verstehen und kann noch um weitere Aspekte ergänzt werden. Wenn die Flächen der Features (hier Lagunen im nördlichen Ecuador) einmal generiert wurden, wird die jeweilige Spalte in der Attributtabelle über .getFeatures() angesprochen und anschließend mit numpy grundlegende Statistik ausgegeben. Außerdem benutzen wir den key-Parameter (lambda), um die Fläche der größten und kleinsten Seen (oder Moorflächen, Flurstücke etc.) sowie die zugehörigen Namen auszugeben. 
