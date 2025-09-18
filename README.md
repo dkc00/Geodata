@@ -1,7 +1,7 @@
 Sammlung aus Tools, kleineren und größeren Codeblöcken sowie 
 Methodikansätzen, die über die Jahre im Rahmen von Arbeit mit Geodaten
 entstanden sind. Über die Zeit werden hier Dateien zusammengetragen, um 
-routinemäßig anfallende Arbeitsschritte zu beschleunigen. 
+routinemäßig anfallende Arbeitsschritte zu beschleunigen. Die Skripte werden kontinuierlich überarbeitet und bauen teilweise aufeinander auf bzw. ergänzen sich. Sie können also als zusammenhängende Toolbox betrachtet werden. 
 
 Dies beinhaltet Skripte in Python (oft direkt für Anwendung in der QGIS-
 Python-Konsole oder als Jupyter Notebooks), R, QGIS-Layouts und mehr. 
@@ -79,3 +79,6 @@ Das Skript muss an die jeweiligen Excel-Tabellen angepasst werden! Es wird mit d
 
 18_flurstuecke_abfragen.py 
 Das Skript vereinfacht das Auslesen von Flurstücken und gleicht diese mit einem anderen Vektorlayer ab, z.B. jedes Flurstück, dass sich innerhalb eines Polygons befindet bzw. mit diesem überlappt. So fallen auch kleine, unscheinbare Flurstücke auf. Das Ganze wird per csv-Library automatisch als csv-Tabelle in einen veränderbaren Pfad exportiert. Eine Erweiterung wurde getestet, ist aber auskommentiert, bei der zudem geprüft wird, ob sich das Flurstück nicht auf einer Eigentumsfläche befindet. Von qgis.core wird mit QgsProject, QgsFeatureRequest und QgsSpatialIndex für bessere Performance gearbeitet, QgsCoordinateTransform spielte bei der KBS-Transformation von Eigentumsflächen und Flurstücken eine Rolle. 
+
+19_bounding_boxes_aller_layer
+Es kommt häufig vor, dass bei der Bounding-Box von Vektorlayern Probleme auftreten und man die bboxes verschiedener Layer abrufen muss, um diese zu vergleichen. Bei der Interpolation von Wasseroberflächen war dies bspw. notwendig zum Abgleich mit vektorisierten Wasserstandsänderungen in 50m-Zellen. Dieses Skript gibt alle bounding boxes der Vektorlayer aus und speichert sie in einer CSV-Tabelle. So sieht man auch direkt, wenn KBS-Unterschiede vorliegen. Ideen und Code wurde von vorherigen Skripten eingebaut, darunter das Skript zum Abfragen der Flurstücke (csv-Library und csv.writer) sowie das Resampling von Rasterdaten in R, wo auch xmin, xmax, ymin und ymax genutzt wurde. Sonst die üblichen QgsProject und QgsVectorLayer sowie os. 
