@@ -9,7 +9,7 @@ ob sich das Flurstück nicht auf einer Eigentumsfläche befindet.
 
 """
 
-from qgis.core import QgsProject, QgsSpatialIndex, QgsFeatureRequest, QgsSpatialIndex, QgsCoordinateTransform
+from qgis.core import QgsProject, QgsSpatialIndex, QgsFeatureRequest, QgsCoordinateTransform
 import csv
 
 layer_a_name = "Rieth_Flurstueck"          
@@ -95,5 +95,6 @@ with open(output_pfad, 'w', newline='', encoding='utf-8') as f:
     writer.writerow([clm_1_name, clm_0_name, clm_2_name])  
     for row in treffer:
         writer.writerow([row[0], row[1], row[2]]) 
+
 
 print(f"CSV gespeichert unter: {output_pfad}")
