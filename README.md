@@ -76,3 +76,6 @@ Auf Basis des Suchpfades wird per os.walk nach dem korrekten Dateipfad gesucht, 
 17_grundwasserganglinien.R
 Das folgende Skript erzeugt einen Plot für Grundwasserganglinien verschiedener Messstellen auf Basis einer Excel-Tabelle . Im selben Plot werden die Niederschläge dargestellt.
 Das Skript muss an die jeweiligen Excel-Tabellen angepasst werden! Es wird mit der readxl-Bibliothek gearbeitet.
+
+18_flurstuecke_abfragen.py 
+Das Skript vereinfacht das Auslesen von Flurstücken und gleicht diese mit einem anderen Vektorlayer ab, z.B. jedes Flurstück, dass sich innerhalb eines Polygons befindet bzw. mit diesem überlappt. So fallen auch kleine, unscheinbare Flurstücke auf. Das Ganze wird per csv-Library automatisch als csv-Tabelle in einen veränderbaren Pfad exportiert. Eine Erweiterung wurde getestet, ist aber auskommentiert, bei der zudem geprüft wird, ob sich das Flurstück nicht auf einer Eigentumsfläche befindet. Von qgis.core wird mit QgsProject, QgsFeatureRequest und QgsSpatialIndex für bessere Performance gearbeitet, QgsCoordinateTransform spielte bei der KBS-Transformation von Eigentumsflächen und Flurstücken eine Rolle. 
