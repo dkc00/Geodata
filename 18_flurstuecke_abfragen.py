@@ -2,7 +2,7 @@
 
 Das Skript vereinfacht das Auslesen von Flurstücken und gleicht diese mit einem 
 anderen Vektorlayer ab, z.B. jedes Flurstück, dass sich innerhalb eines Polygons 
-befindet bzw. mit diesem überlappt. So fallen auch kleine, unscheinbare Flurstücke aus. 
+befindet bzw. mit diesem überlappt. So fallen auch kleine, unscheinbare Flurstücke auf. 
 Das Ganze wird automatisch als csv-Tabelle in einen veränderbaren Pfad exportiert.
 Eine Erweiterung wurde getestet, ist aber auskommentiert, bei der zudem geprüft wird 
 ob sich das Flurstück nicht auf einer Eigentumsfläche befindet.
@@ -98,3 +98,4 @@ with open(output_pfad, 'w', newline='', encoding='utf-8') as f:
 
 
 print(f"CSV gespeichert unter: {output_pfad}")
+
