@@ -1,4 +1,4 @@
-In dieser Overview-Datei wird jedes Skript genauer erläutert. 
+In dieser Overview-Datei wird jedes Skript genauer erläutert. Hierbei liegt ein Fokus auf der Anwendung des Skripts, Problemen bei der Umsetzung und genutzten Bibliotheken, Methoden etc. Es wird empfohlen, direkt mit Strg+F z.B. nach "QgsRasterLayer", "KBS" oder "matplotlib" zu suchen, um schnell den passenden Code zu finden.
 
 01_kerngeruest_layouts_laden.py: 
 Lädt ein erstelltes .qpt-Layout für QGIS zuverlässig mit PyQGIS-Synthax 
