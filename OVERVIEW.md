@@ -77,3 +77,8 @@ Es kommt häufig vor, dass bei der Bounding-Box von Vektorlayern Probleme auftre
 
 20_Layouts managen.ipynb
 Vermutlich durch KBS-Änderungen kam es bei mir im QGIS-Projekt zu Problemen, meine alten Karten-Layouts korrekt zu öffnen. Die Karten deshalb neu anzufertigen, ist aber sehr mühsam. Dieses Skript exportiert die beschädigten/ nicht korrekt ladenden Layouts, ohne dass sie im GIS geöffnet werden müssen. Zudem kann bei großen WMS-Layern die dpi-Auflösung des exportierten Bildes Probleme machen. Diese wird deshalb separat berücksichtigt. Layer können entfernt und wieder hinzugefügt werden. Die Skriptblöcke sollten direkt in der Python-Konsole von QGIS ausgeführt werden und nicht in diesem Notebook. Ich arbeite für die Layout-Ansprache nur mit qgis.core (QgsProject, QgsLayoutExporter, QgsLayoutItemMap, QgsLayoutObject, QgsProperty, QgsLayoutItemLegend, QgsUnitTypes). 
+
+21_layer_sichtbarkeit_nach_massstab.py
+Manche Karten wie eine TK 1:25.000 haben keinen Mehrwert, wenn sie bei zu hohem Maßstab angezeigt werden. Ebenso stört ein sehr detailreiches Shapefile wie bspw. 
+Fließgewässer eines ganzen Bundeslandes, wenn man aus anderen Gründen herauszoomt. Dieses Miniskript setzt die Layer-Sichtbarkeit eines gewissen Layers im 
+QGIS-Projekt auf einen gewissen Maßstab, ab dem der Layer erst angezeigt wird. Wir benötigen nur QgsProject und iface.
