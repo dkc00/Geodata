@@ -17,6 +17,7 @@ PyQGIS:
 - Bounding-Boxes aller Layer ausgeben
 - Layouts managen, Jupyter Notebook mit verschiedenen Schritten wie Layer zu Karte hinzufügen, löschen, Lock Layers, Lock Styles, Layout einladen, exportieren etc.
 - Maßstab festlegen, ab dem Layer X (z.B. topographische Karte) in GIS sichtbar ist. (min/max-Angaben)
+- Metadaten wie Dateipfad, KBS, Extent usw. aller Layer übersichtlich als HTML-Ausgabe im Standardbrowser darstellen
 
 Sonstiges Python: 
 - Sämtliche 2-Band-Fernerkundungsindices auf Basis von Sentinel-2-Daten berechnen lassen
@@ -115,3 +116,9 @@ Vermutlich durch KBS-Änderungen kam es bei mir im QGIS-Projekt zu Problemen, me
 Manche Karten wie eine TK 1:25.000 haben keinen Mehrwert, wenn sie bei zu hohem Maßstab angezeigt werden. Ebenso stört ein sehr detailreiches Shapefile wie bspw. 
 Fließgewässer eines ganzen Bundeslandes, wenn man aus anderen Gründen herauszoomt. Dieses Miniskript setzt die Layer-Sichtbarkeit eines gewissen Layers im 
 QGIS-Projekt auf einen gewissen Maßstab, ab dem der Layer erst angezeigt wird. Wir benötigen nur QgsProject und iface.
+
+22_metadaten_html.py
+Das Skript soll die Metadaten aller eingeladenen Layer ausgeben und temporär in HTML darstellen. So kann beispielsweise übersichtlich überprüft werden, wo 
+KBS-Unterschiede bestehen, ohne dass eine neue Datei erstellt werden oder man sich mit QGIS-Ansichten begnügen muss. Geht einfach, sieht sehr übersichtlich aus 
+und ist vor allem für KBS sinnvoll, bei manchen Anwendungen auch für den extent. Außerdem kann dieser Code beliebig erweitert werden! Wir arbeiten mit QgsProject, 
+iface sowie webbrowser und os zur Darstellung im Standardbrowser.
