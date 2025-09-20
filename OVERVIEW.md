@@ -1,5 +1,38 @@
 In dieser Overview-Datei wird jedes Skript genauer erläutert. Hierbei liegt ein Fokus auf der Anwendung des Skripts, Problemen bei der Umsetzung und genutzten Bibliotheken, Methoden etc. Es wird empfohlen, direkt mit Strg+F z.B. nach "QgsRasterLayer", "KBS" oder "matplotlib" zu suchen, um schnell den passenden Code zu finden.
 
+Aktuelle Skripte/Tools: 
+
+PyQGIS: 
+
+- Automatisierte Erstellung eines QGIS-Layouts in PyQGIS
+- Randomisierte Punkterzeugung in Polygon-Layern mit KBS-Transformation
+- Raster-Statistiken und Histogramme mit matplotlib in QGIS ausgeben lassen
+- Gesamtfläche jedes Attributs aus Polygondaten ausgeben lassen
+- Shapefiles automatisiert einladen und KBS aller Layer im Interface ausgeben lassen
+- Basemap von QuickMapServices einladen
+- Alle Styles von Layer A auf Layer B kopieren
+- Attributtabelle und definierte Spalte auslesen, Statistik mit Numpy ausgeben, Attribute mit höchsten/niedrigsten/... Einträgen benennen
+- Layer Relinker: Bei beschädigten Dateipfaden korrekten Pfad suchen und Verknüpfung in QGIS reparieren
+- Flurstücke o. beliebige Polygondatei mit anderer Vektordatei abgleichen, überlappende Features ausgeben und in csv speichern
+- Bounding-Boxes aller Layer ausgeben
+- Layouts managen, Jupyter Notebook mit verschiedenen Schritten wie Layer zu Karte hinzufügen, löschen, Lock Layers, Lock Styles, Layout einladen, exportieren etc.
+- Maßstab festlegen, ab dem Layer X (z.B. topographische Karte) in GIS sichtbar ist. (min/max-Angaben)
+
+Sonstiges Python: 
+- Sämtliche 2-Band-Fernerkundungsindices auf Basis von Sentinel-2-Daten berechnen lassen
+
+R:
+
+- Rasterdaten-Resampling von 1m auf 50m (belieblig anpassbar)
+- Löschen der "33" o.ä. vor den Koordinaten jedes Eintrags für KBS-Kompatibilität
+- ggplot für BAGLUVA-Wasserhaushaltsgleichung mit Niederschlagslinie
+- Vektordaten rasterisieren und hochskalieren
+- Rasterdaten räumlich erweitern und neuen Rasterzellen Nullwerte zuweisen
+- Raster auf die Ränder einer Vektordatei clippen
+- Grundwasserganglinien und Niederschläge in Plots darstellen
+
+_________________________________________________________________________________________________________________________________________________________
+
 01_kerngeruest_layouts_laden.py: 
 Lädt ein erstelltes .qpt-Layout für QGIS zuverlässig mit PyQGIS-Synthax 
 ein. Dies wurde für die schnelle Erstellung von Sentinel-2-Übersichtskarten
