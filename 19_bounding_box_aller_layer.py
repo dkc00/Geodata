@@ -26,8 +26,9 @@ output_pfad = r"C:\Users\Daniel Koch\Desktop\Fernerkundung\Ergebnisse\layers_bbo
 BOUNDING BOX VON EINEM LAYER 
 """
 
-
-# einzelner_layer = iface.activeLayer() # hier aufpassen beim test, das ist der ausgewählte layer! 
+# layer_name = "landflaeche_uruguay"
+# einzelner_layer = QgsProject.instance().mapLayersByName(layer_name)[0]
+##  einzelner_layer = iface.activeLayer() # hier aufpassen beim test, das ist der ausgewählte layer! wir nehmen besser mapLayersByName 
 
 # if einzelner_layer and isinstance(einzelner_layer, QgsVectorLayer):
     
@@ -39,10 +40,11 @@ BOUNDING BOX VON EINEM LAYER
 #     ymax = extent.yMaximum()
 
 #     print(f"Bounding-Box des Layers {einzelner_layer.name()}:")
-#     print(f"  Xmin: {xmin}")
-#     print(f"  Xmax: {xmax}")
-#     print(f"  Ymin: {ymin}")
-#     print(f"  Ymax: {ymax}")
+#     print(f"  Xmin: {xmin:.8f}")
+#     print(f"  Xmax: {xmax:.8f}")
+#     print(f"  Ymin: {ymin:.8f}")
+#     print(f"  Ymax: {ymax:.8f}")
+
 
 #     bbox_coords = (xmin, xmax, ymin, ymax)
 #     print(f"\nGespeichert als Tupel: {bbox_coords}") #optional als test
@@ -64,10 +66,10 @@ for layer in layers:
         ymax = extent.yMaximum()
 
         print(f"Bounding-Box des Layers {layer.name()}:")
-        print(f"  Xmin: {xmin}")
-        print(f"  Xmax: {xmax}")
-        print(f"  Ymin: {ymin}")
-        print(f"  Ymax: {ymax}")
+        print(f"  Xmin: {xmin:.8f}")
+        print(f"  Xmax: {xmax:.8f}")
+        print(f"  Ymin: {ymin:.8f}")
+        print(f"  Ymax: {ymax:.8f}")
 
         bboxes.append([layer.name(), xmin, xmax, ymin, ymax])
 
