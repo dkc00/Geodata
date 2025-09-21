@@ -128,5 +128,8 @@ KBS-Unterschiede bestehen, ohne dass eine neue Datei erstellt werden oder man si
 und ist vor allem für KBS sinnvoll, bei manchen Anwendungen auch für den extent. Außerdem kann dieser Code beliebig erweitert werden! Wir arbeiten mit QgsProject, 
 iface sowie webbrowser und os zur Darstellung im Standardbrowser.
 
+23_bandstatistik_s2.ipynb
+Für ein Sentinel-2-Band möchte ich mir die Statistik des Bandes ausgeben, um mögliche Ausreißer zu finden und einen ersten Eindruck zu gewinnen, was die Datenqualität angeht. Ich möchte mit rasterio sowie ergänzend mit notwendigen Bibliotheken wie numpy, matplotlib arbeiten. In diesem Skript werden die Rohdaten in physikalisch interpretierbare Werte umgerechnet, diese als Histogramm ausgegeben sowie Wolkenpixel und Nullwerte an verschiedenen S2-Beispielbildern untersucht (Deutschland, Ecuador, Uruguay mit abgeschnittenem Extent und vielen Nullwerten). 
+
 Sentinel_2_datenverarbeitung.ipynb 
 Am Beispiel Uruguays werden mögliche Schritte der Datenverarbeitung von Sentinel-2-Daten aufgearbeitet und umgesetzt. Dabei werden Geoverarbeitungsschritte mit PyQGIS-Code eingebaut sowie verschiedene Methodikansätze getestet, die anschließend je nach Anwendungsfeld eingesetzt werden können. Andere Mini-Skripte aus dem Geodata-Repository wurden hier eingebaut und anwendungsbezogen getestet. 
