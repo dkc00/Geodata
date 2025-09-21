@@ -36,6 +36,9 @@ R:
 
 _________________________________________________________________________________________________________________________________________________________
 
+indices: 
+QGIS-Plugin zur Berechnung von Fernerkundungsindices direkt im GIS. Die GUI wurde mit Qt Designer erstellt, außerdem besteht das Plugin aus der __init__.py, einer basis.py sowie der indices.py mit dem wesentlichen Code. Es ist simpel aufgebaut und vereinfacht die Berechnung wichtiger Indices, die beispielsweise bei 06_IndexBerechnungSentinel.ipynb extern und nicht in QGIS durchgeführt wird. Es wurde in QGIS 3.40 entwickelt und funktionierte aufgrund von Namensänderungen der Geowerkzeuge nicht auf 3.28. Kann bei Bedarf noch angepasst werden. 
+
 01_kerngeruest_layouts_laden.py: 
 Lädt ein erstelltes .qpt-Layout für QGIS zuverlässig mit PyQGIS-Synthax 
 ein. Dies wurde für die schnelle Erstellung von Sentinel-2-Übersichtskarten
@@ -124,3 +127,6 @@ Das Skript soll die Metadaten aller eingeladenen Layer ausgeben und temporär in
 KBS-Unterschiede bestehen, ohne dass eine neue Datei erstellt werden oder man sich mit QGIS-Ansichten begnügen muss. Geht einfach, sieht sehr übersichtlich aus 
 und ist vor allem für KBS sinnvoll, bei manchen Anwendungen auch für den extent. Außerdem kann dieser Code beliebig erweitert werden! Wir arbeiten mit QgsProject, 
 iface sowie webbrowser und os zur Darstellung im Standardbrowser.
+
+Sentinel_2_datenverarbeitung.ipynb 
+Am Beispiel Uruguays werden mögliche Schritte der Datenverarbeitung von Sentinel-2-Daten aufgearbeitet und umgesetzt. Dabei werden Geoverarbeitungsschritte mit PyQGIS-Code eingebaut sowie verschiedene Methodikansätze getestet, die anschließend je nach Anwendungsfeld eingesetzt werden können. Andere Mini-Skripte aus dem Geodata-Repository wurden hier eingebaut und anwendungsbezogen getestet. 
