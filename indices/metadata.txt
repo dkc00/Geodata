@@ -1,0 +1,8 @@
+[general]
+name=Indices
+email=info@test.de
+author=daniel_koch 
+qgisMinimumVersion=3.34
+description=Fernerkundungsanalyse basierend auf Sentinel-2-Daten
+about=Mithilfe dieses Plugins können verschiedene 2-Band-Indices berechnet werden, darunter der NDWI, NDCI, NDMI und NDVI. 
+version=1.0
