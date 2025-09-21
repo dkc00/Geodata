@@ -26,8 +26,9 @@ output_pfad = r"C:\Users\Daniel Koch\Desktop\Fernerkundung\Ergebnisse\layers_bbo
 BOUNDING BOX VON EINEM LAYER 
 """
 
-
-# einzelner_layer = iface.activeLayer() # hier aufpassen beim test, das ist der ausgewählte layer! 
+# layer_name = "landflaeche_uruguay"
+# einzelner_layer = QgsProject.instance().mapLayersByName(layer_name)[0]
+##  einzelner_layer = iface.activeLayer() # hier aufpassen beim test, das ist der ausgewählte layer! wir nehmen besser mapLayersByName 
 
 # if einzelner_layer and isinstance(einzelner_layer, QgsVectorLayer):
     
