@@ -4,6 +4,7 @@ Aktuelle Skripte/Tools:
 
 PyQGIS: 
 
+- QGIS-Plugin zur Berechnung von Fernerkundungsindices wie NDWI, NDCI, NDVI aus Rasterdaten direkt im Interface
 - Automatisierte Erstellung eines QGIS-Layouts in PyQGIS
 - Randomisierte Punkterzeugung in Polygon-Layern mit KBS-Transformation
 - Raster-Statistiken und Histogramme mit matplotlib in QGIS ausgeben lassen
@@ -21,6 +22,7 @@ PyQGIS:
 
 Sonstiges Python: 
 - Sämtliche 2-Band-Fernerkundungsindices auf Basis von Sentinel-2-Daten berechnen lassen
+- Datenverarbeitungsroutine für Sentinel-2-Daten, PyQGIS und "normales" Python
 
 R:
 
