@@ -40,10 +40,11 @@ BOUNDING BOX VON EINEM LAYER
 #     ymax = extent.yMaximum()
 
 #     print(f"Bounding-Box des Layers {einzelner_layer.name()}:")
-#     print(f"  Xmin: {xmin}")
-#     print(f"  Xmax: {xmax}")
-#     print(f"  Ymin: {ymin}")
-#     print(f"  Ymax: {ymax}")
+#     print(f"  Xmin: {xmin:.8f}")
+#     print(f"  Xmax: {xmax:.8f}")
+#     print(f"  Ymin: {ymin:.8f}")
+#     print(f"  Ymax: {ymax:.8f}")
+
 
 #     bbox_coords = (xmin, xmax, ymin, ymax)
 #     print(f"\nGespeichert als Tupel: {bbox_coords}") #optional als test
@@ -65,10 +66,10 @@ for layer in layers:
         ymax = extent.yMaximum()
 
         print(f"Bounding-Box des Layers {layer.name()}:")
-        print(f"  Xmin: {xmin}")
-        print(f"  Xmax: {xmax}")
-        print(f"  Ymin: {ymin}")
-        print(f"  Ymax: {ymax}")
+        print(f"  Xmin: {xmin:.8f}")
+        print(f"  Xmax: {xmax:.8f}")
+        print(f"  Ymin: {ymin:.8f}")
+        print(f"  Ymax: {ymax:.8f}")
 
         bboxes.append([layer.name(), xmin, xmax, ymin, ymax])
 
