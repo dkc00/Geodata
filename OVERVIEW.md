@@ -20,6 +20,8 @@ PyQGIS:
 - Maßstab festlegen, ab dem Layer X (z.B. topographische Karte) in GIS sichtbar ist. (min/max-Angaben)
 - Metadaten wie Dateipfad, KBS, Extent usw. aller Layer übersichtlich als HTML-Ausgabe im Standardbrowser darstellen
 - WMS-Karte einladen und Performance in QGIS verbessern
+- KBS der Layer ausgeben, die vom Projekt-KBS abweichen
+- Projektlegende als PNG exportieren
 
 Sonstiges Python: 
 - Sämtliche 2-Band-Fernerkundungsindices auf Basis von Sentinel-2-Daten berechnen lassen
@@ -135,6 +137,15 @@ Für ein Sentinel-2-Band möchte ich mir die Statistik des Bandes ausgeben, um m
 24_wms_layer_performance.py
 Ein WMS-Layer des gesamten polnischen Staatsgebiets ist sehr langsam in QGIS, was sich negativ auf die Gesamtperformance auswirkt. Es wurden Ansätze getestet, um 
 diese Performance zu verbessern. Außerdem wird der WMS-Layer per Code eingeladen, was an anderer Stelle in einen Workflow eingebaut werden kann. 
+
+25_abweichende_kbs_ausgeben.py
+Dieses Mini-Tool baut auf der Metadaten-Ausgabe auf und gibt mir das KBS aller eingeladenen Layer in einem HTML aus, diesmal aber nur alle Layer, die nicht 
+das Projekt-KBS haben. Diese sind potentiell anfälliger für Fehler. Außerdem wird geprüft, ob das KBS überhaupt gültig ist. Arbeitet mit QgsProject, iface, webbrowser und os.
+
+26_legende_zu_png.py
+Die Legendeneinträge aller Layer werden als PNG exportiert. Kann schnell angepasst werden, um nur bestimmte Legendeneinträge zu exportieren. Dient zum Verschaffen 
+eines Überblicks sowie zukünftiger Automatisierung von Legendenexporten mithilfe dieses Codeblocks. Er gibt allerdings nur den Anfang der Legende aus. Muss noch 
+verbessert werden! Arbeitet mit datetime für Zeitstempel, os sowie qgis.PyQt.QtGui, qgis.PyQt.QtCore und qgis.core. 
 
 Sentinel_2_datenverarbeitung.ipynb 
 Am Beispiel Uruguays werden mögliche Schritte der Datenverarbeitung von Sentinel-2-Daten aufgearbeitet und umgesetzt. Dabei werden Geoverarbeitungsschritte mit PyQGIS-Code eingebaut sowie verschiedene Methodikansätze getestet, die anschließend je nach Anwendungsfeld eingesetzt werden können. Andere Mini-Skripte aus dem Geodata-Repository wurden hier eingebaut und anwendungsbezogen getestet. 
