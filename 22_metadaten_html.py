@@ -20,7 +20,7 @@ layers = QgsProject.instance().mapLayers().values()
 
 # hier kann normaler html code verwendet werden
 html = ["<h3>Layer-Übersicht</h3>", "<table border='1' cellpadding='3'>"]
-html.append("<tr><th>Name</th><th>Dateipfad</th><th>KBS</th><th>Geometrietyp</th><th>Features</th><th>Extent</th></tr>")
+html.append("<tr><th>Name</th><th>KBS</th><th>Geometrietyp</th><th>Features</th><th>Extent</th></tr>")
 
 for layer in layers: # alle layer in einer schleife durchgehen und metadaten rausziehen
 
