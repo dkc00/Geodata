@@ -4,8 +4,12 @@
 3. Punkte als temporären layer speichern 
 und im iface anzeigen 
 """
-import random as rd
-from qgis.core import QgsVectorLayer, QgsVectorLayerTemporalProperties, QgsPointXY,QgsGeometry,QgsFeature,QgsVectorLayer,QgsProject,QgsField, QgsCoordinateReferenceSystem, QgsCoordinateTransform
+import random as rd #für die zufälligen punkte
+
+from qgis.core import (QgsVectorLayer, 
+QgsVectorLayerTemporalProperties, QgsPointXY,QgsGeometry,QgsFeature,QgsVectorLayer,
+QgsProject,QgsField, QgsCoordinateReferenceSystem, QgsCoordinateTransform)
+
 from PyQt5.QtCore import QVariant
 
 
