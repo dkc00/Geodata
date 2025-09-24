@@ -4,7 +4,7 @@ entstanden sind. Über die Zeit werden hier Dateien zusammengetragen, um
 routinemäßig anfallende Arbeitsschritte zu beschleunigen. Die Skripte werden kontinuierlich überarbeitet und bauen teilweise aufeinander auf bzw. ergänzen sich. Sie können also als zusammenhängende Toolbox betrachtet werden. 
 
 Dies beinhaltet Skripte in Python (oft direkt für Anwendung in der QGIS-
-Python-Konsole oder als Jupyter Notebooks), R und mehr. Der fachliche Fokus liegt auf Hydrologie, Fernerkundung, Geodatenverarbeitung und Machine Learning für Geodatenanalyse.  
+Python-Konsole oder als Jupyter Notebooks), R und mehr. Der fachliche Fokus liegt auf Hydrologie und Hydrogeologie, Fernerkundung, Geodatenverarbeitung und Machine Learning für Geodatenanalyse.  
 
 Für eine ausführliche Beschreibung aller Skripte sowie ihrer Anwendungen und technischen Besonderheiten sei auf die OVERVIEW.md - Datei verwiesen. 
 
