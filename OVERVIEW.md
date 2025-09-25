@@ -22,6 +22,7 @@ PyQGIS:
 - WMS-Karte einladen und Performance in QGIS verbessern
 - KBS der Layer ausgeben, die vom Projekt-KBS abweichen
 - Projektlegende als PNG exportieren
+- Flurabstandskarten für Moorflächen nach Koska-Wasserstufen reklassifizieren
 
 Sonstiges Python: 
 - Sämtliche 2-Band-Fernerkundungsindices auf Basis von Sentinel-2-Daten berechnen lassen
