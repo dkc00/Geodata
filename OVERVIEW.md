@@ -147,5 +147,8 @@ Die Legendeneinträge aller Layer werden als PNG exportiert. Kann schnell angepa
 eines Überblicks sowie zukünftiger Automatisierung von Legendenexporten mithilfe dieses Codeblocks. Er gibt allerdings nur den Anfang der Legende aus. Muss noch 
 verbessert werden! Arbeitet mit datetime für Zeitstempel, os sowie qgis.PyQt.QtGui, qgis.PyQt.QtCore und qgis.core. 
 
+27_koska_wasserstufen.py
+Es ist mühsam, die Koska-Wasserstufen (nach Koska (2001)) als Flurabstandsangabe in Moorflächen immer wieder neu einzugeben, um neue Flurabstandskarten zu erstellen. Dieses Skript speichert die Tabelle der Wasserstufen 5+ (als 5), 4+ (als 4), 3+ (als 3), 2+ (als 2) und 2- (als -2). Sonst basiert er auf dem ausgegebenen Python-Code des QGIS-Tools "Reclassify by table". Basiert lediglich auf os, QgsRasterLayer und QgsProject.
+
 Sentinel_2_datenverarbeitung.ipynb 
 Am Beispiel Uruguays werden mögliche Schritte der Datenverarbeitung von Sentinel-2-Daten aufgearbeitet und umgesetzt. Dabei werden Geoverarbeitungsschritte mit PyQGIS-Code eingebaut sowie verschiedene Methodikansätze getestet, die anschließend je nach Anwendungsfeld eingesetzt werden können. Andere Mini-Skripte aus dem Geodata-Repository wurden hier eingebaut und anwendungsbezogen getestet. 
