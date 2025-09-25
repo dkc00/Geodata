@@ -25,7 +25,7 @@ PyQGIS:
 
 Sonstiges Python: 
 - Sämtliche 2-Band-Fernerkundungsindices auf Basis von Sentinel-2-Daten berechnen lassen
-- Datenverarbeitungsroutine für Sentinel-2-Daten, PyQGIS und "normales" Python
+- Datenverarbeitungsroutine für Sentinel-2-Daten mit PyQGIS und "normalem" Python: Vorverarbeitung, Download, Datenvorbereitung, Indices, Wolkenbedeckung
 
 R:
 
