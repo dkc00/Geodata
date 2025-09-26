@@ -37,6 +37,7 @@ R:
 - Rasterdaten räumlich erweitern und neuen Rasterzellen Nullwerte zuweisen
 - Raster auf die Ränder einer Vektordatei clippen
 - Grundwasserganglinien und Niederschläge in Plots darstellen
+- Rasterdatei hochskalieren, anschließend auf eine bbox clippen, vektorisieren und als Vektor speichern
 
 _________________________________________________________________________________________________________________________________________________________
 
@@ -150,6 +151,9 @@ verbessert werden! Arbeitet mit datetime für Zeitstempel, os sowie qgis.PyQt.Qt
 
 27_koska_wasserstufen.py
 Es ist mühsam, die Koska-Wasserstufen (nach Koska (2001)) als Flurabstandsangabe in Moorflächen immer wieder neu einzugeben, um neue Flurabstandskarten zu erstellen. Dieses Skript speichert die Tabelle der Wasserstufen 5+ (als 5), 4+ (als 4), 3+ (als 3), 2+ (als 2) und 2- (als -2). Sonst basiert er auf dem ausgegebenen Python-Code des QGIS-Tools "Reclassify by table". Basiert lediglich auf os, QgsRasterLayer und QgsProject.
+
+28_vektorisieren_clippen_upscalen.py
+Aufbauend auf den Skripten "rasterisieren_und_hochskalieren" sowie "Resampling_Rasterdaten" wird eine Rasterdatei von 1x1m auf 20x20m Auflösung hochskaliert, um sie anschließend auf eine bbox zu clippen und als Vektordatei zu exportieren. Hier sollten störende Artefakte einer Wasserstandsberechnung händisch aus dem Raster entfernt werden. Gebraucht wird nur die terra-Bibliothek. 
 
 Sentinel_2_datenverarbeitung.ipynb 
 Am Beispiel Uruguays werden mögliche Schritte der Datenverarbeitung von Sentinel-2-Daten aufgearbeitet und umgesetzt. Dabei werden Geoverarbeitungsschritte mit PyQGIS-Code eingebaut sowie verschiedene Methodikansätze getestet, die anschließend je nach Anwendungsfeld eingesetzt werden können. Andere Mini-Skripte aus dem Geodata-Repository wurden hier eingebaut und anwendungsbezogen getestet. 
