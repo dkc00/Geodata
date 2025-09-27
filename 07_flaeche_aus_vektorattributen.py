@@ -13,8 +13,13 @@ durch 10.000 geteilt werden.
 from qgis.core import QgsProject
 # from qgis.PyQt.QtCore import QVariant
 
+# HIER die jeweiligen Spalten- und Layernamen angeben!
+spaltenname = 'Hckurz' # anpassen!
+lyr_name = 'Biotope_cut' # anpassen!
 
-lyr = QgsProject.instance().mapLayersByName('Biotope_cut')[0] 
+lyr = QgsProject.instance().mapLayersByName(lyr_name)[0] 
+
+
 
 if not lyr:
     print("layer 'Biotope_cut' nicht gefunden!")
@@ -24,7 +29,7 @@ else:
     flaechen_pro_kategorie = {} # flächen als dict speichern
     
     for feat in lyr.getFeatures():
-        kategorie = feat['Hckurz']
+        kategorie = feat[spaltenname]
         
         geom = feat.geometry()
         if geom and geom.isGeosValid():
