@@ -23,6 +23,7 @@ PyQGIS:
 - KBS der Layer ausgeben, die vom Projekt-KBS abweichen
 - Projektlegende als PNG exportieren
 - Flurabstandskarten für Moorflächen nach Koska-Wasserstufen reklassifizieren
+- PostGIS Ansprache durch PyQGIS, Ausgabe der PostgreSQL-Version und Test der erfolgreichen Verbindung 
 
 Sonstiges Python: 
 - Sämtliche 2-Band-Fernerkundungsindices auf Basis von Sentinel-2-Daten berechnen lassen
@@ -154,6 +155,11 @@ Es ist mühsam, die Koska-Wasserstufen (nach Koska (2001)) als Flurabstandsangab
 
 28_vektorisieren_clippen_upscalen.py
 Aufbauend auf den Skripten "rasterisieren_und_hochskalieren" sowie "Resampling_Rasterdaten" wird eine Rasterdatei von 1x1m auf 20x20m Auflösung hochskaliert, um sie anschließend auf eine bbox zu clippen und als Vektordatei zu exportieren. Hier sollten störende Artefakte einer Wasserstandsberechnung händisch aus dem Raster entfernt werden. Gebraucht wird nur die terra-Bibliothek. 
+
+29_zugriff_auf_postgis.py
+Zur Verwaltung meiner Geodaten möchte ich Shapefiles und Raster in PostGIS einladen und dafür zuerst in QGIS eine Verbindung zu PostGIS herstellen.
+Das geschieht wieder am Beispiel unseres Lagunen-Projekts aus den Anden Ecuadors. Als erstes möchte ich jedoch als kleinen Codeblock PostGIS mit 
+PyQGIS ansprechen und schauen, die installierte PostgreSQL-Version ausgeben (muss mit vorher installierter PostGIS-Version übereinstimmen) und schauen, ob die Verbindung erfolgreich ist. Wir nutzen QgsDataSourceUri, QgsVectorLayer, QgsProject und die psycopg2-Bibliothek.
 
 Sentinel_2_datenverarbeitung.ipynb 
 Am Beispiel Uruguays werden mögliche Schritte der Datenverarbeitung von Sentinel-2-Daten aufgearbeitet und umgesetzt. Dabei werden Geoverarbeitungsschritte mit PyQGIS-Code eingebaut sowie verschiedene Methodikansätze getestet, die anschließend je nach Anwendungsfeld eingesetzt werden können. Andere Mini-Skripte aus dem Geodata-Repository wurden hier eingebaut und anwendungsbezogen getestet. 
