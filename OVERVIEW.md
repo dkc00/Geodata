@@ -129,6 +129,12 @@ mit_postgis_interagieren.py
 Baut auf das zugriff_auf_postgis Skript auf. Damit shapes in PostGIS geladen 
 werden können, muss erst im QGIS-Browser manuell ein Zugang zu PostgreSQL 
 eingerichtet werden. Lädt shapes von QGIS in PostGIS und andersherum. 
+
+ndwi_randomforest.py
+Als Teil der Spektralindex-Auswertung für Uruguay soll hier ein Random-Forest Ansatz auf eine NDWI-Berechnung getestet werden. Der Ocde kann als Funktion 
+umfunktioniert und an andererer Stelle in größere Workflows eingebaut werden. Dafür können wir QgsProject.instance() nutzen oder geben alternativ den pfad an, iface, rasterio für die sentinel/tiffauswertung, numpy und scikit learn mit dem typischen RandomForestRegressor. Der RF-Code ist die standardmäßige Herangehensweise, wir haben einen 80/20-Split von train und test. Er soll vorerst nur ein R^2 ausgeben auf Basis der Verteilung der NDWI-Pixel. Das sollte man für eine richtige Anwendung unbedingt mit ground-truth daten oder anderweitigen Prädiktoren ausbauen! 
+Leider kommt der Computer aber auch aufgrund der hohen Anzahl an S2-Rasterzellen an seine Grenzen. Ich möchte das Skript performanter ausbauen, evtl. mit Downscaling arbeiten oder nur Teilbereiche untersuchen, und unbedingt ground truth daten für uruguay recherchieren. Dient also 
+vorerst nur als anhaltspunkt für weitere RF-Skripte, ist aber aufgrund der Hardware schwer ausführbar.
 ____________________________-
 Jupyter-Notebooks:
 
