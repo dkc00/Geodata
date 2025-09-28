@@ -46,8 +46,8 @@ def postgis_zugriff(port_nummer, datenbank_name, user_name, passwort):
         FROM information_schema.tables
         WHERE table_schema='public';
         """)
-        for row in cur.fetchall():
-            print(row) # listet die existierenden spalten auf 
+        # for row in cur.fetchall():
+        #     print(row) # listet die existierenden spalten auf 
         conn.close()
         print("Verbindung erfolgreich")
     except Exception as error:
