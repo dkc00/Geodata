@@ -26,6 +26,7 @@ PyQGIS:
 - PostGIS Ansprache durch PyQGIS, Ausgabe der PostgreSQL-Version und Test der erfolgreichen Verbindung
 - Shapefiles mit aktivierter PostgreSQL-Verbindung von QGIS in PostGIS laden und dort vorhandene Shapes wieder in QGIS laden
 - TIF-Raster mit GDAL-Werkzeug in QGIS auf Polygon clippen und als neues Raster speichern
+- Automatischer Zoom in QGIS auf Polygon-Feature einer festzulegenden Spalte der Attributtabelle eines bestimmten Layers
 
 Sonstiges Python: 
 - Sämtliche 2-Band-Fernerkundungsindices auf Basis von Sentinel-2-Daten berechnen lassen
@@ -139,6 +140,14 @@ vorerst nur als anhaltspunkt für weitere RF-Skripte, ist aber aufgrund der Hard
 
 raster_polygon_clip.py
 Ich nutze manuell sehr regelmäßig die Standard-Tools von QGIS, um eine Raster-TIF-Datei (Flurabstandskarte, geol. Interpolationen etc). auf ein Polygon (Untersuchungsgebiet, Biotop, Flurstück etc.) zu clippen. Für größere Workflows brauche ich das als Funktion in PyQGIS. Normal brauche ich diese Anwendung nur für einzelne Raster, sollte eine Automatisierung für viele Raster in einem Projekt erstellt werden, kann die Geoverarbeitung dieses Skripts in eine Schleife verschoben werden.
+
+bestimmtes_attribut_anzeigen.py 
+Nützliches Zoom-Tool auf Features. Das Skript soll in die Attributtabelle eines gewissen Layers gehen und mir 
+für eine gewisse Spalte das Feature anzeigen, welches einen gewissen Namen als Eintrag hat. 
+Auf dieses wird direkt in der Karte gezoomt. So kann man sich schnell ein gewisses 
+Fließgewässer, Siedlung etc. aus riesigen Tabellen anzeigen lassen.Funktioniert 
+bei mir, um schnell von Polygon zu Polygon zu springen. Bspw. bei 100.000 Fließgewässern im shp: 
+highlight = bestimmtes_attribut_anzeigen(Fließgewässer,NAME,Theel-Bach), und fertig. Der Maßstab der Darstellung im Interface passt sich automatisch der Polygongrö0e an. Wir arbeiten standardmaeßig mit Qgis, QgsProject und iface, außerdem für das Hervorheben mit QgsHighlight und QColor.
 
 ____________________________-
 Jupyter-Notebooks:
