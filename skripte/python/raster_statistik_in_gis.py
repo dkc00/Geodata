@@ -7,7 +7,7 @@ Matplotlib direkt in QGIS generieren.
 
 import numpy as np # für die erstellungen eines np.arrays
 import matplotlib.pyplot as plt # für ein ansehnliches histogramm
-from qgis.core import QgsRaster
+from qgis.core import QgsRaster, QgsProject
 
 
 
