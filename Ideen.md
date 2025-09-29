@@ -1,3 +1,11 @@
+Nach bspw. 50+ funktionen mit pyqgis ein qgis plugin bauen, was alle oder die meisten davon verknüpft. dort könnte man wie aus einem katalog geoverarbeitungstools auswählen. 
+
+_________
+
+ich kann mit webgis-code (html/js, leaflet) eine kleine app für flächenmonitoring eines exemplarischen gebiets erstellen und im backend mit python und insb weiter mit pyqgis arbeiten. evtl könnte man eine art zeitachse/schieberegler für das frontend einbauen, um interaktiv die veränderung der ndvi/swir/ndmi werte o.ä zu sehen. evtl kombinierbar mit der unteren idee für dürremonitoring
+
+___________
+
 Sentinel 2 basierte Analyse der Dürresituation Brandenburgs: 
 - nutzbarkeit von ndmi, ndvi, optimal mit random forest und umweltprädiktoren wie historischen zeitreihen, niederschläge, biotope, quartärgeologie
 - bereits viel grundlagenmaterial
@@ -5,6 +13,8 @@ Sentinel 2 basierte Analyse der Dürresituation Brandenburgs:
 - als webgis projekt implementieren?
 - bereits abgearbeitetes thema?
 
+
+__________
 
 Immobilienbewertung/Standort für neubauten mit sentinel-1 und 2:
 - wie belastbar ist das? 

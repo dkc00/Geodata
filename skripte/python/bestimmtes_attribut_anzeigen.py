@@ -9,7 +9,7 @@ Bspw. bei 100.000 Fließgewässern im shp:
 highlight = bestimmtes_attribut_anzeigen(Fließgewässer,NAME,Theel-Bach), und fertig.
 Der Maßstab der Darstellung im Interface passt sich automatisch der Polygongrö0e an.
 Wir arbeiten standardmaeßig mit Qgis, QgsProject und iface, außerdem für das 
-Hervorheben mit QgsHighlught und QColor.
+Hervorheben mit QgsHighlight und QColor.
 
 """
 
