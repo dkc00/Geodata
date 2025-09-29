@@ -11,14 +11,17 @@ anderem Code kombiniert werden.
 
 from qgis.core import QgsRasterLayer, QgsProject
 
-# das ist die url für osm xyz tiles 
-url = "type=xyz&url=https://tile.openstreetmap.org/{z}/{x}/{y}.png"
+def osm_hinzufuegen():
+    # das ist die url für osm xyz tiles 
+    url = "type=xyz&url=https://tile.openstreetmap.org/{z}/{x}/{y}.png"
 
-layer = QgsRasterLayer(url, "OpenStreetMap", "wms")  
-# hier explizit 'wms' als treiber angeben
-if not layer.isValid():
-    iface.messageBar().pushMessage("Fehler!", "WMS-Layer konnte nicht geladen werden.", Qgis.Critical, 5)
-else: 
-    iface.messageBar().pushMessage("Glückwunsch!", "WMS-Layer erfolgreich eingeladen.", Qgis.Success, 5)
+    layer = QgsRasterLayer(url, "OpenStreetMap", "wms")  
+    # hier explizit 'wms' als treiber angeben
+    if not layer.isValid():
+        iface.messageBar().pushMessage("Fehler!", "WMS-Layer konnte nicht geladen werden.", Qgis.Critical, 5)
+    else: 
+        iface.messageBar().pushMessage("Glückwunsch!", "WMS-Layer erfolgreich eingeladen.", Qgis.Success, 5)
 
-QgsProject.instance().addMapLayer(layer)
+    QgsProject.instance().addMapLayer(layer)
+
+osm_hinzufuegen()
