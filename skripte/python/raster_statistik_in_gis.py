@@ -7,7 +7,7 @@ Matplotlib direkt in QGIS generieren.
 
 import numpy as np # für die erstellungen eines np.arrays
 import matplotlib.pyplot as plt # für ein ansehnliches histogramm
-from qgis.core import QgsRaster
+from qgis.core import QgsRaster, QgsProject
 
 
 
@@ -18,7 +18,10 @@ from qgis.core import QgsRaster
 
 #________
 # FÜR EINEN LAYER____________________________________________________________________
-lyr = iface.activeLayer()
+
+layer_name = "" # HIER LAYER-NAME ANGEBEN 
+
+lyr = QgsProject.instance().mapLayersByName(layer_name)[0]
 stats = lyr.dataProvider().bandStatistics(1) 
 stats = iface.activeLayer().dataProvider().bandStatistics(1)
 print(f"Mean: {stats.mean}")

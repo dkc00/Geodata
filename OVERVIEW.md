@@ -25,6 +25,7 @@ PyQGIS:
 - Flurabstandskarten für Moorflächen nach Koska-Wasserstufen reklassifizieren
 - PostGIS Ansprache durch PyQGIS, Ausgabe der PostgreSQL-Version und Test der erfolgreichen Verbindung
 - Shapefiles mit aktivierter PostgreSQL-Verbindung von QGIS in PostGIS laden und dort vorhandene Shapes wieder in QGIS laden
+- TIF-Raster mit GDAL-Werkzeug in QGIS auf Polygon clippen und als neues Raster speichern
 
 Sonstiges Python: 
 - Sämtliche 2-Band-Fernerkundungsindices auf Basis von Sentinel-2-Daten berechnen lassen
@@ -129,6 +130,16 @@ mit_postgis_interagieren.py
 Baut auf das zugriff_auf_postgis Skript auf. Damit shapes in PostGIS geladen 
 werden können, muss erst im QGIS-Browser manuell ein Zugang zu PostgreSQL 
 eingerichtet werden. Lädt shapes von QGIS in PostGIS und andersherum. 
+
+ndwi_randomforest.py
+Als Teil der Spektralindex-Auswertung für Uruguay soll hier ein Random-Forest Ansatz auf eine NDWI-Berechnung getestet werden. Der Ocde kann als Funktion 
+umfunktioniert und an andererer Stelle in größere Workflows eingebaut werden. Dafür können wir QgsProject.instance() nutzen oder geben alternativ den pfad an, iface, rasterio für die sentinel/tiffauswertung, numpy und scikit learn mit dem typischen RandomForestRegressor. Der RF-Code ist die standardmäßige Herangehensweise, wir haben einen 80/20-Split von train und test. Er soll vorerst nur ein R^2 ausgeben auf Basis der Verteilung der NDWI-Pixel. Das sollte man für eine richtige Anwendung unbedingt mit ground-truth daten oder anderweitigen Prädiktoren ausbauen! 
+Leider kommt der Computer aber auch aufgrund der hohen Anzahl an S2-Rasterzellen an seine Grenzen. Ich möchte das Skript performanter ausbauen, evtl. mit Downscaling arbeiten oder nur Teilbereiche untersuchen, und unbedingt ground truth daten für uruguay recherchieren. Dient also 
+vorerst nur als anhaltspunkt für weitere RF-Skripte, ist aber aufgrund der Hardware schwer ausführbar.
+
+raster_polygon_clip.py
+Ich nutze manuell sehr regelmäßig die Standard-Tools von QGIS, um eine Raster-TIF-Datei (Flurabstandskarte, geol. Interpolationen etc). auf ein Polygon (Untersuchungsgebiet, Biotop, Flurstück etc.) zu clippen. Für größere Workflows brauche ich das als Funktion in PyQGIS. Normal brauche ich diese Anwendung nur für einzelne Raster, sollte eine Automatisierung für viele Raster in einem Projekt erstellt werden, kann die Geoverarbeitung dieses Skripts in eine Schleife verschoben werden.
+
 ____________________________-
 Jupyter-Notebooks:
 
