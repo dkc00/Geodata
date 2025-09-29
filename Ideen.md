@@ -1,3 +1,6 @@
+Nach bspw. 50+ funktionen mit pyqgis ein qgis plugin bauen, was alle oder die meisten davon verknüpft. dort könnte man wie aus einem katalog geoverarbeitungstools auswählen. 
+
+
 Sentinel 2 basierte Analyse der Dürresituation Brandenburgs: 
 - nutzbarkeit von ndmi, ndvi, optimal mit random forest und umweltprädiktoren wie historischen zeitreihen, niederschläge, biotope, quartärgeologie
 - bereits viel grundlagenmaterial
