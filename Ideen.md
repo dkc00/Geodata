@@ -4,6 +4,8 @@ _________
 
 ich kann mit webgis-code (html/js, leaflet) eine kleine app für flächenmonitoring eines exemplarischen gebiets erstellen und im backend mit python und insb weiter mit pyqgis arbeiten. evtl könnte man eine art zeitachse/schieberegler für das frontend einbauen, um interaktiv die veränderung der ndvi/swir/ndmi werte o.ä zu sehen. evtl kombinierbar mit der unteren idee für dürremonitoring
 
+exemplarisch angefangen für das stadtgebiet rathenows. muss noch ausgebaut werden. 
+
 ___________
 
 Sentinel 2 basierte Analyse der Dürresituation Brandenburgs: 
