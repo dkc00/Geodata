@@ -30,6 +30,7 @@ PyQGIS:
 
 Sonstiges Python: 
 - Sämtliche 2-Band-Fernerkundungsindices auf Basis von Sentinel-2-Daten berechnen lassen
+- Backend mit Flask und Rasterio für WebGIS-Darstellung von Fernerkundungsindices
 - Datenverarbeitungsroutine für Sentinel-2-Daten mit PyQGIS und "normalem" Python: Vorverarbeitung, Download, Datenvorbereitung, Indices, Wolkenbedeckung
 
 R:
@@ -42,7 +43,10 @@ R:
 - Raster auf die Ränder einer Vektordatei clippen
 - Grundwasserganglinien und Niederschläge in Plots darstellen
 - Rasterdatei hochskalieren, anschließend auf eine bbox clippen, vektorisieren und als Vektor speichern
+- Vorlage für einfache Plots aus Excel-Tabellen (z.B. Grundwasserstand gegen Zeit auftragen)
 
+Sonstiges: 
+- Interaktive NDVI-Darstellung von Sentinel-2-Daten im Webbrowser mit OpenStreetMap als Hintergrund für Rathenow, mit JavaScript/HTML sowie o.g. Python-Backend
 _________________________________________________________________________________________________________________________________________________________
 
 indices: 
@@ -196,3 +200,6 @@ Ein Raster wird auf die Ränder eines Vektors geclippt. Auch dies ist standardm�
 grundwasserganglinien.R
 Das folgende Skript erzeugt einen Plot für Grundwasserganglinien verschiedener Messstellen auf Basis einer Excel-Tabelle . Im selben Plot werden die Niederschläge dargestellt.
 Das Skript muss an die jeweiligen Excel-Tabellen angepasst werden! Es wird mit der readxl-Bibliothek gearbeitet.
+
+plot_datum_gegen_daten.R
+Ähnlich zum vorherigen Skript grundwasserganglinien.R, aber einfacher und sollte als Vorlage für weitere einfache wissenschaftliche Plots genutzt werden. Auch hier verwenden wir readxl. Der Flurabstand einer Grundwassermessstelle wird gegen das Datum aufgetragen. 
