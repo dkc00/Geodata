@@ -11,14 +11,14 @@ QGIS-Projekt auf einen gewissen Maßstab. Wir benötigen nur QgsProject und ifac
 from qgis.core import QgsProject
 from qgis.utils import iface
 
-lyr_name = "" # HIER LAYER-NAME ANGEBEN
+lyr_name = "TK 25" # HIER LAYER-NAME ANGEBEN, hier für eine TK 1: 25.000
 min_scale = 50000 # erst sichtbar ab maßstab 1: 50.000 
 max_scale = 0 # keine maximalgrenze
 
 def layer_sichtbarkeit(lyr_name, min_scale, max_scale): 
 
-  lyr = QgsProject.instance().mapLayersByName(lyr_name)[0] # hier für eine TK 1: 25.000
-  # print(lyr)
+  lyr = QgsProject.instance().mapLayersByName(lyr_name)[0] # layer einladen
+  # print(lyr) # als test
   
   # print(iface.mapCanvas().scale()) # aktuellen kartenmaßstab prüfen, nur als test
   # sollte denselben wert ergeben wie unten in der qgis bar
