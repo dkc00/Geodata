@@ -27,6 +27,7 @@ PyQGIS:
 - Shapefiles mit aktivierter PostgreSQL-Verbindung von QGIS in PostGIS laden und dort vorhandene Shapes wieder in QGIS laden
 - TIF-Raster mit GDAL-Werkzeug in QGIS auf Polygon clippen und als neues Raster speichern
 - Automatischer Zoom in QGIS auf Polygon-Feature einer festzulegenden Spalte der Attributtabelle eines bestimmten Layers
+- GDAL-Tool des Zuschneidens eines Rasters auf Ausdehnung in eine PyQGIS-Funktion überführen
 
 Sonstiges Python: 
 - Sämtliche 2-Band-Fernerkundungsindices auf Basis von Sentinel-2-Daten berechnen lassen
