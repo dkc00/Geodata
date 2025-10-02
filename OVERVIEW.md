@@ -154,6 +154,11 @@ Fließgewässer, Siedlung etc. aus riesigen Tabellen anzeigen lassen.Funktionier
 bei mir, um schnell von Polygon zu Polygon zu springen. Bspw. bei 100.000 Fließgewässern im shp: 
 highlight = bestimmtes_attribut_anzeigen(Fließgewässer,NAME,Theel-Bach), und fertig. Der Maßstab der Darstellung im Interface passt sich automatisch der Polygongrö0e an. Wir arbeiten standardmaeßig mit Qgis, QgsProject und iface, außerdem für das Hervorheben mit QgsHighlight und QColor.
 
+cliprasterbyextent.py
+In diesem Skript ist "Clip Raster by Extent" aus GDAL zu finden, um z.B. eine Flurabstandskarte auf die Ausdehnung eines Untersuchungsgebietes 
+zuzuschneiden. Es wird nur QgsProject benötigt. Wenn verschiedene Schritte kombiniert und automatisiert werden sollen, z.B. Erstellung einer Grundwasserstandsinterpolation mit Universal Kriging, anschließende Verrechnung im Rasterrechner mit DGM zur Erstellung der Flurabstandskarte, anpassen der Styles, Farbskala sowie Kategorisierung und final Clip auf ein Untersuchungsgebiet, ist das manuelle GDAL- Tool in QGIS nicht ausreichend und wir benötigen den PyQGIS Code.
+
+
 ____________________________-
 Jupyter-Notebooks:
 
