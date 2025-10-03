@@ -42,3 +42,22 @@ _____________
 
 Welche tools (auch sehr kleine, lassen sich gut zu Workflows zusammenfügen) könnte ich noch sinnvoll in PyQGIS bauen? 
 
+- Koordinaten aller features eines Shapefiles als CSV exportieren (z.B. für Geländedaten)
+
+- Automatische Layerbeschreibung als Markdown oder HTML
+
+- merge funktion in pyqgis, um vektorlayer mit selbem namen im projekt zu mergen und als neue datei mit selben styles etc zu speichern. könnte aber Fehleranfällig sein, evtl auch die pfade getrennt implementieren
+
+- heatmap aus punktlayer generieren (zb wasserstände oder geländehöhen)
+
+- automatisches entfernen identischer features in vektorlayern (abgleich der spalten, mit .getAttributes)
+
+- automatisch linienlängen berechnen und optional exportieren als xlsx/csv (Straßen, fließgewässer etc) 
+
+- rasterwerte eines rasterlayers an bestimmten koordinaten angeben (kbs berücksichtigen, also lyr, kbs, x und y als parameter der funktion)
+
+- transparenzstufen verschiedener rasterlayer aufeinander abstimmen (zb Interpolation und dahinter osm/ topografische karte)
+
+
+
+
