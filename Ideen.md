@@ -31,3 +31,14 @@ allgemeinen
 - urbane wärmebelastung und/oder lärmbelastung indirekt abschätzen
 - kombination mit corine daten, osm, anderen open source geodaten (kartenportale etc.)
 -ggfs auch ml-modelle mit gesammelten daten für eine deutsche testfläche testen
+
+
+___________
+
+An teilen meiner sentinel-2 datenverarbeitung möchte ich einmal einen CI(Continuous Integration) Ansatz testen, mit GitHub actions und einer workflow datei. ein umfassenderer CI/CD test ergibt keinen sinn, wenn ich keine Implementierung von clouddiensten benötige.
+
+_____________
+
+
+Welche tools (auch sehr kleine, lassen sich gut zu Workflows zusammenfügen) könnte ich noch sinnvoll in PyQGIS bauen? 
+
