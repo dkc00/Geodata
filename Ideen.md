@@ -35,7 +35,7 @@ allgemeinen
 
 ___________
 
-An teilen meiner sentinel-2 datenverarbeitung möchte ich einmal einen CI(Continuous Integration) Ansatz testen, mit GitHub actions und einer workflow datei. ein umfassenderer CI/CD test ergibt keinen sinn, wenn ich keine Implementierung von clouddiensten benötige.
+An teilen meiner sentinel-2 datenverarbeitung möchte ich einmal einen CI(Continuous Integration) Ansatz testen, mit GitHub actions und einer workflow datei. ein umfassenderer CI/CD (continuous delivery or deployment) test ergibt keinen sinn, wenn ich keine Implementierung von clouddiensten benötige.
 
 _____________
 
