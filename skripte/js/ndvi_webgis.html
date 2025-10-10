@@ -1,0 +1,60 @@
+
+<!DOCTYPE html>
+<html>
+    <script>
+/*
+
+Ich würde gerne eine interaktive Karte erstellen, die NDVI-Werte und andere Indizes über die Zeit 
+darstellt. Für ein kleines Gebiet, z.B. 100ha in Brandenburg (hier Beispiel in Rathenow)
+Hier moechte ich zuerst ein kleines Frontend-Skript aufbauen, das mir eine Benutzeroberfläche erschafft.
+
+*/
+    </script>
+<head>
+  <title>NDVI der Stadt Rathenow, September 2025</title> 
+  <script>
+    // wir nutzen leaflet für unsere frontend-darstellung
+  </script>
+  <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+  <style>
+    #map { height: 600px; width: 100%; }
+  </style>
+</head>
+<body>
+  <h2>NDVI-Visualisierung</h2>
+  <div id="map"></div>
+  <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+  <script>
+    // im folgenden schritt wird die karte initialisiert
+    var map = L.map('map').setView([52.6, 12.3], 13); // hier die richtigen koordinaten der flaeche in brandenburg einfuegen
+
+    // osm wird als hitnergrundkarte eingeladen
+    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+      attribution: '© OpenStreetMap'
+    }).addTo(map);
+
+    map.on('click', function(e) {
+      var lon = e.latlng.lng;
+      var lat = e.latlng.lat;
+
+      // hier wird mein flask backend angefragt. das ist meine lokale adresse
+      fetch("http://127.0.0.1:5000/get_value?lon=" + lon + "&lat=" + lat)
+        .then(response => response.json())
+        .then(data => {
+          var ndvi = data.ndvi.toFixed(2); 
+          L.popup()
+            .setLatLng(e.latlng)
+            .setContent("NDVI: " + ndvi)
+            .openOn(map);
+        })
+        .catch(err => {
+          console.error(err);
+          L.popup()
+            .setLatLng(e.latlng)
+            .setContent("Fehler beim Abrufen des Werts")
+            .openOn(map);
+        });
+    });
+  </script>
+</body>
+</html>
