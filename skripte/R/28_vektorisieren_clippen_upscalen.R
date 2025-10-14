@@ -3,8 +3,8 @@ library(terra)
 # GENERELLES VEKTORISIEREN MIT TERRA
 
 
-raster_path <- "M:/DBU Ueckermünder Heide/QGIS/Karten/PrognoseTool/NEU_Projektbereich_Schlosssee_KOSKA_Diff_recl.tif"
-output_path <- "M:/DBU Ueckermünder Heide/QGIS/Karten/PrognoseTool/NEU_Projektbereich_Schlosssee_KOSKA_Diff_recl_vect.shp"
+raster_path <- "...tif"
+output_path <- "...shp"
 
 
 raster <- rast(raster_path)
@@ -24,8 +24,8 @@ writeVector(vector, output_path)
 # Siehe für diesen Code das Skript "rasterisieren_und_hochskalieren"
 
 # Schritt 1:
-raster_path <- "M:/DBU Ueckermünder Heide/QGIS/Karten/PrognoseTool/NEU_Projektbereich_Schlosssee_KOSKA_Diff_recl.tif"
-output_path <- "M:/DBU Ueckermünder Heide/QGIS/Karten/PrognoseTool/NEU_Projektbereich_Schlosssee_KOSKA_Diff_recl_vect.shp"
+raster_path <- "...tif"
+output_path <- "...shp"
 
 
 raster <- rast(raster_path)
