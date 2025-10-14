@@ -3,55 +3,68 @@ install.packages("terra")
 library(sf)
 library(terra)
 
-#Allgemeiner code als Alternative zu v.to.rast (Rasterisieren)
+# code als Alternative zu v.to.rast (Rasterisieren)
 
 
-shapefile_path <- "....shp" # gewünschte vektordaten einlesen (zb prognosetool)
-wert_feld <- "Diff_GW__1" # name des wertfelds anpassen (attributtabelle)
+shapefile_path <- "...shp" # gewünschte vektordaten einlesen (zb prognosetool)
+wert_feld <- "Diff_GW_Ri" # name des wertfelds anpassen (attributtabelle)
+raster_aufloesung <- 50 # aufloesung in m
+output_rasterisieren <- "...tif" # !! VORSICHT: PFAD AKTUALISIEREN !! 
 
+rasterisieren <- function(shapefile_path, wert_feld, raster_aufloesung, output_rasterisieren){
 
-v <- st_read(shapefile_path) # shapefile einlesen
-v <- st_transform(v, 25833) # richtiges projekt-KBS angeben
+  v <- st_read(shapefile_path) # shapefile einlesen
+  #v <- st_transform(v, 102329) # richtiges projekt-KBS angeben
+  
+  # vektordaten einladen
+  v_terra <- vect(v)
+  
+  r_template <- rast(v_terra, resolution = raster_aufloesung) 
+  
+  # vektordaten mit template rasterisieren
+  neuraster <- rasterize(v_terra, r_template, field = wert_feld) 
+  
+  # NaN werte managen
+  neuraster[is.na(neuraster[])] <- 0
+  
+  # neues raster zur kontrolle plotten
+  plot(neuraster)
+  
+  # raster speichern
+  writeRaster(neuraster, output_rasterisieren, overwrite = TRUE)
+  
+  print("Neues Raster gespeichert.")
+  
+}
 
-# vektordaten einladen
-v_terra <- vect(v)
-
-r_template <- rast(v_terra, resolution = 50) # 50m raster-template erstellen
-
-# vektordaten mit template rasterisieren
-neuraster <- rasterize(v_terra, r_template, field = wert_feld) 
-
-# NaN werte managen
-neuraster[is.na(neuraster[])] <- 0
-
-# neues raster zur kontrolle plotten
-plot(neuraster)
-
-
-# !! VORSICHT: PFAD AKTUALISIEREN !! 
-
-writeRaster(neuraster, "...tif", overwrite = TRUE)
+rasterisieren(shapefile_path, wert_feld, raster_aufloesung, output_rasterisieren)
 
 
 # HOCHSKALIEREN
 
-# als input raster einfach das neu exportierte raster nehmen aus dem schritt davor
-input_raster <- "....tif"
 
 # hier angeben wo das auf 1m skalierte raster hingespeichert werden soll
-output_raster <- "....tif"
+input_hochskalieren <- output_rasterisieren # hier ggfs. einen Pfad einfügen
+output_hochskalieren <- "...tif" # Wo soll das hochskalierte Bild hingespeichert werden? 
+faktor_hochskalieren <- 50 # z.B. von 50m auf 1m -> Faktor 50 
+# output_rasterisieren aus dem letzten Code wird benötigt. Sonst einfach den Pfad des zu rasterisierenden Bildes angeben
 
 
+raster_hochskalieren <- function(input_hochskalieren, faktor_hochskalieren, output_hochskalieren){
 
-r <- rast(input_raster)
+  r <- rast(input_hochskalieren)
+  
+  orig_res <- res(r)
+  
+  factor <- faktor_hochskalieren  # um faktor 50 hochskalieren
+  
+  r_upscaled <- disagg(r, fact = factor, method = "near")
+  plot(r_upscaled) # neues raster zur kontrolle plotten 
+  
+  writeRaster(r_upscaled, output_hochskalieren, overwrite=TRUE)
 
-orig_res <- res(r)
-stopifnot(abs(orig_res[1] - 50) < 1e-6, abs(orig_res[2] - 50) < 1e-6)
+  print("Hochskaliertes Raster gespeichert.")
+}
 
-factor <- 50  # um faktor 50 hochskalieren
-
-r_upscaled <- disagg(r, fact = factor, method = "near")
-plot(r_upscaled) # neues raster zur kontrolle plotten 
-
-writeRaster(r_upscaled, output_raster, overwrite=TRUE)
+raster_hochskalieren(input_hochskalieren, faktor_hochskalieren, output_hochskalieren)
 
