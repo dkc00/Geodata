@@ -62,6 +62,9 @@ Welche tools (auch sehr kleine, lassen sich gut zu Workflows zusammenfügen) kö
 
 - transparenzstufen verschiedener rasterlayer aufeinander abstimmen (zb Interpolation und dahinter osm/ topografische karte)
 
+___________
+
+Deutsche fläche zb am rhein mit sentinel-2 untersuchen, möglichst ground truth daten mit einbauen. kompletten workflow von anfang bis ende durchtesten (indexberechnung, zeitreihen, prozessierung). 
 
 
 
