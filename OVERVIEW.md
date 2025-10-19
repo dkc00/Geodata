@@ -45,6 +45,7 @@ R:
 - Grundwasserganglinien und Niederschläge in Plots darstellen
 - Rasterdatei hochskalieren, anschließend auf eine bbox clippen, vektorisieren und als Vektor speichern
 - Vorlage für einfache Plots aus Excel-Tabellen (z.B. Grundwasserstand gegen Zeit auftragen)
+- Räumliche Ausdehnung für Rechenoperationen mit Rasterdaten anpassen/korrigieren
 
 Sonstiges: 
 - Interaktive NDVI-Darstellung von Sentinel-2-Daten im Webbrowser mit OpenStreetMap als Hintergrund für Rathenow, mit JavaScript/HTML sowie o.g. Python-Backend
@@ -209,3 +210,6 @@ Das Skript muss an die jeweiligen Excel-Tabellen angepasst werden! Es wird mit d
 
 plot_datum_gegen_daten.R
 Ähnlich zum vorherigen Skript grundwasserganglinien.R, aber einfacher und sollte als Vorlage für weitere einfache wissenschaftliche Plots genutzt werden. Auch hier verwenden wir readxl. Der Flurabstand einer Grundwassermessstelle wird gegen das Datum aufgetragen. 
+
+extent_anpassen.R
+Zwei Raster sollen bspw. addiert werden aber haben nicht dieselbe Ausdehnung? bei terra kommt es schnell zum Problem "extents do not match", auch wenn nur Nachkommastellen nicht uebereinstimmen. Terra arbeitet dort auch schnell ungenau. Ebenso macht der Rasterrechner in QGIS gerne Probleme. Zum schnellen Addieren kann deshalb dieses Skript genutzt werden. (Kann natuerlich genauso fuer andere Rechenoperationen angepasst werden)

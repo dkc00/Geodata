@@ -6,6 +6,10 @@ ich kann mit webgis-code (html/js, leaflet) eine kleine app für flächenmonitor
 
 exemplarisch angefangen für das stadtgebiet rathenows. muss noch ausgebaut werden. 
 
+ein simpler ansatz wäre auch eine automatisierte ndvi-auswertung für eine gewisse testfläche in deutschland/europa, wo schon S-2 L2A daten vorhanden sind und man nicht noch separat sen2cor anwenden muss. daher auch eine terrestrische fläche ohne acolite-notwendigkeit , zb mit anwendungen in risikogebieten für waldbrand oder dürre. waldbrandrisikogebiete in sachsen sind eine möglichkeit. 
+
+das tool meldet sich über das s2 downloader qgis-plugin automatisch im copernicus dataspace an, lädt ein sentinel-2 bild l2a mit wolken-threshold herunter (nur ndvi-bänder für performance und weniger speichernutzung), berechnet den ndvi aus den bändern und speichert den durchschnittlichen ndvi-wert in einem csv file oder einer datenbank. kann man auch auf kleinere, interessante bereiche mit einer bbox zuschneiden. so kriegt man völlig ohne manuelle arbeit aktualisierte ndvi-werte. lässt sich anschließend mit ground truth validieren und kann auch ggfs. ab einem threshold eine automatisierte warnung ausgeben -> frühwarnanwendung 
+
 ___________
 
 Sentinel 2 basierte Analyse der Dürresituation Brandenburgs: 
@@ -58,6 +62,9 @@ Welche tools (auch sehr kleine, lassen sich gut zu Workflows zusammenfügen) kö
 
 - transparenzstufen verschiedener rasterlayer aufeinander abstimmen (zb Interpolation und dahinter osm/ topografische karte)
 
+___________
+
+Deutsche fläche zb am rhein mit sentinel-2 untersuchen, möglichst ground truth daten mit einbauen. kompletten workflow von anfang bis ende durchtesten (indexberechnung, zeitreihen, prozessierung). 
 
 
 

@@ -33,7 +33,7 @@ view = QgsLayerTreeView()
 view.setModel(model)
 
 
-view.resize(fensterbreite, view.sizeHint().height())
+view.resize(fensterbreite, view.sizeHint().height()) # wird oben festgelegt
 
 scene = QGraphicsScene()
 scene.addWidget(view)
@@ -48,7 +48,7 @@ scene.render(painter)
 painter.end()
 
 timestamp = datetime.datetime.now().strftime("%Y%m%d_%H%M%S")
-output_path = os.path.abspath(f"layer_legend_{timestamp}.png")
-image.save(output_path)
+output_path = os.path.abspath(f"layer_legend_{timestamp}.png") # namen des outputs mit os 
+image.save(output_path) # QImage zum Speichern nutzen
 
 print(f"Legende als png Datei gespeichert: {output_path}")
