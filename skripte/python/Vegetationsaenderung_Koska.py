@@ -14,7 +14,7 @@ from qgis.analysis import QgsZonalStatistics
 
 biotop_layer_name = "Biotope_zugeschnitten"
 koska_diff_name = "BeekeNord_KOSKA_Diff"
-output_path = r"..."
+# output_path = r"..." wird nur beneoetigt wenn mit output_path gearbeitet wird, aktuell wird ein temporaerer layer erzeugt
 
 
 biotop_layer = QgsProject.instance().mapLayersByName(biotop_layer_name)[0]
@@ -63,3 +63,4 @@ else:
     else:
 
         iface.messageBar().pushMessage("Vorsicht", "Keine Biotop-Polygone mit KOSKA-Diff ungleich Null gefunden.", level=Qgis.Warning)
+
