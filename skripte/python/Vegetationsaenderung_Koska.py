@@ -14,7 +14,7 @@ from qgis.analysis import QgsZonalStatistics
 
 biotop_layer_name = "Biotope_zugeschnitten"
 koska_diff_name = "BeekeNord_KOSKA_Diff"
-output_path = r"M:\DBU Ueckermünder Heide\Planung\GEST\Vegetationsänderung"
+output_path = r"..."
 
 
 biotop_layer = QgsProject.instance().mapLayersByName(biotop_layer_name)[0]
@@ -61,4 +61,5 @@ else:
             level=Qgis.Info
         )
     else:
+
         iface.messageBar().pushMessage("Vorsicht", "Keine Biotop-Polygone mit KOSKA-Diff ungleich Null gefunden.", level=Qgis.Warning)
