@@ -28,6 +28,7 @@ PyQGIS:
 - TIF-Raster mit GDAL-Werkzeug in QGIS auf Polygon clippen und als neues Raster speichern
 - Automatischer Zoom in QGIS auf Polygon-Feature einer festzulegenden Spalte der Attributtabelle eines bestimmten Layers
 - GDAL-Tool des Zuschneidens eines Rasters auf Ausdehnung in eine PyQGIS-Funktion überführen
+- Biotop-Polygondaten mit KOSKA-Differenzenraster abgleichen, um pot. Vegetationsänderungen zu ermitteln
 
 Sonstiges Python: 
 - Sämtliche 2-Band-Fernerkundungsindices auf Basis von Sentinel-2-Daten berechnen lassen
@@ -160,7 +161,8 @@ cliprasterbyextent.py
 In diesem Skript ist "Clip Raster by Extent" aus GDAL zu finden, um z.B. eine Flurabstandskarte auf die Ausdehnung eines Untersuchungsgebietes 
 zuzuschneiden. Es wird nur QgsProject benötigt. Wenn verschiedene Schritte kombiniert und automatisiert werden sollen, z.B. Erstellung einer Grundwasserstandsinterpolation mit Universal Kriging, anschließende Verrechnung im Rasterrechner mit DGM zur Erstellung der Flurabstandskarte, anpassen der Styles, Farbskala sowie Kategorisierung und final Clip auf ein Untersuchungsgebiet, ist das manuelle GDAL- Tool in QGIS nicht ausreichend und wir benötigen den PyQGIS Code.
 
-
+Vegetationsaenderung_Koska.py
+Dieses Skript soll Biotop-Polygone mit Koska-Differenzenkarten (Soll-Flurabstand nach KOSKA - Ist-Flurabstand nach KOSKA) vergleichen und in einem neuen Vektorlayer alle Polygone behalten, für die das KOSKA_Diff ungleich null ist (Veränderung in der Wasserstufe). Arbeitet mit QgsZonalStatistics sowie QgsProject, Qgis, QgsVectorLayer und QgsRasterLayer.
 ____________________________-
 Jupyter-Notebooks:
 
