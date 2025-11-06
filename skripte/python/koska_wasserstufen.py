@@ -16,7 +16,7 @@ output_path = 'M:/DBU Ueckermünder Heide/QGIS/Interpolation/SchSee_SollZustand_
 
 params = {'INPUT_RASTER': path,
 'RASTER_BAND':1,
-'TABLE':['-2','0','5','0','0.2','4','0.2','0.45','3','0.45','0.8','2','0.8','inf','-2'],
+'TABLE':['-2','0','5','0','0.2','4','0.2','0.45','3','0.45','0.8','2','0.8','inf','-2'], # jeweilige wasserstufen von 2- bis 5+ 
 'NO_DATA':-9999,
 'RANGE_BOUNDARIES':0,
 'NODATA_FOR_MISSING':False,
