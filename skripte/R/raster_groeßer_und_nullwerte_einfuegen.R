@@ -17,7 +17,7 @@ crs(rastklein) <- crs_code
 rastklein_neu <- extend(rastklein, ext_neu)
 rastklein_neu[is.na(rastklein_neu[])] <- 0
 
-writeRaster(rastklein_neu, output_path, overwrite = TRUE) # output path anpassen
+writeRaster(rastklein_neu, output_path, overwrite = TRUE)
 
 
 
