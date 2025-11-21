@@ -3,7 +3,7 @@
 
 library(readxl)
 
-xlsx_path <- "M:/DBU Göldenitzer Moor/Planung/KWB/Klima-Temp-Niederschlag.xlsx" #anpassen
+xlsx_path <- "...xlsx" #anpassen
 sheet_name <- "Tabelle1" # hier egal, aber relevant wenn mehrere sheets vorhanden
 
 df <- read_excel(xlsx_path, sheet = sheet_name, skip = 1) # wie viele header-zeilen müssen geskippt werden? 
@@ -43,4 +43,5 @@ plot(x_vals, df[[nieder_col]],
      ylim = rain_range)
 
 mtext("Niederschlag [mm]", side=4, line=3)
+
 
