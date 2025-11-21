@@ -41,6 +41,7 @@ R:
 - Rasterdaten-Resampling von 1m auf 50m (belieblig anpassbar)
 - Löschen der "33" o.ä. vor den Koordinaten jedes Eintrags für KBS-Kompatibilität
 - ggplot für BAGLUVA-Wasserhaushaltsgleichung mit Niederschlagslinie
+- Plot zur klimatischen Gebietsbeschreibung mit Temperaturlinie und Niederschlagsbalken
 - Vektordaten rasterisieren und hochskalieren
 - Rasterdaten räumlich erweitern und neuen Rasterzellen Nullwerte zuweisen
 - Raster auf die Ränder einer Vektordatei clippen
@@ -216,3 +217,6 @@ plot_datum_gegen_daten.R
 
 extent_anpassen.R
 Zwei Raster sollen bspw. addiert werden aber haben nicht dieselbe Ausdehnung? bei terra kommt es schnell zum Problem "extents do not match", auch wenn nur Nachkommastellen nicht uebereinstimmen. Terra arbeitet dort auch schnell ungenau. Ebenso macht der Rasterrechner in QGIS gerne Probleme. Zum schnellen Addieren kann deshalb dieses Skript genutzt werden. (Kann natuerlich genauso fuer andere Rechenoperationen angepasst werden)
+
+Temp_Niederschlags_Diagramm.R
+Mit diesem Skript kann schnell für eine klimatische Gebietsbeschreibung ein Plot erzeugt werden, welche Jahresangaben auf der x-Achse gegen Temperatur und Niederschlag auf verschiedenen y-Achsen plottet (Temperatur als rote Linie, Niederschlag als blaue Balken). 
