@@ -6,19 +6,20 @@ library(readxl)
 xlsx_path <- "...xlsx" #anpassen
 sheet_name <- "Tabelle1" # hier egal, aber relevant wenn mehrere sheets vorhanden
 
-df <- read_excel(xlsx_path, sheet = sheet_name, skip = 1) # wie viele header-zeilen müssen geskippt werden? 
+df <- read_excel(xlsx_path, sheet = sheet_name, skip = 0) # wie viele header-zeilen müssen geskippt werden? 
 
 df[[1]] <- as.Date(df[[1]]) # in welcher spalte steht das datum? 
 
 temp_col <- 2    # in welcher spalte steht die temperatur? 
 nieder_col <- 3    # in welcher spalte steht der niederschlag? 
 
-par(mar = c(5, 5, 4, 5))
+par(mar = c(5, 5, 4, 5)) # ggfs anpassen, bestimmt wie groß der plot ist und ob alles "draufpasst"
 
 plot(df[[1]], df[[temp_col]],
      type = "l", col = "red", lwd = 2,
      xlab = "Jahr",
      ylab = "Temperatur [°C]",
+     ylim = c(7,11), # anpassen an temperatur oder loeschen für automatische skala
      main = "Klimatische Bedingungen Göldenitzer Moor, 2005-2024",
      xaxt = "n")
 abline(h = pretty(df[[temp_col]], 10), col = "grey85", lwd = 1)
@@ -42,6 +43,7 @@ plot(x_vals, df[[nieder_col]],
      ylab = "",
      ylim = rain_range)
 
+axis(4) # wichtig, damit die rechte y achsenskala angezeigt wird
 mtext("Niederschlag [mm]", side=4, line=3)
 
 
