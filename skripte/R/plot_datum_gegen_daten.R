@@ -3,7 +3,7 @@
 library(readxl) # benoetigte bibliothek
 
 # HIER PFAD ANPASSEN
-xlsx_path <- "M:/DBU Ueckermünder Heide/Bereitgestellte Daten/GWM Polen/MWP/dane_MWP_wniosek_GAG.5513.564.2025.xlsx"
+xlsx_path <- "...xlsx"
 
 # HIER EXCEL-SHEETNAME ANPASSEN
 sheet_name <- "pomiary automatyczne"
@@ -26,4 +26,5 @@ plot(df[[1]], df[[2]],
 
 # Optional die anzahl der x-Achsen-Beschriftungen anpassen
 axis.Date(1, at = seq(min(df[[1]]), max(df[[1]]), by = "year"), format = "%Y")
+
 
