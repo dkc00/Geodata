@@ -30,7 +30,8 @@ PyQGIS:
 - GDAL-Tool des Zuschneidens eines Rasters auf Ausdehnung in eine PyQGIS-Funktion überführen
 - Biotop-Polygondaten mit KOSKA-Differenzenraster abgleichen, um pot. Vegetationsänderungen zu ermitteln
 
-Python allgemein: 
+Python: 
+- Teilautomatisierung der Treibhausgas-Emissionsschätzung für Moor- und Feuchtgebiete nach GEST-Ansatz (Couwenberg et al. 2008, 2011), basierend auf botanischen Artenlisten und Wasserstufen nach Koska (2001)
 - Sämtliche 2-Band-Fernerkundungsindices auf Basis von Sentinel-2-Daten berechnen lassen
 - Backend mit Flask und Rasterio für WebGIS-Darstellung von Fernerkundungsindices
 - Datenverarbeitungsroutine für Sentinel-2-Daten mit PyQGIS und "normalem" Python: Vorverarbeitung, Download, Datenvorbereitung, Indices, Wolkenbedeckung
@@ -167,6 +168,17 @@ Vegetationsaenderung_Koska.py
 Dieses Skript soll Biotop-Polygone mit Koska-Differenzenkarten (Soll-Flurabstand nach KOSKA - Ist-Flurabstand nach KOSKA) vergleichen und in einem neuen Vektorlayer alle Polygone behalten, für die das KOSKA_Diff ungleich null ist (Veränderung in der Wasserstufe). Arbeitet mit QgsZonalStatistics sowie QgsProject, Qgis, QgsVectorLayer und QgsRasterLayer.
 ____________________________-
 Jupyter-Notebooks:
+
+GEST_Schaetzung_Offenland.ipynb 
+Teilautomatisierung der THG-Abschätzung nach GEST-Ansatz. Schritt 1: Offenland/Waldbiotope auf Torfböden zuschneiden und Offenland/Wald trennen. Schritt 2.1: QGIS-Tabelle der gewünschten Biotope exportieren.
+Schritt 2.2: Biotope mit Datenliste abgleichen und Arten rauskopieren. Schritt 3.1: Arten die Wasserstufen "+" und "°" zuweisen. Schritt 3.2: "+" und "°" für jedes Biotop zählen und vorherrschende Wasserstufe(n) ermitteln.
+Schritt 3.3: Ergebnisse in einem neuen Excel-Sheet kompakt darstellen. Schritt 4: Mit Fläche und GEST-Bezeichnung das CO2 bzw. den CO2-Äq-Wert pro Biotop berechnen (Ist-Zustand). Schritt 5: Mit Prognoseberechnungs-Ergebnissen die neuen Wasserstufen, Bezeichnungen und somit Emissionseinsparungen ableiten.
+
+GEST_Schaetzung_Wald.ipynb
+Für Waldgebiete kann eine vereinfachte Schätzung der CO2-Äq-Emissionen vor und nach den Wiedervernässungsmaßnahmen erfolgen.
+Schritt 1: Vergleichbar mit dem Skript für die Offenland-Flächen wird als PyQGIS Code ein neues .shp File mit den Waldbiotopen der zu untersuchenden Fläche erzeugt. 
+Schritt 2: CO2-Äq-Emissionen vor Maßnahmenumsetzung in GIS bestimmen.
+Zuerst muss manuell in QGIS die bereits erstellte Flurabstandsplankarte neu kategorisiert (nach KOSKA) und anschließend nach Tabelle reklassifiziert werden. Die Biotoptypbezeichnung sowie Wasserstufe nach Koska soll mit der GEST_Wald_Mastertabelle verglichen und darauf basierend in eine neue Spalte "Ist_Emissionen" der Wert der CO2-Äq-Emissionen in t/ha/a angegeben werden. Außerdem soll ein Dictionary nicht_gefunden = {} erstellt werden, wo die Kombinationen aus Biotop und Wasserstufe gespeichert werden, die nicht in der Mastertabelle erhalten sind. Diese müssen dann manuell eingetragen werden. Schritt 3: CO2-Äq-Emissionen nach Maßnahme bestimmen.
 
 IndexBerechnungSentinel.ipynb
 Ein etwas längeres Skript zur Erstellung von TIF-Dateien beliebiger Fernerkundungsindizes aus Sentinel-2-Daten. Der Benutzer gibt seinen Dateipfad zum Sentinelordner und den gewünschten Index an. Daraufhin geht das Programm in die Unterordner, wählt die Bänder in höchstmöglicher Auflösung aus und berechnet die Indizes.
