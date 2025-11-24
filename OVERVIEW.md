@@ -30,7 +30,7 @@ PyQGIS:
 - GDAL-Tool des Zuschneidens eines Rasters auf Ausdehnung in eine PyQGIS-Funktion überführen
 - Biotop-Polygondaten mit KOSKA-Differenzenraster abgleichen, um pot. Vegetationsänderungen zu ermitteln
 
-Sonstiges Python: 
+Python allgemein: 
 - Sämtliche 2-Band-Fernerkundungsindices auf Basis von Sentinel-2-Daten berechnen lassen
 - Backend mit Flask und Rasterio für WebGIS-Darstellung von Fernerkundungsindices
 - Datenverarbeitungsroutine für Sentinel-2-Daten mit PyQGIS und "normalem" Python: Vorverarbeitung, Download, Datenvorbereitung, Indices, Wolkenbedeckung
@@ -49,6 +49,7 @@ R:
 - Rasterdatei hochskalieren, anschließend auf eine bbox clippen, vektorisieren und als Vektor speichern
 - Vorlage für einfache Plots aus Excel-Tabellen (z.B. Grundwasserstand gegen Zeit auftragen)
 - Räumliche Ausdehnung für Rechenoperationen mit Rasterdaten anpassen/korrigieren
+- Tagesmittel von Grundwasserstandsdatenlogger-Zeitreihen exportieren
 
 Sonstiges: 
 - Interaktive NDVI-Darstellung von Sentinel-2-Daten im Webbrowser mit OpenStreetMap als Hintergrund für Rathenow, mit JavaScript/HTML sowie o.g. Python-Backend
@@ -220,3 +221,6 @@ Zwei Raster sollen bspw. addiert werden aber haben nicht dieselbe Ausdehnung? be
 
 Temp_Niederschlags_Diagramm.R
 Mit diesem Skript kann schnell für eine klimatische Gebietsbeschreibung ein Plot erzeugt werden, welche Jahresangaben auf der x-Achse gegen Temperatur und Niederschlag auf verschiedenen y-Achsen plottet (Temperatur als rote Linie, Niederschlag als blaue Balken). 
+
+Tagesmittelwerte_Pegeldaten.R
+Aus einer Excel-Tabelle mit Wasserstands- und Temperaturmessungen eines in eine Grundwassermessstelle eingebauten Datenloggers (Messwert alle 2 Stunden) werden Tagesmittelwerte als neue Excel-Tabelle exportiert.
