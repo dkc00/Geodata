@@ -169,8 +169,9 @@ Vegetationsaenderung_Koska.py
 Dieses Skript soll Biotop-Polygone mit Koska-Differenzenkarten (Soll-Flurabstand nach KOSKA - Ist-Flurabstand nach KOSKA) vergleichen und in einem neuen Vektorlayer alle Polygone behalten, für die das KOSKA_Diff ungleich null ist (Veränderung in der Wasserstufe). Arbeitet mit QgsZonalStatistics sowie QgsProject, Qgis, QgsVectorLayer und QgsRasterLayer.
 
 ndwi_aus_orthophoto.py 
-Skript, um den NDWI aus Grünem- und Infrarotband eines Digitalen Orthophotos in der QGIS Python Konsole berechnen und so z.B. Geländebedingungen mit hoher Auflösung von 0,2mx0,2m vor Begehung abzuschätzen. Stabiler und schneller durchführbar als mit dem QGIS-Rasterrechner. Wir arbeiten mit dem QgsRasterCalculator und QgsRasterCalculatorEntry aus qgis.analysis sowie mit iface. 
-____________________________-
+Skript, um den NDWI aus Grünem- und Infrarotband eines Digitalen Orthophotos in der QGIS Python Konsole berechnen und so z.B. Geländebedingungen mit hoher Auflösung von 0,2mx0,2m vor Begehung abzuschätzen. Stabiler und schneller durchführbar als mit dem QGIS-Rasterrechner. Wir arbeiten mit dem QgsRasterCalculator und QgsRasterCalculatorEntry aus qgis.analysis sowie mit iface. Hier angewendet für öffentlich zugängliche Orthophoto-TIFs der Uckermark / Brandenburg. 
+
+____________________________
 Jupyter-Notebooks:
 
 GEST_Schaetzung_Offenland.ipynb 
