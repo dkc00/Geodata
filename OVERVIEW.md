@@ -52,6 +52,7 @@ R:
 - Vorlage für einfache Plots aus Excel-Tabellen (z.B. Grundwasserstand gegen Zeit auftragen)
 - Räumliche Ausdehnung für Rechenoperationen mit Rasterdaten anpassen/korrigieren
 - Tagesmittel von Grundwasserstandsdatenlogger-Zeitreihen exportieren
+- Datenreihen mit vielen NA-Werten darstellen (Einzelne Datenpunkte und verbindende Linien über die Zeit)
 
 Sonstiges: 
 - Interaktive NDVI-Darstellung von Sentinel-2-Daten im Webbrowser mit OpenStreetMap als Hintergrund für Rathenow, mit JavaScript/HTML sowie o.g. Python-Backend
@@ -241,3 +242,6 @@ Mit diesem Skript kann schnell für eine klimatische Gebietsbeschreibung ein Plo
 
 Tagesmittelwerte_Pegeldaten.R
 Aus einer Excel-Tabelle mit Wasserstands- und Temperaturmessungen eines in eine Grundwassermessstelle eingebauten Datenloggers (Messwert alle 2 Stunden) werden Tagesmittelwerte als neue Excel-Tabelle exportiert.
+
+ganglinien_mit_NA_werten.R
+Der typische Ansatz mit lines() funktioniert in R nicht, wenn Datenreihen mit vielen NA-Werten vorhanden sind. Dieser Code plottet Wasserstände über die Zeit (und Niederschläge als Balken im Hintergrund). Es wurden im entsprechenden Projektgebiet lediglich im Abstand mehrerer Wochen Wasserstände gemessen, aber tägliche Niederschläge dargestellt, weshalb ein Großteil der Wasserstände als NA angegeben ist. Das Ergebnis sind Linien der Wasserstandsentwicklung zusammen mit den Datenpunkten, auf denen die Linien basieren. 
