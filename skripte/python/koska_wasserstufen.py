@@ -11,8 +11,8 @@ und 2- (als -2). Sonst basiert er auf dem ausgegebenen Python-Code des QGIS-Tool
 import os 
 from qgis.core import QgsRasterLayer, QgsProject
 
-path = r'M:/DBU Ueckermünder Heide/QGIS/Interpolation/SchSee_SollZustand_mitPolen_NEU.tif'
-output_path = r'M:/DBU Ueckermünder Heide/QGIS/Interpolation/SchSee_SollZustand_mitPolen_NEU_reclassified.tif'
+path = r'..tif' # Wo liegt das Koska TIF? 
+output_path = r'..tif' # wo soll gespeichert werden? 
 
 params = {'INPUT_RASTER': path,
 'RASTER_BAND':1,
