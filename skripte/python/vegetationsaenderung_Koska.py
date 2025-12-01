@@ -10,7 +10,6 @@ null ist (Veränderung in der Wasserstufe).
 from qgis.core import QgsProject, Qgis, QgsVectorLayer, QgsRasterLayer, QgsVectorFileWriter 
 from qgis.utils import iface
 from qgis.analysis import QgsZonalStatistics
-# import os 
 
 biotop_layer_name = "Biotope_zugeschnitten"
 koska_diff_name = "BeekeNord_KOSKA_Diff"
@@ -63,4 +62,5 @@ else:
     else:
 
         iface.messageBar().pushMessage("Vorsicht", "Keine Biotop-Polygone mit KOSKA-Diff ungleich Null gefunden.", level=Qgis.Warning)
+
 
