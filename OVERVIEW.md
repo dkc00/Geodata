@@ -42,6 +42,7 @@ Python:
 R:
 
 - Plot von Hyperspektraldaten eines Fließgewässers gegen in-situ gemessene Chl-a-Konzentrationen mit definiertem Wertefenster und Zeitabschnitt
+- Shiny-App zur Visualisierung von Spektrometer-Daten über die Zeit und automatischer Berechnung von Fernerkundungs-Indices 
 - Rasterdaten-Resampling von 1m auf 50m (belieblig anpassbar)
 - Löschen der "33" o.ä. vor den Koordinaten jedes Eintrags für KBS-Kompatibilität
 - ggplot für BAGLUVA-Wasserhaushaltsgleichung mit Niederschlagslinie
