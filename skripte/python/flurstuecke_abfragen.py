@@ -19,7 +19,7 @@ layer_b_name = "PrognoseTool_Beeke-Nord Trocken"
 value_field = "Diff_FINAL"  
 
 threshold = 0.05
-output_pfad = r"M:\DBU Ueckermünder Heide\Planung\Antragsunterlagen\Flurstücke\Betroffene_Flurstuecke\test.csv" 
+output_pfad = r"..." 
 
 # HIER die Namen der Spalten der Flurstücks-Vektordatei anpassen!
 clm_0_name = "flstnrzae" # Flurstück
