@@ -30,6 +30,7 @@ PyQGIS:
 - GDAL-Tool des Zuschneidens eines Rasters auf Ausdehnung in eine PyQGIS-Funktion überführen
 - Biotop-Polygondaten mit KOSKA-Differenzenraster abgleichen, um pot. Vegetationsänderungen zu ermitteln
 - NDWI aus Digitalem Orthophoto berechnen (stabiler & schneller als mit dem QGIS-Rasterrechner)
+- Export einer CSV-Tabelle von DGM1-Rasterwerten und den dazugehörigen GNSS-Messwerten aus Geländebegehungen zur Differenzenberechnung/DGM-Korrektur
 
 Python: 
 - Teilautomatisierung der Treibhausgas-Emissionsschätzung für Moor- und Feuchtgebiete nach GEST-Ansatz (Couwenberg et al. 2008, 2011), basierend auf botanischen Artenlisten und Wasserstufen nach Koska (2001)
@@ -171,6 +172,11 @@ Dieses Skript soll Biotop-Polygone mit Koska-Differenzenkarten (Soll-Flurabstand
 
 ndwi_aus_orthophoto.py 
 Skript, um den NDWI aus Grünem- und Infrarotband eines Digitalen Orthophotos in der QGIS Python Konsole berechnen und so z.B. Geländebedingungen mit hoher Auflösung von 0,2mx0,2m vor Begehung abzuschätzen. Stabiler und schneller durchführbar als mit dem QGIS-Rasterrechner. Wir arbeiten mit dem QgsRasterCalculator und QgsRasterCalculatorEntry aus qgis.analysis sowie mit iface. Hier angewendet für öffentlich zugängliche Orthophoto-TIFs der Uckermark / Brandenburg. 
+
+DGM_Vermessung_Abgleich.py
+Das Skript soll die Werte eines DGM1_Rasters an der Stelle eines im Gelände vermessenen Punktes auslesen und die zusammenpassenden Punkte als csv exportieren. 
+Dies diente der Korrektur des DGM1 aus Brandenburg für die jeweiligen Projektflächen. Ziel war dabei das Berechnen der Differenzen aus DGM1 und GNSS-Messwert für 
+die jeweilige Rasterzelle. Es wurde mit QgsRasterLayer, QgsVectorLayer, QgsProject, QgsPointXY, QgsCoordinateTransform und QgsRaster gearbeitet.
 
 ____________________________
 Jupyter-Notebooks:
