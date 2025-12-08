@@ -213,6 +213,9 @@ R-Skripte:
 hyperspektraldaten_vs_insitu_chl_a.R
 Plot von Hyperspektraldaten der Mosel (Kamera) gegen in-situ- Chlorophyll-a-Daten in einem gewissen Wertefenster (5 bis 50 µg/L) und einem Zeitabschnitt. Wellenlängenfenster von 20 nm, Nur Chl a Werte von 5-50 µg/L, Nur Ende Juli, August und Anfang September. Es wird hierfür mit robustbase, ggplot2, dplyr und MASS gearbeitet.
 
+shiny_hyperspektrale_indices.R
+Shiny-App, welche Spektrometer-Daten über die Zeit visualisiert. Es werden automatisch NDCI, NDVI, SABI und BNDVI berechnet, die Liste ist erweiterbar. Außerdem wird in der GUI deskriptive Statistik (Quantile, Median, Min/Max etc.) ausgegeben. 
+
 Resampling_Rasterdaten.R 
 Für eine hydrologische Berechnung mussten Werte aus 1x1m-Rasterzellen auf 50x50m geresamplet werden. Dies wurde mithilfe der terra-Bibliothek aus R, den xmin, xmax, ymin, ymax- Koordinaten aus der QGIS-Attributtabelle und "aggregate" gelöst.
 
@@ -256,3 +259,5 @@ Aus einer Excel-Tabelle mit Wasserstands- und Temperaturmessungen eines in eine 
 
 ganglinien_mit_NA_werten.R
 Der typische Ansatz mit lines() funktioniert in R nicht, wenn Datenreihen mit vielen NA-Werten vorhanden sind. Dieser Code plottet Wasserstände über die Zeit (und Niederschläge als Balken im Hintergrund). Es wurden im entsprechenden Projektgebiet lediglich im Abstand mehrerer Wochen Wasserstände gemessen, aber tägliche Niederschläge dargestellt, weshalb ein Großteil der Wasserstände als NA angegeben ist. Das Ergebnis sind Linien der Wasserstandsentwicklung zusammen mit den Datenpunkten, auf denen die Linien basieren. 
+
+
