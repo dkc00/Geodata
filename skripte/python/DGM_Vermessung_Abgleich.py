@@ -6,7 +6,15 @@ Dies diente der Korrektur des DGM1 aus Brandenburg für die jeweiligen Projektfl
 
 """
 
-from qgis.core import QgsRasterLayer, QgsVectorLayer
+from qgis.core import (
+    QgsRasterLayer, 
+    QgsVectorLayer, 
+    QgsProject
+    QgsPointXY,
+    QgsCoordinateTransform,
+    QgsRaster
+)
+
 from qgis.utils import iface
 import csv # für den export der daten 
 
@@ -92,5 +100,6 @@ with open(csv_output_path, 'w', newline='', encoding='utf-8') as f:
             dgm_val = None
 
         writer.writerow([x, y, elev, dgm_val])
+
 
 print(f"CSV gespeichert unter: {csv_output_path}")
