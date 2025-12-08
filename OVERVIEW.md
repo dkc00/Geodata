@@ -41,6 +41,7 @@ Python:
 
 R:
 
+- Plot von Hyperspektraldaten eines Fließgewässers gegen in-situ gemessene Chl-a-Konzentrationen mit definiertem Wertefenster und Zeitabschnitt
 - Rasterdaten-Resampling von 1m auf 50m (belieblig anpassbar)
 - Löschen der "33" o.ä. vor den Koordinaten jedes Eintrags für KBS-Kompatibilität
 - ggplot für BAGLUVA-Wasserhaushaltsgleichung mit Niederschlagslinie
@@ -207,6 +208,9 @@ Am Beispiel Uruguays werden mögliche Schritte der Datenverarbeitung von Sentine
 
 ________________________________
 R-Skripte: 
+
+hyperspektraldaten_vs_insitu_chl_a.R
+Plot von Hyperspektraldaten der Mosel (Kamera) gegen in-situ- Chlorophyll-a-Daten in einem gewissen Wertefenster (5 bis 50 µg/L) und einem Zeitabschnitt. Wellenlängenfenster von 20 nm, Nur Chl a Werte von 5-50 µg/L, Nur Ende Juli, August und Anfang September. Es wird hierfür mit robustbase, ggplot2, dplyr und MASS gearbeitet.
 
 Resampling_Rasterdaten.R 
 Für eine hydrologische Berechnung mussten Werte aus 1x1m-Rasterzellen auf 50x50m geresamplet werden. Dies wurde mithilfe der terra-Bibliothek aus R, den xmin, xmax, ymin, ymax- Koordinaten aus der QGIS-Attributtabelle und "aggregate" gelöst.
