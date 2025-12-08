@@ -1,0 +1,168 @@
+# Plot von Hyperspektraldaten der Mosel (Kamera) gegen in-situ- Chlorophyll-a-Daten in einem gewissen Wertefenster (5 bis 50 µg/L) und einem Zeitabschnitt.
+
+# 1. Wellenlängenfenster von 20 nm 
+# 2. Nur Chl a Werte von 5-50 µg/L 
+# 3. Nur Ende Juli, August und Anfang September 
+
+library(robustbase)
+library (ggplot2)
+library(dplyr)
+library(MASS)
+
+datenordner <- "..." # hier datenordner einfügen
+setwd(datenordner)
+
+insitu_daten <- "..." # wo sind die insitu daten gespeichert? 
+
+extract_chl_a <- function(file) { #get chl a data out of the file
+  insitu_data_content <- read.table(file, header = TRUE, sep = "\t", stringsAsFactors = FALSE)
+  chl_a_values <- as.numeric(gsub(",", ".", insitu_data_content[-1, 6]))
+  # print(chl_a_values)
+  valid_chl_a <- which(chl_a_values > 5 & chl_a_values < 50)
+  if (length(valid_chl_a) == 0) {
+    return(data.frame(time = character(), chl_a = numeric(), date = character(), stringsAsFactors = FALSE))
+  }
+  # print(chl_a_values)
+  times <- format(as.POSIXct(insitu_data_content[-1, 5], format = "%H:%M:%S"), "%H:%M")
+  valid_times <- times[valid_chl_a]
+  valid_chl_a_values <- chl_a_values[valid_chl_a]
+  # print(times)
+  date <- as.character(insitu_data_content[2, 4])
+  return(data.frame(time = valid_times, chl_a = valid_chl_a_values, date = date, stringsAsFactors = FALSE))
+}
+
+get_mean_in_window <- function(values, window_size = 10) {
+  values <- as.numeric(values)  
+  values[is.nan(values) | values == 0] <- NA  
+  indices <- seq(1, length(values), by = window_size)
+  
+  sapply(indices, function(i) {
+    mean(values[i:min(i + window_size - 1, length(values))], na.rm = TRUE)  
+  })
+}
+
+calculate_index <- function(wavelengths_i, wavelengths_j) {
+  if (any(is.na(wavelengths_i) | is.na(wavelengths_j) | (wavelengths_i + wavelengths_j == 0))) {
+    return(NA)
+  } else {
+    return((wavelengths_i - wavelengths_j) / (wavelengths_i + wavelengths_j))
+  }
+}
+
+selected_insitu_files <- c(
+)
+
+
+# print(selected_insitu_files)
+
+selected_reflectance_folders <- c(
+)
+
+
+for (i in seq_along(selected_insitu_files)) {
+  insitu_data <- extract_chl_a(selected_insitu_files[i])
+  insitu_data$date_formatted <- format(as.Date(insitu_data$date, format = "%d.%m.%Y"), "%y%m%d")
+  
+  reflectance_files <- list.files(path = selected_reflectance_folders[i], pattern = "Reflectance.*\\.csv$", full.names = TRUE)
+  all_indices <- list()
+  for (file in reflectance_files) {
+    daten <- read.csv(file, header = FALSE, sep = ";", stringsAsFactors = FALSE)
+    times_refl <- gsub("_", ":", daten[1, -1])
+    reflectance_times <- format(strptime(substr(times_refl, 1, 5), format = "%H:%M"), "%H:%M")
+    
+    matching_rows <- insitu_data[insitu_data$time %in% reflectance_times, ]
+    
+    cat("Vergleiche Reflectance Datei:", basename(file), "mit In-situ Datei:", basename(selected_insitu_files[i]), "\n")
+    
+    if (nrow(matching_rows) == 0) next
+    
+    matching_reflectance_indices <- which(reflectance_times %in% matching_rows$time)
+    
+    if (length(matching_reflectance_indices) < 1) {
+      print("Keine passenden Zeitstempel gefunden.")
+      next
+    }
+    
+    matching_chl_a <- matching_rows$chl_a
+    print(length(matching_chl_a))
+    
+    x_values <- as.numeric(daten[, 1])
+    # print(x_values)
+    
+    x_windows <- get_mean_in_window(x_values)
+    x_windows <- x_windows[x_windows >= 400 & x_windows <= 900]
+    # print(x_windows)
+    for (j in 1:length(x_windows)) {
+      for (k in (j + 1):length(x_windows)) {
+        
+        y_values_i <- as.numeric(daten[matching_reflectance_indices + 1, j + 1])
+        y_values_j <- as.numeric(daten[matching_reflectance_indices + 1, k + 1])
+        
+        index <- calculate_index(y_values_i, y_values_j)
+        # print(length(index))
+        # print(paste("wavelengths", x_windows[j], "and", x_windows[k]))
+        
+        if (is.null(all_indices[[paste0(x_windows[j], "_", x_windows[k])]])) {
+          all_indices[[paste0(x_windows[j], "_", x_windows[k])]] <- index
+        } else {
+          all_indices[[paste0(x_windows[j], "_", x_windows[k])]] <- c(all_indices[[paste0(x_windows[j], "_", x_windows[k])]], index)
+        }
+      }
+    }
+  }
+}
+
+# Es sollen für alle selected_insitu_files und selected_reflectance_folders die 
+# jeweiligen Indexwerte für alle möglichen Wellenlängenkombinationen berechnet werden
+# und pro Kombination von Wellenlängen am Ende ein R^2 der Korrelation mit in-situ pro Kombination 
+# berechnen (für alle Wellenl?ngen zusammen). 
+
+
+
+r_squared_df <- data.frame(wavelength1 = numeric(), wavelength2 = numeric(), r_squared = numeric())
+
+for (i in 1:length(x_windows)) {
+  for (j in (i + 1):length(x_windows)) {
+    wavelength1 <- x_windows[i]
+    wavelength2 <- x_windows[j]
+    
+    if (any(names(all_indices) == paste(wavelength1, "_", wavelength2, sep=""))) {
+      index <- all_indices[[paste(wavelength1, "_", wavelength2, sep="")]]
+      
+      if (!all(is.na(index)) && length(index) == length(matching_chl_a)) {
+        # valid_data <- na.omit(data.frame(matching_chl_a, index))
+        model <- lmrob (matching_chl_a ~ index)
+        #model <- rlm(matching_chl_a ~ index)
+        r_squared <- summary(model)$r.squared
+        
+        print(paste("R? f?r Wellenl?ngen", wavelength1, "und", wavelength2, ":", round(r_squared, 4)))
+        
+        r_squared_df <- r_squared_df %>%
+          add_row(wavelength1 = x_windows[i], wavelength2 = x_windows[j], r_squared = r_squared)
+        
+        # print(paste("F?r Wellenl?ngen", wavelength1, "und", wavelength2, "betr?gt das R?:", r_squared))
+      } else {
+        # print(paste("Ungleiche L?ngen oder NA-Werte f?r Wellenl?ngen", wavelength1, "und", wavelength2))
+      }
+    }
+  }
+}
+
+
+
+
+ggplot(data = r_squared_df, aes(x = wavelength1, y = wavelength2, fill = r_squared)) +
+  geom_tile(width = 10, height = 10) + 
+  scale_fill_gradientn(colours = rev(rainbow(7)), na.value = "black") +
+  labs(x = "Wavelength 1 [nm]", y = "Wavelength 2 [nm]", fill = "R^2",
+       title = "Hyperspectral index comparison") +
+  theme_minimal() +
+  theme(aspect.ratio = 1)
+
+max_r_squared <- r_squared_df[which.max(r_squared_df$r_squared), ]
+index_formula <- paste("(", max_r_squared$wavelength1, "-", max_r_squared$wavelength2, ")/(", 
+                       max_r_squared$wavelength1, "+", max_r_squared$wavelength2, ")")
+
+print(paste("Highest R^2:", max_r_squared$r_squared, "for wavelengths", 
+            max_r_squared$wavelength1, "and", max_r_squared$wavelength2))
+print(paste("Index formula:", index_formula))
