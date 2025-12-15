@@ -34,6 +34,7 @@ PyQGIS:
 
 Python: 
 - Teilautomatisierung der Treibhausgas-Emissionsschätzung für Moor- und Feuchtgebiete nach GEST-Ansatz (Couwenberg et al. 2008, 2011), basierend auf botanischen Artenlisten und Wasserstufen nach Koska (2001)
+- Aufbereitung von AquiTronic-Datenlogger-Rohdaten einer Grundwassermessstelle zur Darstellung von Grundwasserganglinien
 - Sämtliche 2-Band-Fernerkundungsindices auf Basis von Sentinel-2-Daten berechnen lassen
 - Backend mit Flask und Rasterio für WebGIS-Darstellung von Fernerkundungsindices
 - Datenverarbeitungsroutine für Sentinel-2-Daten mit PyQGIS und "normalem" Python: Vorverarbeitung, Download, Datenvorbereitung, Indices, Wolkenbedeckung
@@ -206,6 +207,9 @@ Für ein Sentinel-2-Band möchte ich mir die Statistik des Bandes ausgeben, um m
 
 Sentinel_2_datenverarbeitung.ipynb 
 Am Beispiel Uruguays werden mögliche Schritte der Datenverarbeitung von Sentinel-2-Daten aufgearbeitet und umgesetzt. Dabei werden Geoverarbeitungsschritte mit PyQGIS-Code eingebaut sowie verschiedene Methodikansätze getestet, die anschließend je nach Anwendungsfeld eingesetzt werden können. Andere Mini-Skripte aus dem Geodata-Repository wurden hier eingebaut und anwendungsbezogen getestet. 
+
+Datenlogger_Rohdaten_aufbereitung.ipynb 
+Das folgende Skript soll für die Arbeit mit Daten von Grund- und Moorwassermessstellen die redundante Berechnung von Sensortiefe (in m NHN), Wasserstand des jeweiligen Datenpunkts (m NHN) sowie Flurabstand (m u. GOK) von Wasserstandsaufzeichnungen eines AquiTronic-Datenloggers automatisieren. Es basiert auf der Datenstruktur der in AquiTronic exportierten xlsx-Dateien einer Messstelle. Aufgrund unterschiedlicher ROK, GOK und Abstich-Werte für jede Messstelle wurde nicht mit einer Schleife gearbeitet, es müssen jedoch lediglich der Dateiname und die genannten Variablen geändert werden, was mit einer erheblichen Zeitersparnis verbunden ist. Es werden os und openpyxl benötigt.
 
 ________________________________
 R-Skripte: 
