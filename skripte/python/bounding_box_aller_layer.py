@@ -19,7 +19,7 @@ from qgis.utils import iface
 # normal auch ohne den import im QGIS, aber so wird der Code sauberer
 
 # Beim folgenden Pfad MUSS eine Datei mit .csv angegeben werden, NICHT nur ein Pfad! 
-output_pfad = r"C:\Users\Daniel Koch\Desktop\Fernerkundung\Ergebnisse\layers_bbox.csv"
+output_pfad = r"...layers_bbox.csv"
 
 
 """
