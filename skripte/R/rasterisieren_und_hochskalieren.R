@@ -1,5 +1,3 @@
-
-install.packages("terra")
 library(sf)
 library(terra)
 
