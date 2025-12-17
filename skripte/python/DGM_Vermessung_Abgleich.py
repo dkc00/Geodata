@@ -9,7 +9,7 @@ Dies diente der Korrektur des DGM1 aus Brandenburg für die jeweiligen Projektfl
 from qgis.core import (
     QgsRasterLayer, 
     QgsVectorLayer, 
-    QgsProject
+    QgsProject,
     QgsPointXY,
     QgsCoordinateTransform,
     QgsRaster
@@ -103,3 +103,4 @@ with open(csv_output_path, 'w', newline='', encoding='utf-8') as f:
 
 
 print(f"CSV gespeichert unter: {csv_output_path}")
+
