@@ -34,7 +34,7 @@ PyQGIS:
 
 Python: 
 - Teilautomatisierung der Treibhausgas-Emissionsschätzung für Moor- und Feuchtgebiete nach GEST-Ansatz (Couwenberg et al. 2008, 2011), basierend auf botanischen Artenlisten und Wasserstufen nach Koska (2001)
-- Aufbereitung von AquiTronic-Datenlogger-Rohdaten einer Grundwassermessstelle zur Darstellung von Grundwasserganglinien
+- Aufbereitung von AquiTronic-Datenlogger-Rohdaten einer Grundwassermessstelle zur Darstellung von Grundwasserganglinien und anschließende grafische Darstellung
 - Sämtliche 2-Band-Fernerkundungsindices auf Basis von Sentinel-2-Daten berechnen lassen
 - Backend mit Flask und Rasterio für WebGIS-Darstellung von Fernerkundungsindices
 - Datenverarbeitungsroutine für Sentinel-2-Daten mit PyQGIS und "normalem" Python: Vorverarbeitung, Download, Datenvorbereitung, Indices, Wolkenbedeckung
