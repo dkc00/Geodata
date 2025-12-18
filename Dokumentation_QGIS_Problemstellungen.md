@@ -84,3 +84,67 @@ Lösung:
 Vector overlay -> Difference
 
 __________________________________________________________________________________________________________
+
+Fragestellung: 
+Vektorpolygone sollen an einer Linie zerschnitten werden (z.B. Wasserstandsanhebungen sollen dort enden, wo ein Fließgewässer als Polylinie verläuft).
+
+Lösung: 
+Vector overlay -> Split with lines 
+Input-Layer: z.B. "Prognoseberechnung", Split-Layer z.B. "Fließgewässer" oder eigens erstellte Linie.
+
+__________________________________________________________________________________________________________
+
+Fragestellung: 
+Wie lasse ich mir direkt im GIS deskriptive Statistik ausgeben (z.B. NDVI-Werte von Ufervegetation aus Digitalen Orthophotos), ohne die Werte erst als Excel zu exportieren? 
+
+Lösung: 
+Zonal statistics (deutsch: Zonenstatistik): Gibt Median, Mean, min, max, Std.abw etc. zu ausgewählten Polygonen aus.
+
+__________________________________________________________________________________________________________
+
+Arbeit mit Rasterdaten: 
+
+__________________________________________________________________________________________________________
+
+Fragestellung: 
+Wie reklassifiziere ich Raster und lasse mir anschließend die Häufigkeit der Werte angeben (z.B. für Wasserstufen nach KOSKA in einem Moor)? 
+
+Lösung:
+1. Reclassify by table in GIS mit gewünschten min/max-Werten oder entsprechendes Skript hier aus dem "python"- Ordner nutzen
+2. Raster analysis -> Raster layer unique values report (Deutsch: Bericht eindeutiger Rasterwerte)
+ 
+__________________________________________________________________________________________________________
+
+Fragestellung: 
+Wie vergrößere ich Rasterdateien künstlich mit nodata-Werten, um anschließend zwei Raster verschiedener Größen miteinander zu verrechnen? 
+
+Lösung: 
+Lieber in R oder Python mit entsprechenden Skripten als im Rasterrechner. Ist deutlich einfacher, schneller und weniger fehleranfällig.
+
+__________________________________________________________________________________________________________
+
+Sonstiges: 
+
+__________________________________________________________________________________________________________
+
+Fragestellung: 
+Wo ist Python für mein QGIS installiert? Hier sollte eine nicht vorhandene Library installiert werden.
+
+Lösung: 
+- Python-Konsole öffnen
+import sys
+print(sys.executable)
+
+Wenn keine python.exe als Ergebnis kommt, sondern nur der QGIS-Pfad, müssen die gewünschten Pakete direkt über OSGeo4WShell installiert werden. 
+Dort: python -m pip install openpyxl 
+(oder andere Libraries)
+
+__________________________________________________________________________________________________________
+
+
+Fragestellung: 
+Ich möchte den QGIS-Vollbildmodus beenden. 
+
+Lösung: F11 
+
+
