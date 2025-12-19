@@ -95,7 +95,7 @@ Input-Layer: z.B. "Prognoseberechnung", Split-Layer z.B. "Fließgewässer" oder 
 __________________________________________________________________________________________________________
 
 Fragestellung: 
-Wie lasse ich mir direkt im GIS deskriptive Statistik ausgeben (z.B. NDVI-Werte von Ufervegetation aus Digitalen Orthophotos), ohne die Werte erst als Excel zu exportieren? 
+Wie lasse ich mir direkt im GIS deskriptive Statistik ausgeben (z.B. vektorisierte NDVI-Werte von Ufervegetation aus Digitalen Orthophotos), ohne die Werte erst als Excel zu exportieren? 
 
 Lösung: 
 Zonal statistics (deutsch: Zonenstatistik): Gibt Median, Mean, min, max, Std.abw etc. zu ausgewählten Polygonen aus.
