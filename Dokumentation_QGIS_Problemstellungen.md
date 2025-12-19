@@ -72,6 +72,30 @@ Lösung:
 
 __________________________________________________________________________________________________________
 
+Fragestellung: 
+Ich möchte für eine Spalte in der Attributtabelle die Fläche aller Polygon-Features eines Shapefiles berechnen (z.B. Standgewässer in der Fläche). 
+
+Lösung: 
+$area im Feldrechner für die neue Spalte oder neue Spalte mit diesem Ausdruck anlegen.
+
+__________________________________________________________________________________________________________
+
+Fragestellung: 
+Mein Rasterrechner gibt komische Ergebnisse aus und führt die Rechenoperationen (z.B. interpolierte Wasseroberfläche - DGM1) nicht korrekt aus. 
+
+Lösungsansätze: 
+
+1. Sind die Namen zu lang? Ggfs. auch ohne Sonderzeichen/Leerzeichen probieren.
+2. Ist das KBS der Raster unterschiedlich?
+3. Ggfs. die Layer neu ins GIS einladen
+4. Ist die räumliche Auflösung gleich (insb. bei Satellitendaten wie Sentinel-2 oder Interpolationen)
+5. Ggfs. eine neue (Test-)Datei mit anderem Namen erstellen.
+
+Wird an beiden Enden der Skala des erzeugten Rasters der Wert 3.402823e+38 bzw. -3.402823e+38 angezeigt? 
+-> das ist  der Standard-NoData-Wert von 32-bit-Float-Rastern. QGIS interpretiert diese nodata-Werte als echte Werte.
+-> Das Nodata Handling war nicht korrekt und das Ergebnis ist tendenziell unbrauchbar (Rechenergebnis ohne gültige Maske). Neu versuchen.  
+
+__________________________________________________________________________________________________________
 
 Arbeit mit Vektorlayern: 
 
@@ -82,6 +106,23 @@ Ich möchte ein "Loch" in ein Polygon schneiden (z.B. einen See aus der Waldflä
 
 Lösung: 
 Vector overlay -> Difference
+
+__________________________________________________________________________________________________________
+
+Fragestellung: 
+Ein ganzes Polygon soll an einen anderen Ort verschoben werden, ohne die einzelnen Linien zu verändern (z.B. räumliche Maße eines Staubauwerks). 
+
+Lösung: 
+1. View -> Toolbars -> Advanced Digitizing Toolbar aktivieren
+2. "Move Feature" (Polygon mit einem Pfeil nach rechts als Symbol)
+
+__________________________________________________________________________________________________________
+
+Fragestellung: 
+Die Geometrie meines Vektorlayers ist ungültig und ich kann deswegen gewisse Tools nicht nutzen/ erzeuge Fehlermeldungen. 
+
+Lösung: 
+Vector geometry -> Fix geometries (betroffenen Layer auswählen)
 
 __________________________________________________________________________________________________________
 
@@ -107,6 +148,29 @@ Arbeit mit Rasterdaten:
 __________________________________________________________________________________________________________
 
 Fragestellung: 
+Wie gleiche ich meine Vermessungs-Datenpunkte mit dem DGM1 ab, ohne sie erst als xlsx-Datei exportieren oder ein Skript benutzen zu müssen? 
+
+Lösung: 
+Raster analysis -> Sample raster values 
+Input layer z.B. "Vermessung", Raster layer "DGM1". Erzeugt eine Sampled-Vektordatei mit den passenden DGM1-Werten als neue Spalte in der Attributtabelle. Ggfs kann Excel je nach Anwendung trotzdem angenehmer sein (siehe dafür entsprechendes Skript), aber für einen schnellen Abgleich direkt in QGIS ist es eine gute Möglichkeit. 
+
+__________________________________________________________________________________________________________
+
+Fragestellung: 
+Ich möchte mein Raster auf einen gewissenen Bereich einer Fläche zuschneiden (z.B. eine Flurabstandskarte auf ein Projektgebiet). 
+
+Lösung: 
+1. Polygon mit gewünschter Fläche erstellen
+2. Raster -> Extraction -> Clip Raster by Mask Layer
+3. Input Layer: Rasterdatei, Mask-Layer: shp-Polygon.
+
+Kommt der Fehler "nicht genug Speicherplatz" ? 
+1. Rechtsklick auf Buffer -> Zoom to layer
+2. Sollte ein sehr großes Gebiet erscheinen: Erneut auf gewünschten Buffer zoomen, auswählen und Chlippen mi teinem Haken bei "Selected Features only" erneut ausführen. 
+
+__________________________________________________________________________________________________________
+
+Fragestellung: 
 Wie reklassifiziere ich Raster und lasse mir anschließend die Häufigkeit der Werte angeben (z.B. für Wasserstufen nach KOSKA in einem Moor)? 
 
 Lösung:
@@ -120,6 +184,25 @@ Wie vergrößere ich Rasterdateien künstlich mit nodata-Werten, um anschließen
 
 Lösung: 
 Lieber in R oder Python mit entsprechenden Skripten als im Rasterrechner. Ist deutlich einfacher, schneller und weniger fehleranfällig.
+
+__________________________________________________________________________________________________________
+
+Kartenerstellung: 
+__________________________________________________________________________________________________________
+
+Fragestellung: 
+Die QGIS-Karte exportiert nicht richtig bzw. einzelne Layer werden gar nicht oder nicht wie im GIS dargestellt (z.B. topographische Karten als WMS). 
+
+Lösung: 
+Auflösung beim Export senken, dabei erst sehr niedrige Werte wie 100 oder 150 dpi nehmen und anschließend hochtasten.
+
+__________________________________________________________________________________________________________
+
+Fragestellung: Die Labels in meiner QGIS-Karte überlappen sich ungünstig. 
+
+Lösung: 
+Eine Möglichkeit ist Layer properties -> Labels -> Rendering -> Overlapping Labels "Always Overlaps without penalty". 
+Das kann aber auch unschön aussehen. Dann ggfs. mit einer Expression arbeiten. 
 
 __________________________________________________________________________________________________________
 
@@ -146,5 +229,7 @@ Fragestellung:
 Ich möchte den QGIS-Vollbildmodus beenden. 
 
 Lösung: F11 
+
+__________________________________________________________________________________________________________
 
 
