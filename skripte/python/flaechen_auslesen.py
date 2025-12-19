@@ -13,7 +13,7 @@ sowie die zugehörigen Namen auszugeben.
 from qgis.core import QgsVectorLayer, QgsProject 
 import numpy as np # die flächen aller seen werden mit numpy angesprochen
 
-shp_path = r"C:\Users\Daniel Koch\Desktop\Fernerkundung\Daten\Shapefiles\irgendwelche_lagunen.shp"
+shp_path = r"...shp" # shapefile der flächen
 filename = os.path.basename(shp_path[:-4])
 
 def flaechenstatistik_auslesen(shp_path, filename): 
