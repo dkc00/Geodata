@@ -57,6 +57,7 @@ R:
 - Räumliche Ausdehnung für Rechenoperationen mit Rasterdaten anpassen/korrigieren
 - Tagesmittel von Grundwasserstandsdatenlogger-Zeitreihen exportieren
 - Datenreihen mit vielen NA-Werten darstellen (Einzelne Datenpunkte und verbindende Linien über die Zeit)
+- Plot organischer und anorganischer Parameter-Konzentrationen mit Grenzwertlinie nach BBodSchV 
 
 Sonstiges: 
 - Interaktive NDVI-Darstellung von Sentinel-2-Daten im Webbrowser mit OpenStreetMap als Hintergrund für Rathenow, mit JavaScript/HTML sowie o.g. Python-Backend
@@ -263,5 +264,8 @@ Aus einer Excel-Tabelle mit Wasserstands- und Temperaturmessungen eines in eine 
 
 ganglinien_mit_NA_werten.R
 Der typische Ansatz mit lines() funktioniert in R nicht, wenn Datenreihen mit vielen NA-Werten vorhanden sind. Dieser Code plottet Wasserstände über die Zeit (und Niederschläge als Balken im Hintergrund). Es wurden im entsprechenden Projektgebiet lediglich im Abstand mehrerer Wochen Wasserstände gemessen, aber tägliche Niederschläge dargestellt, weshalb ein Großteil der Wasserstände als NA angegeben ist. Das Ergebnis sind Linien der Wasserstandsentwicklung zusammen mit den Datenpunkten, auf denen die Linien basieren. 
+
+BBodSchV_Konzentrationen_Plot.R 
+Darstellung von gemessenen Konzentrationen anorganischer- und organischer Bodenparameter nach BBodSchV mit Linie für den jeweiligen Vorsorgewert, genutzt für ein Projektgebiet in Brandenburg. Es wurde mit readxl, tidyverse und dplyr gearbeitet. Hilft für jede Art von ggplot-Darstellung, bei der Werte als Balkendiagramm dargestellt werden sollen (lässt sich auch schnell auf Punkte etc. ändern), und es v.a. eine Linie im Plot für Grenzwerte geben soll. 
 
 
