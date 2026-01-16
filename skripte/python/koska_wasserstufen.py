@@ -12,7 +12,11 @@ import os
 from qgis.core import QgsRasterLayer, QgsProject
 
 path = r'..tif' # Wo liegt das Koska TIF? 
-output_path = r'..tif' # wo soll gespeichert werden? 
+base, ext = os.path.splitext(path)
+output_path = base + '_KOSKA' + ext #speichert im selben ordner mit KOSKA am ende des dateinamens
+
+# output_path = r'..tif' # falls ein besonderer Name/Speicherort hersoll: wo soll gespeichert werden? 
+
 
 params = {'INPUT_RASTER': path,
 'RASTER_BAND':1,
