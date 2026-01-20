@@ -1,7 +1,7 @@
 <b>Warum funktioniert das Prognose-Tool nicht?</b>
 
-- Haben alle Tabellen die gleichen ID's, Zeilen(-anzahl) etc.? (UKGWL, HK50, minimaler_Wert_DGM, Grabenlänge, mGROWA, GWGL)?
-- Existieren alle Tabellen (siehe oben)?
+- Haben alle Tabellen die gleichen ID's, Zeilen(-anzahl) etc.? (UKGWL, HK50, minimaler_Wert_DGM, Grabenlänge, mGROWA, GWGL)? Falls nicht, im GIS mit Grid (ID als Label) überprüfen, wo das Problem liegt (z.B. eine Zeile/Spalte zu wenig der HK50).
+- Existieren alle Tabellen (siehe oben)? In der Vergangenheit wurden die Tabellen für HK50 und UKGWL teilweise in der QGIS-Datenaufbereitung gelöscht, wenn es zu Problemen kam. Sollte sich das nicht klären lassen, können diese beiden Schritte auch per Hand durchgeführt werden, also ohne den Modellierer. Hierfür kann r.to.vect und "In Tabellenkalkulation exportieren" im QGIS genutzt werden (siehe Aufbau des Modells im grafischen Modellierer). 
 - Sind die Workbook Links aktualisiert und in Excel auch vollständig?
 - Sehen alle Sheets in Excel "gut" aus? Das heißt auch: Haben sich z.B. durch GIS-Updates die Spaltenänderungen geändert? Im Januar 2026 waren u.a. die Spalten row_index und col_index neu in der exportierten Excel-Datei und mussten gelöscht werden, da sonst die Bezüge falsch abgerufen wurden (row_index wurde bspw. als DGM-Höhe eingelesen).
 - "Es liegt ein Zirkelbezug vor"? -> Die Iterationen sind in Excel nicht mehr aktiviert. Neu aktivieren (Datei -> Optionen -> Formeln -> Iterative Berechnung aktivieren mit Maximaler Iterationszahl 1000.
