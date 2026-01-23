@@ -2,7 +2,7 @@ Diese Datei dient der übersichtlichen Dokumentation von (gelösten) Problemstel
 
 
 
-Eigenschaften von Vektorlayern:
+<b>Eigenschaften von Vektorlayern:</b>
 
 __________________________________________________________________________________________________________
 Fragestellung: 
@@ -49,9 +49,19 @@ Unten rechts im Fenster der Attributtabelle von "form view" auf "table view" än
 __________________________________________________________________________________________________________
 
 
-Feldrechner & Rasterrechner: 
+<b>Feldrechner & Rasterrechner:</b>
 
+__________________________________________________________________________________________________________
 
+Fragestellung:
+Ich möchte mir für Polylinien den Mittelpunkt als X bzw. Y-Koordinate berechnen lassen, um die Verortung bzw. einer Verwallung im Moor anzugeben.
+
+Lösung: 
+Im Feldrechner neue Spalte z.B. X erstellen, dann folgendes eingeben: 
+
+x(centroid($geometry))
+
+Äquivalent für Y y(centroid($geometry))
 
 __________________________________________________________________________________________________________
 
@@ -97,7 +107,7 @@ Wird an beiden Enden der Skala des erzeugten Rasters der Wert 3.402823e+38 bzw. 
 
 __________________________________________________________________________________________________________
 
-Arbeit mit Vektorlayern: 
+<b>Arbeit mit Vektorlayern:</b>
 
 __________________________________________________________________________________________________________
 
@@ -143,7 +153,7 @@ Zonal statistics (deutsch: Zonenstatistik): Gibt Median, Mean, min, max, Std.abw
 
 __________________________________________________________________________________________________________
 
-Arbeit mit Rasterdaten: 
+<b>Arbeit mit Rasterdaten:</b>
 
 __________________________________________________________________________________________________________
 
@@ -187,7 +197,7 @@ Lieber in R oder Python mit entsprechenden Skripten als im Rasterrechner. Ist de
 
 __________________________________________________________________________________________________________
 
-Kartenerstellung: 
+<b>Kartenerstellung:</b>
 __________________________________________________________________________________________________________
 
 Fragestellung: 
@@ -206,7 +216,7 @@ Das kann aber auch unschön aussehen. Dann ggfs. mit einer Expression arbeiten.
 
 __________________________________________________________________________________________________________
 
-Sonstiges: 
+<b>Sonstiges:</b>
 
 __________________________________________________________________________________________________________
 
