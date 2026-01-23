@@ -61,7 +61,9 @@ Im Feldrechner neue Spalte z.B. X erstellen, dann folgendes eingeben:
 
 x(centroid($geometry))
 
-Äquivalent für Y y(centroid($geometry))
+Äquivalent für Y:
+
+y(centroid($geometry))
 
 __________________________________________________________________________________________________________
 
