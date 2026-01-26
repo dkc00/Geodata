@@ -223,6 +223,18 @@ ________________________________________________________________________________
 __________________________________________________________________________________________________________
 
 Fragestellung: 
+
+Ich möchte eine PNG-Datei mit meinem GIS-Layer georeferenzieren (z.B. Grundkarte einer Fläche mit Digitalem Orthophoto).
+
+Lösung: 
+- Layer -> Georeferencer
+- Open Raster -> Bild einladen
+- Add GCP Point: Übereinstimmende Punkte auf Bilddatei und GIS-Layer finden
+- Settings: Helmert als Transformation type auswählen (bei Linear kam es in meinem Fall zu großen Abweichungen).
+- Run 
+__________________________________________________________________________________________________________
+
+Fragestellung: 
 Wo ist Python für mein QGIS installiert? Hier sollte eine nicht vorhandene Library installiert werden.
 
 Lösung: 
