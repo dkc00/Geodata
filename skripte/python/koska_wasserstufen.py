@@ -11,7 +11,7 @@ und 2- (als -2). Sonst basiert er auf dem ausgegebenen Python-Code des QGIS-Tool
 import os 
 from qgis.core import QgsRasterLayer, QgsProject
 
-path = r'..tif' # Wo liegt das Koska TIF? 
+path = r'..tif' # Wo liegt das Flurabstands- TIF, welches nach KOSKA klassifiziert werden soll? 
 base, ext = os.path.splitext(path)
 output_path = base + '_KOSKA' + ext #speichert im selben ordner mit KOSKA am ende des dateinamens
 
