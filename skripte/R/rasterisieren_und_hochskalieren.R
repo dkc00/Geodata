@@ -7,7 +7,7 @@ library(terra)
 shapefile_path <- "...shp" # gewünschte vektordaten einlesen (zb prognosetool)
 wert_feld <- "Diff_GW_Ri" # name des wertfelds anpassen (attributtabelle)
 raster_aufloesung <- 50 # aufloesung in m
-output_rasterisieren <- "...tif" # !! VORSICHT: PFAD AKTUALISIEREN !! 
+output_rasterisieren <- sub("\\.shp$", "_rast.tif", shapefile_path)
 
 rasterisieren <- function(shapefile_path, wert_feld, raster_aufloesung, output_rasterisieren){
 
@@ -43,7 +43,7 @@ rasterisieren(shapefile_path, wert_feld, raster_aufloesung, output_rasterisieren
 
 # hier angeben wo das auf 1m skalierte raster hingespeichert werden soll
 input_hochskalieren <- output_rasterisieren # hier ggfs. einen Pfad einfügen
-output_hochskalieren <- "...tif" # Wo soll das hochskalierte Bild hingespeichert werden? 
+output_hochskalieren <- sub("\\.tif$", "_1m.tif", input_hochskalieren) # hier namen ggfs. anpassen, wenn nicht auf 1m hochskaliert werden soll.
 faktor_hochskalieren <- 50 # z.B. von 50m auf 1m -> Faktor 50 
 # output_rasterisieren aus dem letzten Code wird benötigt. Sonst einfach den Pfad des zu rasterisierenden Bildes angeben
 
