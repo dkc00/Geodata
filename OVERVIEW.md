@@ -31,6 +31,7 @@ PyQGIS:
 - Biotop-Polygondaten mit KOSKA-Differenzenraster abgleichen, um pot. Vegetationsänderungen zu ermitteln
 - NDWI aus Digitalem Orthophoto berechnen (stabiler & schneller als mit dem QGIS-Rasterrechner)
 - Export einer CSV-Tabelle von DGM1-Rasterwerten und den dazugehörigen GNSS-Messwerten aus Geländebegehungen zur Differenzenberechnung/DGM-Korrektur
+- Ausgabe von Einträgen eines Punkt-Shapefiles und Spalten eines anderen Polygon-Shapefiles, in dem es sich befindet (z.B. Baumaßnahmen im jeweiligen Flurstück)
 
 Python: 
 - Teilautomatisierung der Treibhausgas-Emissionsschätzung für Moor- und Feuchtgebiete nach GEST-Ansatz (Couwenberg et al. 2008, 2011), basierend auf botanischen Artenlisten und Wasserstufen nach Koska (2001)
@@ -181,6 +182,9 @@ DGM_Vermessung_Abgleich.py
 Das Skript soll die Werte eines DGM1_Rasters an der Stelle eines im Gelände vermessenen Punktes auslesen und die zusammenpassenden Punkte als csv exportieren. 
 Dies diente der Korrektur des DGM1 aus Brandenburg für die jeweiligen Projektflächen. Ziel war dabei das Berechnen der Differenzen aus DGM1 und GNSS-Messwert für 
 die jeweilige Rasterzelle. Es wurde mit QgsRasterLayer, QgsVectorLayer, QgsProject, QgsPointXY, QgsCoordinateTransform und QgsRaster gearbeitet.
+
+flurstuecke_massnahmen_abgleich.py
+Das folgende Skript dient dem Abgleich, in welchem Flurstück (Polygon-Shp) sich gewisse punktuelle Baumaßnahmen (Punkt-Shp) befinden. Es exportiert eine csv-Tabelle mit variabel anpassbaren Spalten der jeweiligen Shapefiles. Dies dient der schnelleren Erzeugung von tabellarischen Daten und spart bei hunderten Maßnahmenpunkten eine Menge Zeit. 
 
 ____________________________
 Jupyter-Notebooks:
