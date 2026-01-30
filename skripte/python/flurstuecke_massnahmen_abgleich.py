@@ -18,9 +18,9 @@ import csv
 lyr_flur_name = "Flurstücke" # Name des Flurstücks-Layers in QGIS
 lyr_massnahmen_name = "Maßnahmen"# Name des Maßnahmen-Layers in QGIS
 
-massnahmen_id_field = "Bezeichnun"
+massnahmen_id_field = "Bezeichnun" # Welches Feld aus dem Maßnahmen-Layer soll gespeichert werden? (z.B. ID der Maßnahme)
 
-flur_fields = {
+flur_fields = { # Hier benennen wir die Flurstücks-Spalten in der GIS-Attributtabelle, die ausgelesen werden sollen.
     "gemarkung": "gemarkung",
     "flur": "flur",
     "flstnrzae": "flstnrzae",
@@ -32,7 +32,7 @@ flur_fields = {
 output_csv = r"..."
 
 
-# Hier beginnt das eigentliche skript.
+# Hier beginnt das eigentliche skript. Ab hier muss nichts mehr geändert werden. Einfach durchlaufen lassen
 
 project = QgsProject.instance()
 
@@ -45,7 +45,7 @@ index = QgsSpatialIndex(lyr_flur.getFeatures())
 with open(output_csv, mode="w", newline="", encoding="utf-8") as f:
     writer = csv.writer(f, delimiter=";")
     
-    # Header
+    # Header wird hier beschreiben
     writer.writerow([
         "id",
         "gemarkung",
@@ -84,3 +84,4 @@ with open(output_csv, mode="w", newline="", encoding="utf-8") as f:
             writer.writerow([m_id, None, None, None, None])
 
 print("Maßnahmen-CSV erstellt:", output_csv)
+
