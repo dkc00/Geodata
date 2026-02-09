@@ -2,7 +2,7 @@
 
 Das Skript soll die Werte eines DGM1_Rasters an der Stelle eines im Gelände 
 vermessenen Punktes auslesen und die zusammenpassenden Punkte als csv exportieren. 
-Dies diente der Korrektur des DGM1 aus Brandenburg für die jeweiligen Projektflächen.
+Dies diente der Korrektur des DGM1 aus Brandenburg und Niedersachsen für die jeweiligen Projektflächen.
 
 """
 
@@ -104,5 +104,6 @@ with open(csv_output_path, 'w', newline='', encoding='utf-8') as f:
 
 
 print(f"CSV gespeichert unter: {csv_output_path}")
+
 
 
