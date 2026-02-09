@@ -18,13 +18,14 @@ from qgis.core import (
 from qgis.utils import iface
 import csv # für den export der daten 
 
-dgm_raster_name = "DGM1_merged" # name im gis projekt
+# dgm_raster_name = "DGM1_merged" # name im gis projekt. Unter ANgabe des Dateipfads hat es stabiler funktioniert und das DGM konnte ausgelesen werden (siehe unten)
 vermessungs_shp_name = "Vermessung_nur_Quellmoor" # name im gis projekt
 
 # wo soll die csv Datei hingespeichert werden? 
 csv_output_path = r"...csv"
 
-dgm_raster = QgsProject.instance().mapLayersByName(dgm_raster_name)[0]
+# dgm_raster = QgsProject.instance().mapLayersByName(dgm_raster_name)[0]
+dgm_raster = "..tif" # Pfad anpassen 
 vermessungs_shp = QgsProject.instance().mapLayersByName(vermessungs_shp_name)[0]
 
 # HIER die Namen der relevanten Spalten der Vermessungs-Vektordatei anpassen!
@@ -103,4 +104,5 @@ with open(csv_output_path, 'w', newline='', encoding='utf-8') as f:
 
 
 print(f"CSV gespeichert unter: {csv_output_path}")
+
 
