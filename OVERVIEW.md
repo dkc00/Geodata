@@ -58,7 +58,8 @@ R:
 - Räumliche Ausdehnung für Rechenoperationen mit Rasterdaten anpassen/korrigieren
 - Tagesmittel von Grundwasserstandsdatenlogger-Zeitreihen exportieren
 - Datenreihen mit vielen NA-Werten darstellen (Einzelne Datenpunkte und verbindende Linien über die Zeit)
-- Plot organischer und anorganischer Parameter-Konzentrationen mit Grenzwertlinie nach BBodSchV 
+- Plot organischer und anorganischer Parameter-Konzentrationen mit Grenzwertlinie nach BBodSchV
+- Raster-Berechnungsschablone als Alternative zum QGIS-Rasterrechner
 
 Sonstiges: 
 - Interaktive NDVI-Darstellung von Sentinel-2-Daten im Webbrowser mit OpenStreetMap als Hintergrund für Rathenow, mit JavaScript/HTML sowie o.g. Python-Backend
@@ -271,5 +272,9 @@ Der typische Ansatz mit lines() funktioniert in R nicht, wenn Datenreihen mit vi
 
 BBodSchV_Konzentrationen_Plot.R 
 Darstellung von gemessenen Konzentrationen anorganischer- und organischer Bodenparameter nach BBodSchV mit Linie für den jeweiligen Vorsorgewert, genutzt für ein Projektgebiet in Brandenburg. Es wurde mit readxl, tidyverse und dplyr gearbeitet. Hilft für jede Art von ggplot-Darstellung, bei der Werte als Balkendiagramm dargestellt werden sollen (lässt sich auch schnell auf Punkte etc. ändern), und es v.a. eine Linie im Plot für Grenzwerte geben soll. 
+
+rasterrechner_alternative.R
+Simples Skript zum Copy-Paste als Rasterrechner-Alternative, wenn dieser in QGIS nicht richtig funktioniert und NoData-TIFs erzeugt. Kann als Schablone für komplexere Berechnungen genutzt werden. Wurde hier zur DGM-Korrektur um einen Medianwert genutzt. 
+
 
 
