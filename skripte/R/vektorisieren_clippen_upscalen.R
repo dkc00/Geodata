@@ -30,12 +30,10 @@ output_path <- "...shp"
 
 raster <- rast(raster_path)
 
-orig_res <- res(raster) # originale Auflösung
-
 factor <- 20  # um faktor 20 hochskalieren
 
-raster_upscaled <- disagg(raster, fact = factor, method = "near")
-plot(raster_upscaled) # neues raster zur kontrolle plotten 
+raster_downscaled <- aggregate(raster, fact = factor, fun = median)
+plot(raster_downscaled) # neues raster zur kontrolle plotten 
 
 # Wenn wir jetzt vektorisieren, kommt bei sehr großen Rastern der Fehler
 # Fehler: [as.polygons] the raster is too large
@@ -58,11 +56,11 @@ extent_poly <- vect(rbind(
   c(xmax, ymax),
   c(xmax, ymin),
   c(xmin, ymin)
-), type = "polygons", crs = crs(raster_upscaled))
+), type = "polygons", crs = crs(raster_downscaled))
 
-raster_cropped <- crop(raster_upscaled, extent_poly)
+raster_cropped <- crop(raster_downscaled, extent_poly)
 
-ncell(raster_upscaled) # Anzahl der Zellen ausgeben
+ncell(raster_downscaled) # Anzahl der Zellen ausgeben
 ncell(raster_cropped) # Anzahl der Zellen ausgeben
 
 # In meinem akuten Fall ist das Raster immer noch zu groß und lediglich 
