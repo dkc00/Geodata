@@ -53,7 +53,7 @@ R:
 - Rasterdaten räumlich erweitern und neuen Rasterzellen Nullwerte zuweisen
 - Raster auf die Ränder einer Vektordatei clippen
 - Grundwasserganglinien und Niederschläge in Plots darstellen
-- Rasterdatei hochskalieren, anschließend auf eine bbox clippen, vektorisieren und als Vektor speichern
+- Rasterdatei runterskalieren, anschließend auf eine bbox clippen, vektorisieren und als Vektor speichern
 - Vorlage für einfache Plots aus Excel-Tabellen (z.B. Grundwasserstand gegen Zeit auftragen)
 - Räumliche Ausdehnung für Rechenoperationen mit Rasterdaten anpassen/korrigieren
 - Tagesmittel von Grundwasserstandsdatenlogger-Zeitreihen exportieren
