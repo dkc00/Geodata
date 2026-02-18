@@ -22,6 +22,8 @@ Ist dies nicht der Fall, können die Schritte aus dem Modellierer auch manuell a
 3. By comparing to: Gitter
 4. Fields to add: id
 5. Join type: Take attributes of the first matching feature only (one-to-one)
+
+
 Der Rest muss nicht geändert werden. Anschließend in der Attributtabelle mit dem Feldrechner die Spalten "fid" und "cat" mit "id" überschreiben und "id" selbst wieder löschen, damit die Struktur für das PrognoseTool erhalten bleibt. Nun kann die vektorisierte Datei mit "Export to Spreadsheet" als Tabelle exportiert werden. Auch nun sollte nochmal stichprobenartig geprüft werden, ob alle Auswertungsschritte richtig durchgeführt wurden und die Werte stimmen. 
 
 
