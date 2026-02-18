@@ -15,6 +15,15 @@
 - Möglichkeiten hierbei sind z.B. die Widerstandsfähigkeit der Kolmationsschicht zu erhöhen (kf_kol auf 0,05 m/d und z_col auf 0,5 m). Bei niedrigen kf-Werten, wie sie z.B. bei Feinsand mit Schluff zu erwarten sind (kf_GWL = 0,864 m/d), wirkt sich eine höhere Wassertiefe in den Gräben von > 0,5m positiv auf die Performance aus (muss aber auch mit Geländeergebnissen vereinbar sein). 
 
 
+Die exportierten Tabellen "HK50" und "UKGWL" sollten in besonderem Maße geprüft werden. Zuerst, ob die Anzahl der Einträge korrekt ist und mit denen aller anderen Tabellen übereinstimmt, sowie anschließend manuell mit dem jeweiligen Raster in GIS, ob die Einträge der jeweiligen ID's korrekt sind (stichprobenartig). 
+Ist dies nicht der Fall, können die Schritte aus dem Modellierer auch manuell ausgeführt werden. Diese sind für die Tabellen "Unterkante_Grundwasserleiter" und "HK50" identisch. Zuerst wird das jeweilige Raster mit "r.to.vect" in GIS vektorisiert. Nun sollten die "fid"-Einträge mit der ID des Gitters des jeweiligen Projektgebiets verglichen werden: Stimmen die ID's überein? Wenn nicht, werden die Werte auch im PrognoseTool selbst falsch zugeordnet. Hierbei kann das Werkzeug "Join attributes by location" genutzt werden, um die ID's des Gitters zu dem vektorisierten Raster von UKGWL oder HK50 hinzuzufügen. Im Werkzeug selbst werden folgende Einstellungen getätigt: 
+1. "Join to features in": UKGWL
+2. Features they (geometric predicate): intersect
+3. By comparing to: Gitter
+4. Fields to add: id
+5. Join type: Take attributes of the first matching feature only (one-to-one)
+Der Rest muss nicht geändert werden. Anschließend in der Attributtabelle mit dem Feldrechner die Spalten "fid" und "cat" mit "id" überschreiben und "id" selbst wieder löschen, damit die Struktur für das PrognoseTool erhalten bleibt. Nun kann die vektorisierte Datei mit "Export to Spreadsheet" als Tabelle exportiert werden. Auch nun sollte nochmal stichprobenartig geprüft werden, ob alle Auswertungsschritte richtig durchgeführt wurden und die Werte stimmen. 
+
 
 
 
