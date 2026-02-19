@@ -1,8 +1,8 @@
-<b>Warum funktioniert das Prognose-Tool nicht?</b>
+<h1>Warum funktioniert das Prognose-Tool nicht?</h1>
 
 Die folgende Dokumentation dient der Arbeit mit dem PrognoseTool zur Berechnung von Wasserstandsänderungen vor und nach Maßnahmenumsetzung. Sie sollte im Optimalfall unter Nutzung der Suchfunktion genutzt werden (z.B. gezielt nach "UKGWL" suchen), um eine mögliche Lösung für auftretende technische Probleme zu finden. Die Dokumentation befindet sich in stetiger Überarbeitung. Sie basiert auf den Arbeitsschritten der ursprünglichen PrognoseTool-Anleitung.
 
-<h4>Datenvorbereitung</h4>
+<h2>Datenvorbereitung:</h2>
 
 - Sollten die Bohrungen für die Interpolation der UKGWL ungeeignet sein oder sich keine klare Unterkante ermitteln lassen (z.B. nur Sande und Kiese bis in 40-50 m u. GOK), kann das UKGWL-Raster vereinfacht aus dem DGM1 berechnet werden. Hierfür einfach im Rasterrechner oder alternativ in R/Python das DGM - 10 bzw. 20m rechnen, je nach Projektgebiet und geologischen Gegebenheiten.
 
@@ -28,7 +28,7 @@ Der Rest muss nicht geändert werden. Anschließend in der Attributtabelle mit d
 Es kann immer noch vorkommen, dass die Tabelle nicht richtig gelesen wird, weil die ID's im PrognoseTool von links nach rechts und nicht von oben nach unten gelesen werden. Hierzu sollten später die Workbook-Links in Excel aktualisiert und die Ergebnisse bei UKGWL und HK50 sowie die Gitter im PrognoseTool geprüft werden. 
 
 
-<h4> Im Prognose-Tool </h4>
+<h2> Im Prognose-Tool: </h2>
 
 
 - Sind die Workbook Links aktualisiert und in Excel auch vollständig?
