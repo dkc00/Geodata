@@ -41,7 +41,10 @@ Es kann immer noch vorkommen, dass die Tabelle nicht richtig gelesen wird, weil 
 - Ist die Kolmationsschicht zu mächtig oder der kf-Wert zu niedrig? Dann wird gar nicht gerechnet bzw. es kommt zu wenigen Iterationen und keiner Wasserstandsveränderung. Es müssen miteinander plausible Werte gefunden werden, z.B. für Nordostdeutschland 4,32 m/d kf_GWL und 0,22 m/d kf_kol.
 - Ein niedriger kf-Wert führt zu höherem Stauergebnis, wirkt sich aber auf die Konvergenz aus und das Tool läuft oft nicht mehr durch. Hohe kf-Werte (z.B. 86,4 m/d) ermöglichen einen schnellen Durchlauf, aber geringeren Wasserrückhalt und ggfs. unrealistische Annahmen. Hierfür mit Ausbauzeichnungen, Torfsondierungen und historischen Bohrungen abgleichen und im Rahmen der plausiblen Möglichkeiten die kf-Werte variieren (z.B. 43,2 m/d, 8,64 m/d, 4,32 m/d).
 - Selbes gilt für die Wasserstände im Graben (Vermessungs- oder ggfs. Pegeldaten) und Grabenbreiten (Vermessung oder DGM1). Welche hydraulischen u. hydrologischen Parameter führen zu einem schlüssigen Gesamtergebnis?
-- Möglichkeiten hierbei sind z.B. die Widerstandsfähigkeit der Kolmationsschicht zu erhöhen (kf_kol auf 0,05 m/d und z_col auf 0,5 m). Bei niedrigen kf-Werten, wie sie z.B. bei Feinsand mit Schluff zu erwarten sind (kf_GWL = 0,864 m/d), wirkt sich eine höhere Wassertiefe in den Gräben von > 0,5m positiv auf die Performance aus (muss aber auch mit Geländeergebnissen vereinbar sein). 
+- Möglichkeiten hierbei sind z.B. die Widerstandsfähigkeit der Kolmationsschicht zu erhöhen (kf_kol auf 0,05 m/d und z_col auf 0,5 m). Bei niedrigen kf-Werten, wie sie z.B. bei Feinsand mit Schluff zu erwarten sind (kf_GWL = 0,864 m/d), wirkt sich eine höhere Wassertiefe in den Gräben von > 0,5m positiv auf die Performance aus (muss aber auch mit Geländeergebnissen vereinbar sein).
+
+
+Wichtig: Es kann immer passieren, dass das PrognoseTool sich intern "aufgehangen" hat und unabhängig von Anpassung an den Parametern nicht mehr funktioniert bzw. keine plausiblen Ergebnisse erzeugt (z.B. negative Werte für willkürliche Pixel oder das Ignorieren bestimmter Gräben trotz korrekter Daten). In diesem Fall sollte ein frisches Tool aus dem originalen Lotter Beeke-Ordner rauskopiert und neu aufgesetzt werden. 
 
 
 
