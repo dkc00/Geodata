@@ -60,6 +60,7 @@ R:
 - Datenreihen mit vielen NA-Werten darstellen (Einzelne Datenpunkte und verbindende Linien über die Zeit)
 - Plot organischer und anorganischer Parameter-Konzentrationen mit Grenzwertlinie nach BBodSchV
 - Raster-Berechnungsschablone als Alternative zum QGIS-Rasterrechner
+- Korrektur der Grundwasserneubildung nach mGROWA mittels DWD-Klimadaten für bestimmte Jahre
 
 Sonstiges: 
 - Interaktive NDVI-Darstellung von Sentinel-2-Daten im Webbrowser mit OpenStreetMap als Hintergrund für Rathenow, mit JavaScript/HTML sowie o.g. Python-Backend
@@ -276,5 +277,6 @@ Darstellung von gemessenen Konzentrationen anorganischer- und organischer Bodenp
 rasterrechner_alternative.R
 Simples Skript zum Copy-Paste als Rasterrechner-Alternative, wenn dieser in QGIS nicht richtig funktioniert und NoData-TIFs erzeugt. Kann als Schablone für komplexere Berechnungen genutzt werden. Wurde hier zur DGM-Korrektur um einen Medianwert genutzt. 
 
-
+mGROWA_korrektur.R
+Korrektur der Grundwasserneubildung (mGROWA) für die Berechnung von Wasserstandsänderungen nach Staumaßnahmen. Auf Basis der langjährigen mGROWA-Mittel wird die GWN neu für bspw. das Jahr 2025 berechnet. Diese Formel kann ebenfalls auf Monats-, Tages,.. auflösung genutzt werden.  Die Daten für Evapotranspiration und Niederschlag wurden dem DWD Climate Portal entnommen, die mGROWA-Daten dem NIBIS Niedersachsen. 
 
