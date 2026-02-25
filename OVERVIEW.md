@@ -32,6 +32,7 @@ PyQGIS:
 - NDWI aus Digitalem Orthophoto berechnen (stabiler & schneller als mit dem QGIS-Rasterrechner)
 - Export einer CSV-Tabelle von DGM1-Rasterwerten und den dazugehörigen GNSS-Messwerten aus Geländebegehungen zur Differenzenberechnung/DGM-Korrektur
 - Ausgabe von Einträgen eines Punkt-Shapefiles und Spalten eines anderen Polygon-Shapefiles, in dem es sich befindet (z.B. Baumaßnahmen im jeweiligen Flurstück)
+- Einfügen von X-/Y-Koordinaten eines bestimmten KBS in die Attributtabelle eines Layers
 
 Python: 
 - Teilautomatisierung der Treibhausgas-Emissionsschätzung für Moor- und Feuchtgebiete nach GEST-Ansatz (Couwenberg et al. 2008, 2011), basierend auf botanischen Artenlisten und Wasserstufen nach Koska (2001)
@@ -187,6 +188,10 @@ die jeweilige Rasterzelle. Es wurde mit QgsRasterLayer, QgsVectorLayer, QgsProje
 
 flurstuecke_massnahmen_abgleich.py
 Das folgende Skript dient dem Abgleich, in welchem Flurstück (Polygon-Shp) sich gewisse punktuelle Baumaßnahmen (Punkt-Shp) befinden. Es exportiert eine csv-Tabelle mit variabel anpassbaren Spalten der jeweiligen Shapefiles. Dies dient der schnelleren Erzeugung von tabellarischen Daten und spart bei hunderten Maßnahmenpunkten eine Menge Zeit. 
+
+koordinaten_in_attributtabelle.py 
+Dieses Skript ermöglicht es mit einem Klick, im ausgewählten Layer neue Spalten für X- und Y- Koordinaten im gewünschten KBS anzulegen. Es entstand aufgrund 
+eines Layers für geplante Verwallungen in Mecklenburg-Vorpommern, für die mittels normalen Vorgehens im Feldrechner von QGIS keine X- und Y-Spalten erzeugt werden konnten. KBS muss entsprechend im Code angepasst werden. 
 
 ____________________________
 Jupyter-Notebooks:
