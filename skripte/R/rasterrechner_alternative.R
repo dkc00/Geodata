@@ -5,15 +5,17 @@
 
 library(terra)
 
-rast_path <- "...tif"
+rast_path <- "...tif" # hier zu korrigierendes raster auswählen
+output_path <-"...tif" # output anpassen
+
 
 r <- rast(rast_path)
 
-rast_korrigiert <- r - 0.031
+rast_korrigiert <- r - 0.031 # um wieviel meter soll korrigiert werden? 
 
 writeRaster(rast_korrigiert,
-            "...tif",
-            overwrite = TRUE)
+            output_path,
+            overwrite = TRUE) # raster speichern
 
 
 
