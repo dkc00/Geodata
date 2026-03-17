@@ -54,12 +54,14 @@ werte_niederschlag <- niederschlag[[2]] # an tabelle anpassen
 
 par(new = TRUE)
 plot(datum_niederschlag, werte_niederschlag, type = "h",
-     col = adjustcolor("darkblue", alpha.f = 0.75), lwd = 2,
+     col = adjustcolor("darkblue", alpha.f = 0.4), lwd = 2,
      axes = FALSE, xlab = "", ylab = "",
-     ylim = c(0, 10))
+     ylim = c(40, 0))  # gedreht, um hydrologische darstellung mit niederschlagsbalken von oben nach unten zu haben
 
-axis(4, at = seq(0, 10, by = 2), col.axis = "darkblue", col = "darkblue", las = 1)
-mtext("Niederschlag [mm]", side = 4, line = 3, col = "darkblue")
+axis(4, at = seq(0, 40, by = 5), labels = seq(0, 40, by = 5),
+     col.axis = "darkblue", col = "darkblue", las = 1)
+
+mtext("Niederschlag [mm]", side = 4, line = 2, col = "darkblue")
 mtext("© Meteostat", side = 1, line = 4, cex = 0.6, adj = 1)
 #Quelle angeben: Hier Meteostat
 
