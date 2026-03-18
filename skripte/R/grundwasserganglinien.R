@@ -29,7 +29,8 @@ plot(NA, NA, type = "n",
      ylim = rev(c(0, 1)),
      xlab = "Datum", ylab = "Wasserstand [m u. GOK]",
      main = "Torf- und Grundwasserganglinien: März bis Mai 2025",
-     xaxt = "n")
+     xaxt = "n",
+     yaxp = c(0, 1, 10)) # das einfügen wenn zb in 0.1er y-Schritten dargestellt werden soll. (10 schritte)
 
 ticks <- seq(as.POSIXct("2025-03-18"), as.POSIXct("2025-05-21"), by = "7 days")
 axis(1, at = ticks, labels = format(ticks, "%d.%m.%y"), cex.axis = 0.7)
