@@ -38,6 +38,10 @@ axis(1, at = ticks, labels = format(ticks, "%d.%m.%y"), cex.axis = 0.7)
 
 abline(h = seq(-0.2, 1, by = 0.2), col = "gray", lty = "dashed")
 
+# nur wenn torfwasserganglinien dargestellt werden sollen: 
+# abline(h = c(0, 0.1, 0.45), col = "red", lty = "solid", lwd = 1.5) # torferhaltend, schwach torfzehrend, stark torfzehrend nach blankenburg
+
+
 i <- 1
 for (file in names(files)) {
   full_path <- file.path(path, file)
