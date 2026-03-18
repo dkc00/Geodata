@@ -30,7 +30,8 @@ plot(NA, NA, type = "n",
      xlab = "Datum", ylab = "Wasserstand [m u. GOK]",
      main = "Torf- und Grundwasserganglinien: März bis Mai 2025",
      xaxt = "n",
-     yaxp = c(0, 1, 10)) # das einfügen wenn zb in 0.1er y-Schritten dargestellt werden soll. (10 schritte)
+     yaxp = c(0, 1, 10), # das einfügen wenn zb in 0.1er y-Schritten dargestellt werden soll. (10 schritte)
+     las = 2) # beschriftungen um 90° drehen
 
 ticks <- seq(as.POSIXct("2025-03-18"), as.POSIXct("2025-05-21"), by = "7 days")
 axis(1, at = ticks, labels = format(ticks, "%d.%m.%y"), cex.axis = 0.7)
