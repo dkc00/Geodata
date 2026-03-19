@@ -19,7 +19,7 @@ writeVector(vector, output_path)
 
 # ________________________________________________________________---
 
-# Ich möchte jetzt zuerst mein Raster auf 20x20m hochskalieren 
+# Ich möchte jetzt zuerst mein Raster auf 20x20m runterskalieren 
 # (aktuell 1x1m) und dann mit dissolve = FALSE vektorisieren. 
 # Siehe für diesen Code das Skript "rasterisieren_und_hochskalieren"
 
@@ -30,7 +30,7 @@ output_path <- "...shp"
 
 raster <- rast(raster_path)
 
-factor <- 20  # um faktor 20 hochskalieren
+factor <- 20  # um faktor 20 runterskalieren (auflösung geringer)
 
 raster_downscaled <- aggregate(raster, fact = factor, fun = median)
 plot(raster_downscaled) # neues raster zur kontrolle plotten 
