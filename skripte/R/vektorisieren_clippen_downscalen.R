@@ -9,6 +9,11 @@ output_path <- "...shp"
 
 raster <- rast(raster_path)
 
+# HAT DAS RASTER NA WERTE? Diese werden beim Vektorisieren ggfs. nicht berücksichtigt. Hierfür folgende Zeile einbauen und die Werte später in QGIS 
+# belieblig anpassen: 
+
+# raster[is.na(raster)] <- -9999
+
 
 # Ohne dissolve = FALSE exportiert er hier einfach ein großes Polygon mit allen 
 # Zellen, die denselben Wert tragen. So bekommt jede Zelle mit einem Wert
