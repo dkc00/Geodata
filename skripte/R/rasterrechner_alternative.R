@@ -17,5 +17,23 @@ writeRaster(rast_korrigiert,
             output_path,
             overwrite = TRUE) # raster speichern
 
+# VORLAGE FÜR SOLL-FLURABSTANDSPLÄNE 
+
+
+prognose_path <- "..tif" # PROGNOSEBERECHNUNG 
+output_path <-"..tif" # SOLL FLURABSTANDSPFAD
+
+istflur_path <- "...tif" # IST FLURABSTAND
+
+prognose <- rast(prognose_path)
+istflur <- rast(istflur_path)
+
+# drauf achten, dass die raster gleichen extent haben
+
+sollflur <-  istflur - prognose # um wieviel meter soll korrigiert werden? 
+
+writeRaster(sollflur,
+            output_path,
+            overwrite = TRUE) # raster speichern
 
 
