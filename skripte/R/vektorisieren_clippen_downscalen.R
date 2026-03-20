@@ -15,7 +15,7 @@ raster <- rast(raster_path)
 # ein eigenes Polygon. 
 vector <- as.polygons(raster, dissolve = FALSE)
 
-writeVector(vector, output_path)
+writeVector(vector, output_path, overwrite = TRUE)
 
 # ________________________________________________________________---
 
