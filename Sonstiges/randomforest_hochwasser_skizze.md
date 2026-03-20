@@ -47,3 +47,7 @@ print(rmse, r2)
 
 
 Dann eventuell modellläufe ausprobieren: Nur niederschläge und nur pegeldaten als test!
+
+_______
+
+Getesteten code als funktion ausbauen und reproduzierbar machen, grafiken automatisch abspeichern um modellläufe schneller testen zu können.
