@@ -1,4 +1,4 @@
-- R^2 immer von Train und Test ausgeben. Eine sehr gute Performance auf Train, aber schlecht auf Test? Tendenziell Overfitting möglich 
+1- R^2 immer von Train und Test ausgeben. Eine sehr gute Performance auf Train, aber schlecht auf Test? Tendenziell Overfitting möglich 
 
 - Immer zuerst die Datenqualität, Features und Feature Engineering priorisieren, dann ggfs Modelle durchtesten und Hyperparameter tunen.
 
@@ -11,3 +11,5 @@
 - Varianz vs. Bias: An die Zielscheibe beim Bogenschießen denken. Nicht gezielt immer danebenschießen (Bias, wie bei der Geländevermessung mit Float-Signal), aber auch nicht random jedes Mal eine andere Stelle treffen (hohe Varianz, overfitting gefahr!) 
 
 - von einer baseline aus modell aufbauen, zb erst auf pegelstand t trainieren, lagged features einbauen, dann auf t- t-1 (dt) trainieren, ggfs summen der niederschläge über 3 oder 7 tage als feature. was ist physikalisch sinnvoll?
+
+- features sollten so unabhängig wie möglich sein, sind es de facto aber nie ganz 
