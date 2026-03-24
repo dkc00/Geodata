@@ -38,9 +38,11 @@ Python:
 - Teilautomatisierung der Treibhausgas-Emissionsschätzung für Moor- und Feuchtgebiete nach GEST-Ansatz (Couwenberg et al. 2008, 2011), basierend auf botanischen Artenlisten und Wasserstufen nach Koska (2001)
 - Aufbereitung von AquiTronic-Datenlogger-Rohdaten einer Grundwassermessstelle zur Darstellung von Grundwasserganglinien und anschließende grafische Darstellung
 - Sämtliche 2-Band-Fernerkundungsindices auf Basis von Sentinel-2-Daten berechnen lassen
+- Random Forest- Basismodell zur Wasserstandsanalyse mit Feature Importance und SHAP Values
 - Backend mit Flask und Rasterio für WebGIS-Darstellung von Fernerkundungsindices
 - Datenverarbeitungsroutine für Sentinel-2-Daten mit PyQGIS und "normalem" Python: Vorverarbeitung, Download, Datenvorbereitung, Indices, Wolkenbedeckung
 - Sentinel-2 Analyse des Siebengebirges nahe Bonn mit Fokus auf geologische Fernerkundung (Iron Oxide Index, NDWI- und NDVI-Maskenerstellung)
+- Untersuchung von Pegelwasserständen mit ML-Methoden (Bagging & Boosting)
 
 R:
 
@@ -193,6 +195,8 @@ koordinaten_in_attributtabelle.py
 Dieses Skript ermöglicht es mit einem Klick, im ausgewählten Layer neue Spalten für X- und Y- Koordinaten im gewünschten KBS anzulegen. Es entstand aufgrund 
 eines Layers für geplante Verwallungen in Mecklenburg-Vorpommern, für die mittels normalen Vorgehens im Feldrechner von QGIS keine X- und Y-Spalten erzeugt werden konnten. KBS muss entsprechend im Code angepasst werden. 
 
+randomforest_basismodell.py
+Vorlage für schnelles Anwenden eines RF Modells, hier auf Pgeldaten, mit Möglichkeit zur Ausgabe von SHAP Values, Feature Importance, R^2 von Train und Test zur Bias/Varianz Analyse etc.
 ____________________________
 Jupyter-Notebooks:
 
