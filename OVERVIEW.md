@@ -252,6 +252,9 @@ berechnet wurden. Außerdem werden die Niederschläge als blaue Linie geplottet 
 angelegt. Der Plot kann für belieblige ähnliche Fragestellungen angepasst werden, bei denen Balken- oder Linienelemente
 mit ggplot dargestellt werden sollen. 
 
+<img width="300" height="400" alt="BAGLUVA_Göldenitz" src="https://github.com/user-attachments/assets/96051f67-77a2-49ae-96ad-3487d275f766" />
+
+
 rasterisieren_und_hochskalieren.R
 Alternativer Code zu v.to.rast aus GRASS-GIS, falls dieses Probleme bereitet (Vektordaten rasterisieren). Anschließend wird die Auflösung des Rasters hochskaliert (von 50 auf 1 m, kann beliebig angepasst werden), damit eine Verrechnung im Rasterrechner mit anderen Rastern dieser Auflösung möglich ist. Es wird standardmäßig die terra-Bibliothek sowie sf ("Simple Features for R") genutzt. Dann wird mit st_read() und st_transform() aus sf sowie vect(), rast() und rasterize() aus terra gearbeitet.
 
@@ -267,6 +270,9 @@ Ein Raster wird auf die Ränder eines Vektors geclippt. Auch dies ist standardm�
 grundwasserganglinien.R
 Das folgende Skript erzeugt einen Plot für Grundwasserganglinien verschiedener Messstellen auf Basis einer Excel-Tabelle . Im selben Plot werden die Niederschläge dargestellt.
 Das Skript muss an die jeweiligen Excel-Tabellen angepasst werden! Es wird mit der readxl-Bibliothek gearbeitet.
+
+<img width="300" height="400" alt="Grundwassermessstelle Gildehaus Süd" src="https://github.com/user-attachments/assets/31c83227-c301-4107-9b33-333d2cadb8d5" />
+
 
 plot_datum_gegen_daten.R
 Ähnlich zum vorherigen Skript grundwasserganglinien.R, aber einfacher und sollte als Vorlage für weitere einfache wissenschaftliche Plots genutzt werden. Auch hier verwenden wir readxl. Der Flurabstand einer Grundwassermessstelle wird gegen das Datum aufgetragen. 
