@@ -5,9 +5,9 @@ library(terra)
 
 
 shapefile_path <- "...shp" # gewünschte vektordaten einlesen (zb prognosetool)
-wert_feld <- "Diff_GW_Ri" # name des wertfelds anpassen (attributtabelle)
+wert_feld <- "Diff_GW_Ri" # name des wertfelds anpassen (attributtabelle, zu rasterisierender vektor)
 raster_aufloesung <- 50 # aufloesung in m
-output_rasterisieren <- sub("\\.shp$", "_rast.tif", shapefile_path)
+output_rasterisieren <- sub("\\.shp$", "_rast.tif", shapefile_path) # output als TIF wird automatisch erzeugt 
 
 rasterisieren <- function(shapefile_path, wert_feld, raster_aufloesung, output_rasterisieren){
 
