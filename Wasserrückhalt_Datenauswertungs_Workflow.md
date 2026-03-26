@@ -2,7 +2,7 @@ Typischer Workflow bei Wiedervernässungs-/Wasserrückhalts-Projekten und Verwen
 
 1. Vorplanung, Geodaten sichten und aufbereiten. Ggfs Klimatische Wasserbilanz/BAGLUVA mit DWD-Daten durchführen und plotten -> BAGLUVA_Wasserhaushaltsgleichung.R. Grundlegende Klimadaten darstellen für Berichte -> Temp_Niederschlags_Diagramm.R. Grundwassermessstellen sichten und Ganglinien darstellen -> ganglinien_mit_NA_werten.R oder grundwasserganglinien.R, je nach Datenqualität. Code kann auch als Vorlage genutzt und etwas abgeändert werden. Kann auch für Zeitreihen installierter Datenlogger genutzt werden. 
 2. Vermessung durchführen
-3. DGM-Korrektur mit gemessenen Geländehöhen -> zwei Methodikansätze unter DGM_Vermessung_Abgleich.py
+3. DGM-Korrektur mit gemessenen Geländehöhen -> DGM_Vermessung_Abgleich.py
 4. Interpolation der gemessenen Wasserstände, Abzug von korrigiertem DGM für Flurabstandskarte.
 5. Maßnahmen planen und Auswirkungen modellieren
 6. Modelliertes Auswirkungsgitter (Vektor) rasterisieren und auf 1m hochskalieren -> rasterisieren_und_hochskalieren.R
