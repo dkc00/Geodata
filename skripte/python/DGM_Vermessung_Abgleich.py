@@ -2,8 +2,8 @@
 
 Das Skript soll die Werte eines DGM1_Rasters an der Stelle eines im Gelände 
 vermessenen Punktes auslesen und die zusammenpassenden Punkte als csv exportieren. 
-Dies diente der Korrektur des DGM1 aus Brandenburg und Niedersachsen für die jeweiligen Projektflächen.
-
+Dies diente der Korrektur des DGM1 aus Brandenburg, Mecklenburg-Vorpommern und Niedersachsen für die jeweiligen Projektflächen.
+Weiter unten findet sich ein weiterer Ansatz auf Basis der QGIS-Funktion "Sample raster values". 
 """
 
 from qgis.core import (
@@ -105,5 +105,40 @@ with open(csv_output_path, 'w', newline='', encoding='utf-8') as f:
 
 print(f"CSV gespeichert unter: {csv_output_path}")
 
+______
+
+"""
+Der Abgleich kann alternativ mit der Funktion "Sample raster values" in QGIS durchgeführt werden. Mit dem folgenden Code werden die Ergebnisse 
+direkt als xlsx exportiert. Es muss lediglich der Pfad zu den GOK-Daten sowie der Name des DGM-Layers in QGIS angegeben werden. 
+
+"""
+
+from qgis.core import QgsVectorLayer, QgsProject
+
+gok_vermessungs_path = r"...shp"
+dgm_name = "Korrigiertes DGM1" # Wie heißt das DGM in QGIS? 
+dgm = QgsProject.instance().mapLayersByName(dgm_name)[0]
 
 
+output_path = gok_vermessungs_path.replace(".shp", "_sampled.shp")
+xlsx_path = output_path.replace(".shp", "_tabelle.xlsx")
+
+
+params = {
+'INPUT': gok_vermessungs_path,
+'RASTERCOPY': dgm,
+'COLUMN_PREFIX':'SAMPLE_',
+'OUTPUT': output_path
+}
+
+processing.run("native:rastersampling", params)
+
+sampled_lyr = QgsVectorLayer(output_path, os.path.basename(output_path[:-4]))
+QgsProject.instance().addMapLayer(sampled_lyr) 
+
+processing.run("native:exporttospreadsheet", {
+    'LAYERS': [output_path],
+    'OUTPUT': xlsx_path
+})
+
+iface.messageBar().pushMessage(f"Tabelle erfolgreich unter {xlsx_path} gespeichert!", level=Qgis.Success)
