@@ -145,6 +145,9 @@ Lösung:
 Vector overlay -> Split with lines 
 Input-Layer: z.B. "Prognoseberechnung", Split-Layer z.B. "Fließgewässer" oder eigens erstellte Linie.
 
+WICHTIG: Wenn ein Polygon zerschnitten werden soll, muss die jeweilige Trennlinie durch beide Enden des Polygons hindurch verlaufen, darf sich 
+also nicht nur innerhalb befinden. Sonst bekommt das Polygon nur einen inneren Cut und wird nicht vollständig durchtrennt.
+
 __________________________________________________________________________________________________________
 
 Fragestellung: 
