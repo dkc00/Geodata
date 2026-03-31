@@ -46,6 +46,7 @@ Python:
 
 R:
 
+- Processing von modellierten Wasserstandsdaten: Rasterisieren, Hochskalieren, Extent an anderes Raster anpassen, neue Karte generieren
 - Plot von Hyperspektraldaten eines Fließgewässers gegen in-situ gemessene Chl-a-Konzentrationen mit definiertem Wertefenster und Zeitabschnitt
 - Shiny-App zur Visualisierung von Spektrometer-Daten über die Zeit und automatischer Berechnung von Fernerkundungs-Indices 
 - Rasterdaten-Resampling von 1m auf 50m (belieblig anpassbar)
