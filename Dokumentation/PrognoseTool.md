@@ -47,7 +47,21 @@ Es kann immer noch vorkommen, dass die Tabelle nicht richtig gelesen wird, weil 
 Wichtig: Es kann immer passieren, dass das PrognoseTool sich intern "aufgehangen" hat und unabhängig von Anpassung an den Parametern nicht mehr funktioniert bzw. keine plausiblen Ergebnisse erzeugt (z.B. negative Werte für willkürliche Pixel oder das Ignorieren bestimmter Gräben trotz korrekter Daten). In diesem Fall sollte ein frisches Tool aus dem originalen Lotter Beeke-Ordner rauskopiert und neu aufgesetzt werden. 
 
 
+- Wie lese ich die Daten für das Prognose-Tool aus?
 
+Lösung in R: 
+
+"""
+
+library(readxl)
+
+Gebiet1_Diff=unlist(c(read_xlsx("...xlsx", sheet="Diff",
+                                range="J5:AP31",col_names=FALSE))) # wie heißt die prognose tool datei? 
+write.csv(c(Gebiet1_Diff),"..csv") # wie soll die csv tabelle heißen? 
+
+"""
+range= "J5:CE78" muss je nach berechneten Zellen angepasst werden! 
+Denn das sind die Zellen, die aus Excel exportiert werden und entsprechen der Gitterausdehnng bzw. den errechneten Tool-Zellen
 
 
 
