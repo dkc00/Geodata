@@ -1,10 +1,10 @@
 library(terra)
 library(sf)
 
-# Diese Überarbeitung vereint verschiedene alte Skripte und rasterisiert Prognose-Tool-Ergebnisse, 
-# skaliert sie von 50m-Auflösung auf 1m "hoch" und erhöht ihre räumliche Ausdehnung mit NA-Werten, 
-# sodass sie sich mit dem Ausgangsflurabstand verschneiden lassen. 
-# Abschließend wird die Soll-Flurabstandskarte berechnet. Die Zwischenschritte werden ebenfalls 
+# Diese Überarbeitung vereint verschiedene alte Skripte und rasterisiert Prognose-Tool-Ergebnisse als berechnete Wasserstandsänderungen, 
+# skaliert sie von ursprünglich 50m Modellauflösung auf 1m "hoch" und erhöht ihre räumliche Ausdehnung mit NA-Werten, 
+# sodass sie sich mit dem vorliegenden Ausgangsflurabstand (Rasterdatei) verschneiden lassen. 
+# Abschließend wird die Soll-Flurabstandskarte nach Maßnahmenumsetzung berechnet. Die Zwischenschritte werden ebenfalls 
 # als TIF-Rasterdateien ausgegeben. 
 
 # Erst werden alle Pfade und Daten angegeben, danach lediglich die Funktionen eingeladen und ausgeführt. 
