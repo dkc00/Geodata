@@ -42,7 +42,7 @@ Python:
 - Backend mit Flask und Rasterio für WebGIS-Darstellung von Fernerkundungsindices
 - Datenverarbeitungsroutine für Sentinel-2-Daten mit PyQGIS und "normalem" Python: Vorverarbeitung, Download, Datenvorbereitung, Indices, Wolkenbedeckung
 - Sentinel-2 Analyse des Siebengebirges nahe Bonn mit Fokus auf geologische Fernerkundung (Iron Oxide Index, NDWI- und NDVI-Maskenerstellung)
-- Untersuchung von Pegelwasserständen mit ML-Methoden (Bagging & Boosting)
+- Untersuchung von Pegelwasserständen mit ML-Methoden (Bagging & Boosting) und Fokus auf Feature Engineering (lagged variables, 3/7-day sums)
 
 R:
 
