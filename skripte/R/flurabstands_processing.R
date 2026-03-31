@@ -21,17 +21,20 @@ raster_aufloesung <- 50 # aufloesung in m
 faktor_hochskalieren <- 50 # z.B. von 50m auf 1m -> Faktor 50 
 
 
+# __________________________________________________________________
+
+# Das alles nur durchklicken
+
 output_rasterisieren <- sub("\\.shp$", "_rast.tif", shapefile_path)
 output_hochskalieren <- sub("\\.tif$", "_1m.tif", output_rasterisieren) 
 output_path_gross <- sub("\\.tif$", "gross.tif", output_hochskalieren)
 output_path_soll <- sub("\\.tif$", "_SollFlurabstand.tif", output_path_gross)
 
-ext_1 <- 367171.5254999999888241 # Den Extent der Ausgangs-Flurabstandskarte angeben, auf die das Prognosetool-Raster zugeschnitten werden soll.
-ext_2 <- 373722.5254999999888241
-ext_3 <- 5788719.8629999998956919
-ext_4 <- 5793970.8629999998956919
+ist_rast <- rast(ist_flurabstand)
+e <- ext(ist_rast)
+ext_1 <- e[1]; ext_2 <- e[2]; ext_3 <- e[3]; ext_4 <- e[4] # hier werden die extents automatisch aus der flurabstandskarte gezogen
 
-crs_code <- "EPSG:25832" # z.B. EPSG:25833. KBS angeben
+crs_code <- crs(ist_rast)
 
 
 
