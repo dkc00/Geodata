@@ -60,6 +60,7 @@ Gebiet1_Diff=unlist(c(read_xlsx("...xlsx", sheet="Diff",
 write.csv(c(Gebiet1_Diff),"..csv") # wie soll die csv tabelle heißen? 
 
 """
+
 range= "J5:CE78" muss je nach berechneten Zellen angepasst werden! 
 Denn das sind die Zellen, die aus Excel exportiert werden und entsprechen der Gitterausdehnng bzw. den errechneten Tool-Zellen
 
