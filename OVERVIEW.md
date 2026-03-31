@@ -47,6 +47,7 @@ Python:
 R:
 
 - Processing von modellierten Wasserstandsdaten: Rasterisieren, Hochskalieren, Extent an anderes Raster anpassen, neue Karte generieren
+- Zwei Vektorlayer unterschiedlicher Ausdehnung und Zellgröße aufsummieren (z.B. Modellierungs-Ergebnisse)
 - Plot von Hyperspektraldaten eines Fließgewässers gegen in-situ gemessene Chl-a-Konzentrationen mit definiertem Wertefenster und Zeitabschnitt
 - Shiny-App zur Visualisierung von Spektrometer-Daten über die Zeit und automatischer Berechnung von Fernerkundungs-Indices 
 - Rasterdaten-Resampling von 1m auf 50m (belieblig anpassbar)
@@ -299,3 +300,10 @@ Simples Skript zum Copy-Paste als Rasterrechner-Alternative, wenn dieser in QGIS
 mGROWA_korrektur.R
 Korrektur der Grundwasserneubildung (mGROWA) für die Berechnung von Wasserstandsänderungen nach Staumaßnahmen. Auf Basis der langjährigen mGROWA-Mittel wird die GWN neu für bspw. das Jahr 2025 berechnet. Diese Formel kann ebenfalls auf Monats-, Tages,.. auflösung genutzt werden.  Die Daten für Evapotranspiration und Niederschlag wurden dem DWD Climate Portal entnommen, die mGROWA-Daten dem NIBIS Niedersachsen. 
 
+zwei_vektorlayer_addieren.R
+Das folgende Skript addiert zwei Vektorlayer auf, die weder identische ID's zum Joinen noch dieselbe Zellgröße haben. Sie überlappen sich jedoch räumlich. Dieser Ansatz wurde benötigt, um Wasserstandsänderungs-Berechnungen aus zwei verschiedenen Modellierungsquellen miteinander zu verschneiden bzw. aufzuaddieren. Einschränkung des Codes: Bei sich überlappenden Zellen werden Mittelwerte gebildet. 
+Daher sollte z.B. an Rändern zwischen Wasserstandsanhebung und -absenkung überprüft werden, ob die jeweilige Summe in der Zelle fachlich plausibel ist. 
+
+flurabstands_processing.R
+Diese Überarbeitung vereint verschiedene alte Skripte und rasterisiert Prognose-Tool-Ergebnisse, skaliert sie von 50m-Auflösung auf 1m "hoch" und erhöht ihre räumliche Ausdehnung mit NA-Werten, sodass sie sich mit dem Ausgangsflurabstand verschneiden lassen. 
+Abschließend wird die Soll-Flurabstandskarte berechnet. Die Zwischenschritte werden ebenfalls als TIF-Rasterdateien ausgegeben. 
