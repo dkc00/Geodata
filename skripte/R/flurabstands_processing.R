@@ -10,7 +10,7 @@ library(sf)
 # Erst werden alle Pfade und Daten angegeben, danach lediglich die Funktionen eingeladen und ausgeführt. 
 
 
-# Schritt 1.1: Daten für die Rasterisierung/Hochskalierung
+# Schritt 1: Daten für die Rasterisierung/Hochskalierung und die Soll-Flurabstandskarte
 
 shapefile_path <- ".shp"
 wert_feld <- "Prognose_1" # name des tool-wertfelds im Shapefile anpassen (attributtabelle)
