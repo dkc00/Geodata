@@ -27,6 +27,10 @@ Der Rest muss nicht geändert werden. Anschließend in der Attributtabelle mit d
 
 Es kann immer noch vorkommen, dass die Tabelle nicht richtig gelesen wird, weil die ID's im PrognoseTool von links nach rechts und nicht von oben nach unten gelesen werden. Hierzu sollten später die Workbook-Links in Excel aktualisiert und die Ergebnisse bei UKGWL und HK50 sowie die Gitter im PrognoseTool geprüft werden. 
 
+Es sollte in QGIS genau geprüft werden, ob sich das Fließgewässernetz auf den entsprechenden Entwässerungsstrukturen im DGM1 befindet. 
+Wenn bspw. das gezeichnete Fließgewässer, also die Polylinie zwei Meter neben der DGM-Depression liegt, kann dies dazu führen, dass
+das PrognoseTool eine benachbarte Zelle als Graben deklariert und hierfür einen DGM-Wert als Sohlhöhe entnimmt, es aber in dieser Zelle gar keinen Graben nach DGM gibt. Somit wird ein unter Umständen zu hoher Wert integriert, der stauähnliche Wirkungen haben und das Ergebnis verfälschen kann! 
+
 
 <h2> Im Prognose-Tool: </h2>
 
