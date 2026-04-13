@@ -9,8 +9,8 @@
 # Es müssen keine Pfade angegeben werden, sondern lediglich GIS-Layer-Namen. 
 
 
-szenario1_name = "Prognose-Tool mit Landwehr- und Wittmundgraben (v1)" # layername stärkeres szenario
-szenario2_name = "PrognoseTool_GV_winter_v2_" # layername schwächeres szenario
+szenario1_name = "Prognose-Tool Szenario 1" # layername stärkeres szenario
+szenario2_name = "PrognoseTool Szenario 2" # layername schwächeres szenario
 flurstuecke_name = "Flurstücksbesitzer Gildehauser Venn" # layername Flurstücke
 
 szenario1_attribut = "Prognose_T" # Spalte in Attributtabelle stärkeres Szenario
