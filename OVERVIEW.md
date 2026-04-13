@@ -4,6 +4,8 @@ Aktuelle Skripte/Tools:
 
 PyQGIS: 
 
+- Szenariorechnungen von Wasserstandsänderungen im GIS abgleichen und Flurstücksnummern von Flächen ausgeben, die
+  nur im stärkeren Szenario betroffen sind
 - QGIS-Plugin zur Berechnung von Fernerkundungsindices wie NDWI, NDCI, NDVI aus Rasterdaten direkt im Interface
 - Automatisierte Erstellung eines QGIS-Layouts in PyQGIS
 - Randomisierte Punkterzeugung in Polygon-Layern mit KBS-Transformation
@@ -199,6 +201,10 @@ eines Layers für geplante Verwallungen in Mecklenburg-Vorpommern, für die mitt
 
 randomforest_basismodell.py
 Vorlage für schnelles Anwenden eines RF Modells, hier auf Pgeldaten, mit Möglichkeit zur Ausgabe von SHAP Values, Feature Importance, R^2 von Train und Test zur Bias/Varianz Analyse etc.
+
+zwei_prognosetool_szenarien_vergleichen_flurstuecksbetroffenheit.py
+Das Skript vergleicht in PyQGIS verschiedene Szenariorechnungen für Wasserstandsanhebungen, hier getestet an einer Projektfläche in Niedersachsen. Es gibt in der Konsole alle Flurstücksnummern der Flächen aus, welche nur vom stärkeren Szenario (szenario1_name), nicht aber vom schwächeren Szenario mit geringerer Auswirkung (szenario2_name) betroffen sind/intersecten. 
+Die Spalte der jeweiligen Vektorlayer (Prognoserechnungen und Flurstücke) werden angegeben, sowie der Threshold, ab dem ein Flurstück als betroffen zählt (wie hoch muss der Wasserstand nach Szenarioberechnung ansteigen?) Es müssen keine Pfade angegeben werden, sondern lediglich GIS-Layer-Namen. 
 ____________________________
 Jupyter-Notebooks:
 
