@@ -59,7 +59,7 @@ plot(datum, niederschlag, type = "h",
      col = adjustcolor("darkblue", alpha.f = 0.7),
      axes = FALSE, xlab = "", ylab = "",
      xlim = as.POSIXct(c("2025-01-01", "2025-10-30")),
-     ylim = c(0, max(niederschlag, na.rm = TRUE)))
+     ylim = c(max(niederschlag, na.rm = TRUE) * 1.1, 0))
 
 axis(4, col.axis = "darkblue")
 mtext("Niederschlag [mm]", side = 4, line = 3, col = "darkblue")
