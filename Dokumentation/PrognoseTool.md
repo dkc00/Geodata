@@ -50,6 +50,8 @@ das PrognoseTool eine benachbarte Zelle als Graben deklariert und hierfür einen
 
 Wichtig: Es kann immer passieren, dass das PrognoseTool sich intern "aufgehangen" hat und unabhängig von Anpassung an den Parametern nicht mehr funktioniert bzw. keine plausiblen Ergebnisse erzeugt (z.B. negative Werte für willkürliche Pixel oder das Ignorieren bestimmter Gräben trotz korrekter Daten). In diesem Fall sollte ein frisches Tool aus dem originalen Lotter Beeke-Ordner rauskopiert und neu aufgesetzt werden. 
 
+- HK50 und/oder UKGWL sind korrekt exportiert, die Tabelle sind gut aus und trotzdem werden sie im PrognoseTool durcheinander eingelesen? -> Einmal bei "z1_Zusatz_Nummern_fuer_SVERWEIS" prüfen, wie dort nummeriert ist. Ggfs. ist die HK50/UKGWL von oben nach unten und SVERWEIS von links nach rechts nummeriert. 
+
 
 - Wie lese ich die Daten für das Prognose-Tool aus?
 
