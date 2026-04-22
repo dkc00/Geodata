@@ -4,6 +4,7 @@ Aktuelle Skripte/Tools:
 
 PyQGIS: 
 
+- Alle TIFs eines Ordners mergen (z.B. DGM oder TK25-Blattschnitte) und automatisiert als Raster in QGIS einladen 
 - Stabile und performante, zeitsparende Rasterrechner-Alternative 
 - Szenariorechnungen von Wasserstandsänderungen im GIS abgleichen und Flurstücksnummern von Flächen ausgeben, die
   nur im stärkeren Szenario betroffen sind
@@ -211,6 +212,8 @@ Die Spalte der jeweiligen Vektorlayer (Prognoserechnungen und Flurstücke) werde
 rasterrechner_pyqgis_alternative.py
 Dieses Skript ersetzt mir den Rasterrechner in QGIS und verrechnet zwei Raster verschiedenen Extents in PyQGIS (deutlich stabiler und reproduzierbarer). Im Vergleich zu R geht das noch schneller, weil ich keine Pfade angeben muss, sondern direkt die Layernamen copypaste einfügen kann. Das Fundament des Skripts wurde mithilfe von Claude erstellt und erscheint mir etwas umständlich bzw lang, ggfs. wird es in Zukunft noch schlanker gemacht. Man muss allerdings nur die Namen von Layer 1 (zb Ist-Flurabstand), Layer 2( rasterisierte Wasserstandsanhebung) und den gewünschten Namen des Outputs ändern, sonst nichts. Ist also sehr praktisch.
 
+tifs_mergen.py 
+Das Skript merged alle TIF-Dateien eines Ordners und lädt die neue Datei automatisch in QGIS ein. Wurde in diesem Fall benötigt, um TK25-Blattschnitte aus Nordrhein-Westfalen als Hintergrundkarte zu verbinden, die nicht als WMS einladbar waren. Könnte genauso auch für DGM-Blattschnitte o.ä. genutzt werden. 
 ____________________________
 Jupyter-Notebooks:
 
