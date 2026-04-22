@@ -4,6 +4,7 @@ Aktuelle Skripte/Tools:
 
 PyQGIS: 
 
+- Stabile und performante, zeitsparende Rasterrechner-Alternative 
 - Szenariorechnungen von Wasserstandsänderungen im GIS abgleichen und Flurstücksnummern von Flächen ausgeben, die
   nur im stärkeren Szenario betroffen sind
 - QGIS-Plugin zur Berechnung von Fernerkundungsindices wie NDWI, NDCI, NDVI aus Rasterdaten direkt im Interface
@@ -206,6 +207,10 @@ Vorlage für schnelles Anwenden eines RF Modells, hier auf Pgeldaten, mit Mögli
 zwei_prognosetool_szenarien_vergleichen_flurstuecksbetroffenheit.py
 Das Skript vergleicht in PyQGIS verschiedene Szenariorechnungen für Wasserstandsanhebungen, hier getestet an einer Projektfläche in Niedersachsen. Es gibt in der Konsole alle Flurstücksnummern der Flächen aus, welche nur vom stärkeren Szenario (szenario1_name), nicht aber vom schwächeren Szenario mit geringerer Auswirkung (szenario2_name) betroffen sind/intersecten. 
 Die Spalte der jeweiligen Vektorlayer (Prognoserechnungen und Flurstücke) werden angegeben, sowie der Threshold, ab dem ein Flurstück als betroffen zählt (wie hoch muss der Wasserstand nach Szenarioberechnung ansteigen?) Es müssen keine Pfade angegeben werden, sondern lediglich GIS-Layer-Namen. 
+
+rasterrechner_pyqgis_alternative.py
+Dieses Skript ersetzt mir den Rasterrechner in QGIS und verrechnet zwei Raster verschiedenen Extents in PyQGIS (deutlich stabiler und reproduzierbarer). Im Vergleich zu R geht das noch schneller, weil ich keine Pfade angeben muss, sondern direkt die Layernamen copypaste einfügen kann. Das Fundament des Skripts wurde mithilfe von Claude erstellt und erscheint mir etwas umständlich bzw lang, ggfs. wird es in Zukunft noch schlanker gemacht. Man muss allerdings nur die Namen von Layer 1 (zb Ist-Flurabstand), Layer 2( rasterisierte Wasserstandsanhebung) und den gewünschten Namen des Outputs ändern, sonst nichts. Ist also sehr praktisch.
+
 ____________________________
 Jupyter-Notebooks:
 
