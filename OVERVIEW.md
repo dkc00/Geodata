@@ -48,7 +48,7 @@ Python:
 
 R:
 
-- Raster mit verschiedenen Extents verrechnen (hier DGM und interpolierte Grundwassoberfläche)
+- Raster mit verschiedenen Extents verrechnen (hier DGM und interpolierte Grundwasseroberfläche)
 - Processing von modellierten Wasserstandsdaten: Rasterisieren, Hochskalieren, Extent an anderes Raster anpassen, neue Karte generieren
 - Zwei Vektorlayer unterschiedlicher Ausdehnung und Zellgröße aufsummieren (z.B. Modellierungs-Ergebnisse)
 - Plot von Hyperspektraldaten eines Fließgewässers gegen in-situ gemessene Chl-a-Konzentrationen mit definiertem Wertefenster und Zeitabschnitt
