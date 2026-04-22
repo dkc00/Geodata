@@ -48,6 +48,7 @@ Python:
 
 R:
 
+- Raster mit verschiedenen Extents verrechnen (hier DGM und interpolierte Grundwassoberfläche)
 - Processing von modellierten Wasserstandsdaten: Rasterisieren, Hochskalieren, Extent an anderes Raster anpassen, neue Karte generieren
 - Zwei Vektorlayer unterschiedlicher Ausdehnung und Zellgröße aufsummieren (z.B. Modellierungs-Ergebnisse)
 - Plot von Hyperspektraldaten eines Fließgewässers gegen in-situ gemessene Chl-a-Konzentrationen mit definiertem Wertefenster und Zeitabschnitt
@@ -313,3 +314,6 @@ Daher sollte z.B. an Rändern zwischen Wasserstandsanhebung und -absenkung über
 flurabstands_processing.R
 Diese Überarbeitung vereint verschiedene alte Skripte und rasterisiert Prognose-Tool-Ergebnisse, skaliert sie von 50m-Auflösung auf 1m "hoch" und erhöht ihre räumliche Ausdehnung mit NA-Werten, sodass sie sich mit dem Ausgangsflurabstand verschneiden lassen. 
 Abschließend wird die Soll-Flurabstandskarte berechnet. Die Zwischenschritte werden ebenfalls als TIF-Rasterdateien ausgegeben. 
+
+raster_verschiedenen_extents_verrechnen.R
+Für eine Projektfläche in Niedersachsen musste ich die interpolierte Grundwasseroberfläche mit dem DGM1 verrechnen, allerdings war die räumliche Ausdehnung sehr unterschiedlich (wenige intersect-Bereiche) und für einige GW-Interpolationsabschnitte gab es kein DGM. Dieses Skript verrechnet die Intersect-Bereiche und erstellt eine Flurabstandskarte. In QGIS (Rasterrechner) funktionierte dies vorher nicht und mir wurden NoData-Ergebnisse ausgegeben, daher musste die Lösung in R erfolgen.
