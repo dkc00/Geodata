@@ -286,7 +286,7 @@ mit ggplot dargestellt werden sollen.
 rasterisieren_und_hochskalieren.R
 Alternativer Code zu v.to.rast aus GRASS-GIS, falls dieses Probleme bereitet (Vektordaten rasterisieren). Anschließend wird die Auflösung des Rasters hochskaliert (von 50 auf 1 m, kann beliebig angepasst werden), damit eine Verrechnung im Rasterrechner mit anderen Rastern dieser Auflösung möglich ist. Es wird standardmäßig die terra-Bibliothek sowie sf ("Simple Features for R") genutzt. Dann wird mit st_read() und st_transform() aus sf sowie vect(), rast() und rasterize() aus terra gearbeitet.
 
-<img width="1280" height="720" alt="Rplot" src="https://github.com/user-attachments/assets/a84ee060-732a-401f-8ae5-355cbe78af39" />
+<img width="640" height="360" alt="Rplot" src="https://github.com/user-attachments/assets/a84ee060-732a-401f-8ae5-355cbe78af39" />
 
 
 raster_groeßer_und_nullwerte_einfuegen.R
