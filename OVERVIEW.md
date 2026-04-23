@@ -148,9 +148,10 @@ eines Überblicks sowie zukünftiger Automatisierung von Legendenexporten mithil
 verbessert werden! Arbeitet mit datetime für Zeitstempel, os sowie qgis.PyQt.QtGui, qgis.PyQt.QtCore und qgis.core. 
 
 koska_wasserstufen.py
-Es ist mühsam, die Koska-Wasserstufen (nach Koska (2001)) als Flurabstandsangabe in Moorflächen immer wieder neu einzugeben, um neue Flurabstandskarten zu erstellen. Dieses Skript speichert die Tabelle der Wasserstufen 5+ (als 5), 4+ (als 4), 3+ (als 3), 2+ (als 2) und 2- (als -2). Sonst basiert er auf dem ausgegebenen Python-Code des QGIS-Tools "Reclassify by table". Basiert lediglich auf os, QgsRasterLayer und QgsProject.#
+Es ist mühsam, die Koska-Wasserstufen (nach Koska (2001)) als Flurabstandsangabe in Moorflächen immer wieder neu einzugeben, um neue Flurabstandskarten zu erstellen. Dieses Skript speichert die Tabelle der Wasserstufen 5+ (als 5), 4+ (als 4), 3+ (als 3), 2+ (als 2) und 2- (als -2). Sonst basiert er auf dem ausgegebenen Python-Code des QGIS-Tools "Reclassify by table". Basiert lediglich auf os, QgsRasterLayer und QgsProject.
 
-<img width="640" height="360" alt="Bellin_IstFlurabstand_KOSKA" src="https://github.com/user-attachments/assets/df43f6b9-67ff-4574-ac3d-090ed2226109" />
+
+<img width="1280" height="720" alt="Bellin_IstFlurabstand_KOSKA" src="https://github.com/user-attachments/assets/df43f6b9-67ff-4574-ac3d-090ed2226109" />
 
 
 vektorisieren_clippen_upscalen.py
