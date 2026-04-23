@@ -148,7 +148,10 @@ eines Überblicks sowie zukünftiger Automatisierung von Legendenexporten mithil
 verbessert werden! Arbeitet mit datetime für Zeitstempel, os sowie qgis.PyQt.QtGui, qgis.PyQt.QtCore und qgis.core. 
 
 koska_wasserstufen.py
-Es ist mühsam, die Koska-Wasserstufen (nach Koska (2001)) als Flurabstandsangabe in Moorflächen immer wieder neu einzugeben, um neue Flurabstandskarten zu erstellen. Dieses Skript speichert die Tabelle der Wasserstufen 5+ (als 5), 4+ (als 4), 3+ (als 3), 2+ (als 2) und 2- (als -2). Sonst basiert er auf dem ausgegebenen Python-Code des QGIS-Tools "Reclassify by table". Basiert lediglich auf os, QgsRasterLayer und QgsProject.
+Es ist mühsam, die Koska-Wasserstufen (nach Koska (2001)) als Flurabstandsangabe in Moorflächen immer wieder neu einzugeben, um neue Flurabstandskarten zu erstellen. Dieses Skript speichert die Tabelle der Wasserstufen 5+ (als 5), 4+ (als 4), 3+ (als 3), 2+ (als 2) und 2- (als -2). Sonst basiert er auf dem ausgegebenen Python-Code des QGIS-Tools "Reclassify by table". Basiert lediglich auf os, QgsRasterLayer und QgsProject.#
+
+<img width="300" height="400" alt="Bellin_IstFlurabstand_KOSKA" src="https://github.com/user-attachments/assets/df43f6b9-67ff-4574-ac3d-090ed2226109" />
+
 
 vektorisieren_clippen_upscalen.py
 Aufbauend auf den Skripten "rasterisieren_und_hochskalieren" sowie "Resampling_Rasterdaten" wird eine Rasterdatei von 1x1m auf 20x20m Auflösung hochskaliert, um sie anschließend auf eine bbox zu clippen und als Vektordatei zu exportieren. Hier sollten störende Artefakte einer Wasserstandsberechnung händisch aus dem Raster entfernt werden. Gebraucht wird nur die terra-Bibliothek. 
@@ -194,6 +197,9 @@ DGM_Vermessung_Abgleich.py
 Das Skript soll die Werte eines DGM1_Rasters an der Stelle eines im Gelände vermessenen Punktes auslesen und die zusammenpassenden Punkte als csv exportieren. 
 Dies diente der Korrektur des DGM1 aus Brandenburg für die jeweiligen Projektflächen. Ziel war dabei das Berechnen der Differenzen aus DGM1 und GNSS-Messwert für 
 die jeweilige Rasterzelle. Es wurde mit QgsRasterLayer, QgsVectorLayer, QgsProject, QgsPointXY, QgsCoordinateTransform und QgsRaster gearbeitet.
+
+<img width="300" height="400" alt="Quellmoor_Hälterteich_korrigiertes DGM_Differenzen_191225" src="https://github.com/user-attachments/assets/d7925195-432f-41e6-98bd-efdb0e4470d3" />
+
 
 flurstuecke_massnahmen_abgleich.py
 Das folgende Skript dient dem Abgleich, in welchem Flurstück (Polygon-Shp) sich gewisse punktuelle Baumaßnahmen (Punkt-Shp) befinden. Es exportiert eine csv-Tabelle mit variabel anpassbaren Spalten der jeweiligen Shapefiles. Dies dient der schnelleren Erzeugung von tabellarischen Daten und spart bei hunderten Maßnahmenpunkten eine Menge Zeit. 
