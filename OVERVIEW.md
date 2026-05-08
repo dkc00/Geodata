@@ -47,6 +47,7 @@ Python:
 - Datenverarbeitungsroutine für Sentinel-2-Daten mit PyQGIS und "normalem" Python: Vorverarbeitung, Download, Datenvorbereitung, Indices, Wolkenbedeckung
 - Sentinel-2 Analyse des Siebengebirges nahe Bonn mit Fokus auf geologische Fernerkundung (Iron Oxide Index, NDWI- und NDVI-Maskenerstellung)
 - Untersuchung von Pegelwasserständen mit ML-Methoden (Bagging & Boosting) und Fokus auf Feature Engineering (lagged variables, 3/7-day sums)
+- Automatisierte Erstellung eines Grabenquerschnitts in CAD 
 
 R:
 
@@ -214,6 +215,11 @@ Dieses Skript ersetzt mir den Rasterrechner in QGIS und verrechnet zwei Raster v
 
 tifs_mergen.py 
 Das Skript merged alle TIF-Dateien eines Ordners und lädt die neue Datei automatisch in QGIS ein. Wurde in diesem Fall benötigt, um TK25-Blattschnitte aus Nordrhein-Westfalen als Hintergrundkarte zu verbinden, die nicht als WMS einladbar waren. Könnte genauso auch für DGM-Blattschnitte o.ä. genutzt werden. 
+
+Grabenquerschnitt_CAD.py
+Das folgende Skript nutzt FreeCAD zum Erstellen einer simplen Grabenzeichnung zur Visualisierung der Vermessungsergebnisse. 
+Es stellt GOK, Ausgangs-Wasserstand, Zielwasserstand, Sohlhöhe, Sohlbreite und Grabenbreite im Grabenprofil dar. 
+Im CAD-Programm ist es als FCMacro zu nutzen (Makro -> Makros). Dies war notwendig, um die von der Wasserbehörde angeforderten Querschnittszeichnungen für viele Einzelstandorte zu erzeugen.
 ____________________________
 Jupyter-Notebooks:
 
