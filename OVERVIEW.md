@@ -47,7 +47,8 @@ Python:
 - Datenverarbeitungsroutine für Sentinel-2-Daten mit PyQGIS und "normalem" Python: Vorverarbeitung, Download, Datenvorbereitung, Indices, Wolkenbedeckung
 - Sentinel-2 Analyse des Siebengebirges nahe Bonn mit Fokus auf geologische Fernerkundung (Iron Oxide Index, NDWI- und NDVI-Maskenerstellung)
 - Untersuchung von Pegelwasserständen mit ML-Methoden (Bagging & Boosting) und Fokus auf Feature Engineering (lagged variables, 3/7-day sums)
-- Automatisierte Erstellung eines Grabenquerschnitts in CAD 
+- Automatisierte Erstellung eines Grabenquerschnitts in FreeCAD
+- Automatisierte Erstellung eines Grabenlängsschnitts mit Verortung von Vermessungsergebnissen in FreeCAD 
 
 R:
 
@@ -220,6 +221,11 @@ Grabenquerschnitt_CAD.py
 Das folgende Skript nutzt FreeCAD zum Erstellen einer simplen Grabenzeichnung zur Visualisierung der Vermessungsergebnisse. 
 Es stellt GOK, Ausgangs-Wasserstand, Zielwasserstand, Sohlhöhe, Sohlbreite und Grabenbreite im Grabenprofil dar. 
 Im CAD-Programm ist es als FCMacro zu nutzen (Makro -> Makros). Dies war notwendig, um die von der Wasserbehörde angeforderten Querschnittszeichnungen für viele Einzelstandorte zu erzeugen.
+
+Längsschnitt_CAD.py 
+Das folgende Skript nutzt FreeCAD zum Erstellen eines simplen Grabenlängsschnittes zur Visualisierung der Vermessungsergebnisse. Es werden Werte für Sohle, GOK und Wasserstand eingetragen sowie den Maßnahmenstandort zb eines Staubauwerks. Dies wurde im Rahmen eines Wasserrechtsverfahrens in Niedersachsen für die Antragsunterlagen benötigt. 
+Im FreeCAD-Programm ist es als FCMacro zu nutzen (Makro -> Makros). Eigentlich ist es aber nur ein technischer Plot mit typischer x- und y-Achse. Im Gegensatz zum Querschnitt des Grabens hätte man das wahrscheinlich auch in R 
+oder "normalem" Python z.B. Matplotlib oder Seaborn umsetzen können. Bei häufiger Benutzung kann das Skript in Zukunft strukturell ausgebaut werden, damit es für einen potentiellen Nutzer einfacher zu bedienen ist. Aktuell muss leider noch einiges an gemessenen Höhen etc. im Code verändert werden. Der Weg zum antragsreifen Längsschnitt gestaltet sich somit als Ausprobieren.
 ____________________________
 Jupyter-Notebooks:
 
