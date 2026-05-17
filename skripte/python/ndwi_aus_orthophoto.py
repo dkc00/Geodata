@@ -1,7 +1,11 @@
-# NDWI aus Grünem- und Infrarotband eines Digitalen Orthophotos 
-# in der QGIS Python Konsole berechnen. 
-# Stabiler und schneller durchführbar als mit dem QGIS-Rasterrechner. 
+"""
 
+NDWI aus Grünem- und Infrarotband eines Digitalen Orthophotos in der QGIS Python Konsole berechnen. Stabiler und schneller durchführbar als mit dem 
+QGIS-Rasterrechner. Angewendet auf Sentinel-2-Satellitenbilder der ecuadorianischen Lagune Yahuarcocha (Imbabura).
+
+Geschrieben und getestet in Python 3.9.18 und QGIS 3.34.3.
+
+"""
 from qgis.analysis import ( # wichtig: nicht qgis.core! 
     QgsRasterCalculator,
     QgsRasterCalculatorEntry
