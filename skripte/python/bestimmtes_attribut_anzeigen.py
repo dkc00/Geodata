@@ -11,6 +11,8 @@ Der Maßstab der Darstellung im Interface passt sich automatisch der Polygongrö
 Wir arbeiten standardmaeßig mit Qgis, QgsProject und iface, außerdem für das 
 Hervorheben mit QgsHighlight und QColor.
 
+Geschrieben und getestet in QGIS 3.34.3.
+
 """
 
 from qgis.core import Qgis, QgsProject, QgsFeatureRequest
