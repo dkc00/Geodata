@@ -1,3 +1,12 @@
+"""
+
+Das folgende Skript lädt Layouts in QGIS ein (basierend auf einem qpt-Dateipfad). Kann mit weiteren Funktionen kombiniert werden/ zu einem Workflow ausgebaut werden
+(z.B. Layout laden, Layer x löschen, Layout als PNG exportieren als Schleife für 100 Karten). 
+
+Geschrieben und getestet in Python 3.9.18 und QGIS 3.34.3.
+
+"""
+
 from qgis.core import QgsProject, Qgis, QgsPrintLayout, QgsReadWriteContext
 from qgis.PyQt.QtXml import QDomDocument
 import os
