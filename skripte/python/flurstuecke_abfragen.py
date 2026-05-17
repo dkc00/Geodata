@@ -12,6 +12,8 @@ Update 30.03.26:
 Jetzt wird auch ein Shapefile der betroffenen Flurstücke exportiert und direkt ins GIS geladen. Das reduziert den Wert der csv-Datei auf die
 Dokumentation und beschleunigt die Datenauswertung in QGIS. Wurde erfolgreich für Flächen in Niedersachsen angewendet.
 
+Geschrieben und getestet in QGIS 3.34.3 und 3.40.
+
 """
 
 from qgis.core import (
