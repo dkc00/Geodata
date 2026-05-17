@@ -1,10 +1,14 @@
 """
+SKIZZE: NOCH NICHT UNEINGESCHRÄNKT NUTZBAR!
+
 
 Die Legendeneinträge aller Layer werden als PNG exportiert. Kann schnell angepasst
 werden, um nur bestimmte Legendeneinträge zu exportieren. Dient zum Verschaffen 
 eines Überblicks sowie zukünftiger Automatisierung von Legendenexpoirten mithilfe
 dieses Codeblocks. Er gibt allerdings nur den Anfang der Legende aus. Muss noch 
 verbessert werden!
+
+Geschrieben und getestet in Python 3.9.18 und QGIS 3.34.3.
 
 """
 from qgis.core import (QgsProject, QgsLegendRenderer,
