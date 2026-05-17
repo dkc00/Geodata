@@ -10,6 +10,8 @@ Dieses Skript soll im angegebenen Überordner nach einer gleichnamigen Vektordat
 reparieren. 
 Aktuell ist das Skript nicht für Rasterdateien ausgelegt.
 
+Geschrieben und getestet in QGIS 3.34.3.
+
 """
 from qgis.core import QgsProject, QgsVectorLayer
 import os 
