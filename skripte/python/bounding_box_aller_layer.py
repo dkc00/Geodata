@@ -10,7 +10,7 @@ Ideen und Code wurde von vorherigen Skripten eingebaut, darunter das Skript
 zum Abfragen der Flurstücke sowie das Resampling von Rasterdaten 
 in R, wo auch xmin, xmax, ymin und ymax genutzt wurde. 
 
-Geschrieben und getestet in QGIS 3.34.3.
+Geschrieben und getestet in Python 3.9.18 und QGIS 3.34.3.
 
 """
 from qgis.core import QgsProject, QgsVectorLayer
