@@ -6,7 +6,7 @@ ich sie als PyQGIS-Funktionen. Hier unten ist "Clip Raster by Extent" aus GDAL z
 um z.B. eine Flurabstandskarte auf die Ausdehnung eines Untersuchungsgebietes 
 zuzuschneiden. 
 
-Geschrieben und getestet in QGIS 3.34.3.
+Geschrieben und getestet in Python 3.9.18 und QGIS 3.34.3.
 
 """
 
