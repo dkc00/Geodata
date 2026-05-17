@@ -7,6 +7,8 @@ und ist vor allem für KBS sinnvoll, bei manchen Anwendungen auch für den exten
 Außerdem kann dieser Code beliebig erweitert werden! Wir arbeiten mit QgsProject, 
 iface sowie webbrowser und os zur Darstellung im Standardbrowser.
 
+Geschrieben und getestet in Python 3.9.18 und QGIS 3.34.3.
+
 """
 
 from qgis.core import QgsProject
