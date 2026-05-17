@@ -3,6 +3,8 @@
 Schnell Statistiken für einen aktiven GIS-Rasterlayer ausgeben und ggfs. Histogramme mit 
 Matplotlib direkt in QGIS generieren. 
 
+Geschrieben und getestet in Python 3.9.18 und QGIS 3.34.3.
+
 """
 
 import numpy as np # für die erstellungen eines np.arrays
