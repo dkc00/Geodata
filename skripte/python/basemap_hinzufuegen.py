@@ -7,7 +7,7 @@ angesprochen werden, das hat über PyQGIS aber nur unzureichend funktioniert.
 Daher ist diese Version stark vereinfacht worden, kann aber in Zukunft mit 
 anderem Code kombiniert werden. 
 
-Geschrieben und getestet in QGIS 3.34.3.
+Geschrieben und getestet in Python 3.9.18 und QGIS 3.34.3.
 
 """
 
