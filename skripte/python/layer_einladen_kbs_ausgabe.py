@@ -4,6 +4,8 @@ Probleme machen. Dieses Skript lässt sich mit anderen Codeblöcken kombinieren,
 lädt eine Liste von Shapefiles ein und gibt das jeweilige KBS des Shapefiles aus.
 (häufig z.B. 3857 Webmercator, 4326, 25832, 25833, 102329 etc.)
 
+Geschrieben und getestet in Python 3.9.18 und QGIS 3.34.3.
+
 """
 
 from qgis.core import QgsVectorLayer, QgsRasterLayer, QgsProject 
