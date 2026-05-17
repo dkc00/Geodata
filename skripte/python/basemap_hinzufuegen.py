@@ -7,6 +7,8 @@ angesprochen werden, das hat über PyQGIS aber nur unzureichend funktioniert.
 Daher ist diese Version stark vereinfacht worden, kann aber in Zukunft mit 
 anderem Code kombiniert werden. 
 
+Geschrieben und getestet in QGIS 3.34.3.
+
 """
 
 from qgis.core import QgsRasterLayer, QgsProject
