@@ -6,6 +6,8 @@ in PyQGIS. Normal brauche ich diese Anwendung nur für einzelne Raster, sollte
 eine Automatisierung für viele Raster in einem Projekt erstellt werden, 
 kann die Geoverarbeitung dieses Skripts in eine Schleife verschoben werden.
 
+Geschrieben und getestet in Python 3.9.18 und QGIS 3.34.3.
+
 """
 
 from qgis.core import QgsProject, QgsRasterLayer, Qgis
