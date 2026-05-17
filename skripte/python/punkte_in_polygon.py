@@ -3,6 +3,9 @@
 2. 10 zufällige Punkte im polygon erzeugen 
 3. Punkte als temporären layer speichern 
 und im iface anzeigen 
+
+Geschrieben und getestet in Python 3.9.18 und QGIS 3.34.3.
+
 """
 import random as rd #für die zufälligen punkte
 
