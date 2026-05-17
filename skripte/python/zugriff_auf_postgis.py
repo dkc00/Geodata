@@ -5,6 +5,8 @@ Das geschieht wieder am Beispiel unseres Lagunen-Projekts aus den Anden
 Ecuadors. Als erstes möchte ich jedoch als kleinen Codeblock PostGIS mit 
 PyQGIS ansprechen und schauen, ob die Verbindung erfolgreich ist.
 
+Geschrieben und getestet in Python 3.9.18 und QGIS 3.34.3.
+
 """
 # besonders hier ist QgsDataSourceUri
 from qgis.core import QgsDataSourceUri, QgsVectorLayer, QgsProject
