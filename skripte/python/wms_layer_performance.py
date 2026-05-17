@@ -4,6 +4,8 @@ Ein WMS-Layer des gesamten polnischen Staatsgebiets ist sehr langsam in QGIS,
 was sich negativ auf die Gesamtperformance auswirkt. Es folgen Ansätze dafür, 
 diese Performance zu verbessern. 
 
+Geschrieben und getestet in Python 3.9.18 und QGIS 3.34.3.
+
 """
 
 from qgis.core import QgsProject, QgsRasterLayer
