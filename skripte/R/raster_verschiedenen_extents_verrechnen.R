@@ -24,10 +24,12 @@ crs <- "EPSG:25833" # kbs auswählen
 
 
 hk50 <- rast(hk50_path)
+# ext(hk50) <- ext(xmin(hk50)-33000000, xmax(hk50)-33000000, ymin(hk50), ymax(hk50)) # wenn eine 33 bei der GW-interpolation vorne steht
+
 dgm <- rast(dgm_path)
 
 plot(dgm)
-plot(hk50) # sieht alles gut aus?
+plot(hk50) # sieht alles gut aus? gleiches kbs auf den achsen?
 
 crs(hk50) <- crs; dgm <- project(dgm, hk50)
 
@@ -53,6 +55,9 @@ dgm_aligned <- resample(dgm_crop, hk50_crop, method = "bilinear")
 # jetzt wird der istflurabstand berechnet
 istflur <- dgm_aligned - hk50_crop
 
+# ext(istflur)
+# res(istflur)
+# origin(istflur) 
 
 plot(istflur,
      main = "Ist-Flurabstände als Stichtagsmessung",
