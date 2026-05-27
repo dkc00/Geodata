@@ -1,3 +1,7 @@
+# Version 1.1 (27.05.2026): 
+# Nach dem Plotten von HK50 und DGM wird nun zuerst das KBS angeglichen, um Fehler wie bzw. eine "33" vor der X-Koordinate zu vermeiden.
+
+
 library(terra)
 
 
@@ -13,6 +17,8 @@ dgm_path <-"..." # Pfad des DGMs
 
 output_path <- "..." # output wohin? 
 
+crs <- "EPSG:25833" # kbs auswählen
+
 # ____________________________________________________________
 # ab hier muss nichts mehr geändert werden
 
@@ -23,6 +29,7 @@ dgm <- rast(dgm_path)
 plot(dgm)
 plot(hk50) # sieht alles gut aus?
 
+crs(hk50) <- crs; dgm <- project(dgm, hk50)
 
 common_ext <- intersect(ext(hk50), ext(dgm)) 
 
