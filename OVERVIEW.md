@@ -73,6 +73,7 @@ R:
 - Plot organischer und anorganischer Parameter-Konzentrationen mit Grenzwertlinie nach BBodSchV
 - Raster-Berechnungsschablone als Alternative zum QGIS-Rasterrechner
 - Korrektur der Grundwasserneubildung nach mGROWA mittels DWD-Klimadaten für bestimmte Jahre
+- Berechnung und grafische Darstellung der Klimatischen Wasserbilanz für ganzjährige Daten sowie hydrologische Sommer-/Winterhalbjahre
 
 Sonstiges: 
 - Interaktive NDVI-Darstellung von Sentinel-2-Daten im Webbrowser mit OpenStreetMap als Hintergrund für Rathenow, mit JavaScript/HTML sowie o.g. Python-Backend
@@ -337,3 +338,7 @@ Abschließend wird die Soll-Flurabstandskarte berechnet. Die Zwischenschritte we
 
 raster_verschiedenen_extents_verrechnen.R
 Für eine Projektfläche in Niedersachsen musste ich die interpolierte Grundwasseroberfläche mit dem DGM1 verrechnen, allerdings war die räumliche Ausdehnung sehr unterschiedlich (wenige intersect-Bereiche) und für einige GW-Interpolationsabschnitte gab es kein DGM. Dieses Skript verrechnet die Intersect-Bereiche und erstellt eine Flurabstandskarte. In QGIS (Rasterrechner) funktionierte dies vorher nicht und mir wurden NoData-Ergebnisse ausgegeben, daher musste die Lösung in R erfolgen.
+
+klimatische_Wasserbilanz.R
+Berechnung der klimatischen Wasserbilanz für ganzjährige Daten sowie für das hydrologische Sommer- und Winterhalbjahr. 
+Erzeugt anschauliche Plots für entsprechende Klimabeschreibungen. Wurde für Projektflächen in Mecklenburg-Vorpommern, Niedersachsen und Brandenburg angewendet.
