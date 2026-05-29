@@ -1,15 +1,14 @@
 # Für die klimatische Gebietsbeschreibung in Berichten schnell Temperatur 
 # und Niederschlag als gut aussehende Grafik plotten. 
 
-"""
-Update 29.05.26: 
 
-Die Robustheit des Codes wurde durch Änderungen am Einlesen des DataFrames verbessert, außerdem wurden die Niederschlagsbalken gedreht 
-und Einzelheiten am Design des Plots optimiert. 
+# Update 29.05.26: 
 
-Wurde für Projektgebiete in Niedersachsen, Brandenburg und Mecklenburg-Vorpommern auf Basis von DWD-Daten angewendet. 
+# Die Robustheit des Codes wurde durch Änderungen am Einlesen des DataFrames verbessert, außerdem wurden die Niederschlagsbalken gedreht 
+# und Einzelheiten am Design des Plots optimiert. 
 
-"""
+# Wurde für Projektgebiete in Niedersachsen, Brandenburg und Mecklenburg-Vorpommern auf Basis von DWD-Daten angewendet. 
+
 
 library(readxl)
 
