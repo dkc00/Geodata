@@ -68,7 +68,7 @@ axis(4, at = seq(0, 40, by = 5), labels = seq(0, 40, by = 5),
      col.axis = "darkblue", col = "darkblue", las = 1)
 
 mtext("Niederschlag [mm]", side = 4, line = 2, col = "darkblue")
-mtext("© Meteostat", side = 1, line = 4, cex = 0.6, adj = 1)
+mtext("© DWD", side = 1, line = 4, cex = 0.6, adj = 1)
 #Quelle angeben: Hier Meteostat
 
 
