@@ -76,7 +76,7 @@ plot2 <- ggplot(daten, aes(x = Jahr)) +
     panel.grid.major.y = element_line(color = "grey80"),
     plot.title = element_text(face = "bold")
   ) +
-  ggtitle("Klimatische Wasserbilanz Göldenitzer Moor Mai bis Oktober, 2005 bis 2025")
+  ggtitle("Klimatische Wasserbilanz Göldenitzer Moor Mai bis Oktober, 2005 bis 2025 (hydrologisches Sommerhalbjahr) ")
 
 plot2 <- plot2 + coord_cartesian(ylim = c(-400, 400))
 
@@ -106,7 +106,7 @@ plot3 <- ggplot(daten, aes(x = Jahr)) +
     panel.grid.major.y = element_line(color = "grey80"),
     plot.title = element_text(face = "bold")
   ) +
-  ggtitle("Klimatische Wasserbilanz Göldenitzer Moor November bis April, 2005 bis 2025")
+  ggtitle("Klimatische Wasserbilanz Göldenitzer Moor November bis April, 2005 bis 2025 (hydrologisches Winterhalbjahr) ")
 
 plot3 <- plot3 + coord_cartesian(ylim = c(-400, 400))
 
