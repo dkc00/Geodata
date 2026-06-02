@@ -74,6 +74,7 @@ R:
 - Raster-Berechnungsschablone als Alternative zum QGIS-Rasterrechner
 - Korrektur der Grundwasserneubildung nach mGROWA mittels DWD-Klimadaten für bestimmte Jahre
 - Berechnung und grafische Darstellung der Klimatischen Wasserbilanz für ganzjährige Daten sowie hydrologische Sommer-/Winterhalbjahre
+- Rasterisieren und Downscalen von ArcEGMO-Modellierungsdaten (Brandenburg)
 
 Sonstiges: 
 - Interaktive NDVI-Darstellung von Sentinel-2-Daten im Webbrowser mit OpenStreetMap als Hintergrund für Rathenow, mit JavaScript/HTML sowie o.g. Python-Backend
@@ -342,3 +343,6 @@ Für eine Projektfläche in Niedersachsen musste ich die interpolierte Grundwass
 klimatische_Wasserbilanz.R
 Berechnung der klimatischen Wasserbilanz für ganzjährige Daten sowie für das hydrologische Sommer- und Winterhalbjahr. 
 Erzeugt anschauliche Plots für entsprechende Klimabeschreibungen. Wurde für Projektflächen in Mecklenburg-Vorpommern, Niedersachsen und Brandenburg angewendet.
+
+arcegmo_rasterisieren.R 
+Vektorlayer nach bestimmtem Eintrag rasterisieren und Auflösung anpassen. Wurde für ArcEGMO-Grundwasserneubildungsdaten aus Brandenburg für anschließende hydrologische Berechnungen genutzt. 
