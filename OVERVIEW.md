@@ -47,8 +47,9 @@ Python:
 - Datenverarbeitungsroutine für Sentinel-2-Daten mit PyQGIS und "normalem" Python: Vorverarbeitung, Download, Datenvorbereitung, Indices, Wolkenbedeckung
 - Sentinel-2 Analyse des Siebengebirges nahe Bonn mit Fokus auf geologische Fernerkundung (Iron Oxide Index, NDWI- und NDVI-Maskenerstellung)
 - Untersuchung von Pegelwasserständen mit ML-Methoden (Bagging & Boosting) und Fokus auf Feature Engineering (lagged variables, 3/7-day sums)
-- Automatisierte Erstellung eines Grabenquerschnitts in FreeCAD
-- Automatisierte Erstellung eines Grabenlängsschnitts mit Verortung von Vermessungsergebnissen in FreeCAD 
+- Automatisierte Erstellung eines CAD-gestützten Grabenquerschnitts in 
+- Automatisierte Erstellung eines CAD-gestützten Grabenlängsschnitts mit Verortung von Vermessungsergebnissen
+- Generierung eines in GIS ausgewählten DGM-Querprofils mit Höhenangaben in CAD
 
 R:
 
