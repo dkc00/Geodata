@@ -1,0 +1,52 @@
+# 1.	QGIS öffnen
+# 2.	DGM1 aktivieren, mit dem Plugin „ProfileTool“ ein Querprofil gewünschter Länge durch den Graben ziehen, an dem die Sohlschwelle errichtet werden soll. 
+# 3.	 Unten rechts beim Profilschnitt in der „ProfileTool“-Ansicht statt „Graph – PNG“ (voreingestellt) „2D Profile – DXF) auswählen. Anschließend „Save as“ klicken und bspw. als „Grabenprofil.dxf“ speichern. 
+# 4.	FreeCAD öffnen 
+# 5.	Im Startfenster namens „Neue Datei“ die Option „2D-Zeichnung (Erstellt ein 2D-Draft-Dokument)“ auswählen. 
+# 6.	Datei -> Importieren -> dxf-Datei auswählen. Importieren als „Bearbeitbare Draft-Objekte“ (ganz oben). 
+# 7.	Makro -> Makros -> Erstellen: Als Namen bspw. „Querprofil“ eingeben. 
+# 8. Unten folgenden Code ausführen. 
+# 9. Hintergrundraster in CAD unter Dienstprogramme -> Raster umschalten deaktivieren, da dieses sonst in der Abbildung stört. 
+# 10. Datei -> Als PDF exportieren. Anschließend bspw. mit PowerPoint-Vorlage weiter manuell bearbeiten (Maßnahmen einzeichnen, Sohl- und Grabenbreite eintragen usw.)
+
+
+# Wir importieren die notwendigen Bibliotheken, FreeCAD als App und Draft.
+import FreeCAD as App 
+import Draft
+
+
+# Unser aktives Dokument in FreeCAD wird als Variable doc definiert
+doc = App.ActiveDocument
+
+# Wir greifen auf unser Objekt "Wire" zu. Der Namen kann abweichen, siehe Anleitung.
+profil = doc.getObject("Wire")
+print(profil)
+
+
+
+# In dieser Schleife lassen wir uns die Profilpunkte ausgeben. Im Ausgabefenster ist zu prüfen, ob er das Profil richtig erkennt.
+for p in profil.Points:
+    print(p)
+
+
+# Final erstellen wir die Höhenlabels und dazu passenden Linien. Ggfs. muss je nach Geschmack die Schriftgröße unten bei .FontSize angepasst werden (z.B. 0.4 falls zu klein).
+for v in profil.Shape.Vertexes:
+
+    x = v.Point.x
+    y = v.Point.y
+
+    Draft.make_line(
+        App.Vector(x,y,0),
+        App.Vector(x,y-2,0)
+    )
+
+    hoehe = Draft.make_text(
+        [f"{y:.2f}"],
+        App.Vector(x-0.2,y-2.5,0)
+    )
+    hoehe.ViewObject.FontSize = 0.35
+
+
+doc.recompute()
+
+
