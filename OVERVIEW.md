@@ -53,6 +53,7 @@ Python:
 
 R:
 
+- Berechnung von zu verfüllenden Grabenvolumina auf Basis von Vermessungsdaten
 - Raster mit verschiedenen Extents verrechnen (hier DGM und interpolierte Grundwasseroberfläche)
 - Processing von modellierten Wasserstandsdaten: Rasterisieren, Hochskalieren, Extent an anderes Raster anpassen, neue Karte generieren
 - Zwei Vektorlayer unterschiedlicher Ausdehnung und Zellgröße aufsummieren (z.B. Modellierungs-Ergebnisse)
@@ -347,3 +348,6 @@ Erzeugt anschauliche Plots für entsprechende Klimabeschreibungen. Wurde für Pr
 
 arcegmo_rasterisieren.R 
 Vektorlayer nach bestimmtem Eintrag rasterisieren und Auflösung anpassen. Wurde für ArcEGMO-Grundwasserneubildungsdaten aus Brandenburg für anschließende hydrologische Berechnungen genutzt. 
+
+Grabenvolumen.R
+Berechnung der Grabenvolumina, welche im Rahmen von Erdarbeiten verfüllt werden sollen. Auf Basis der Trapezformel. Angewendet für die Ausführungsplanung eines Projektgebiets in Brandenburg.
