@@ -12,10 +12,10 @@ library(sf)
 
 # Schritt 1: Daten für die Rasterisierung/Hochskalierung und die Soll-Flurabstandskarte
 
-shapefile_path <- ".shp"
+shapefile_path <- ".shp" # Prognose-Tool als Shapefile/Vektordatei
 wert_feld <- "Prognose_1" # name des tool-wertfelds im Shapefile anpassen (attributtabelle)
 
-ist_flurabstand <- ".tif"
+ist_flurabstand <- ".tif" # Wo liegt man Ist-Flurabstand als Raster?
 
 raster_aufloesung <- 50 # aufloesung in m
 faktor_hochskalieren <- 50 # z.B. von 50m auf 1m -> Faktor 50 
