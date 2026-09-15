@@ -3,10 +3,10 @@
 library(readxl) # benoetigte bibliothek
 
 # HIER PFAD ANPASSEN
-xlsx_path <- "...xlsx"
+xlsx_path <- "...xlsx" # Wo liegt meine Excel-Datei? 
 
 # HIER EXCEL-SHEETNAME ANPASSEN
-sheet_name <- "pomiary automatyczne"
+sheet_name <- "pomiary automatyczne" # Wie heißt das Sheet?
 
 # Data frame erstellen
 df <- read_excel(xlsx_path,
@@ -16,7 +16,7 @@ df <- read_excel(xlsx_path,
 # Erste Spalte ist das Datum. Auch ggfs. anpassen
 df[[1]] <- as.Date(df[[1]])
 
-# Plottet die erste gegen die zweite Spalte.
+# Plottet die erste gegen die zweite Spalte. Ggf. anpassen, ebenfalls wie die ylim für die Achsen.
 plot(df[[1]], df[[2]],
      type = "l", col = "blue", lwd = 2,
      xlab = "Datum", ylab = "Flurabstand [m]",
