@@ -1,4 +1,4 @@
-# SIMPLER EXCEL-PLOT IN R
+# Simpler Plot im Excel-Stil, welcher das Datum gegen eine Datenreihe plottet.
 
 library(readxl) # benoetigte bibliothek
 
