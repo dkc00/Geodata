@@ -14,6 +14,9 @@ Man könnte unsauber eigene Linien durch das Polygon ziehen und dann mit Vector 
 "Polygon Divider". Dieses einfach über Plugins herunterladen und anschließend als "Input Layer" das gewünschte Shapefile auswählen, einen Output-Pfad eingeben und bei "Number of Divisions" die Anzahl der Teilungen eintragen. Fertig! 
 (Das Shapefile sollte das Projekt-KBS aufweisen, damit es nicht zu Problemen kommt.)
 
+Für schönere/homogenere Bereiche: 
+Zuerst mit "Rotate" rotieren, hierbei Drehwinkel und Zentroid als Drehpunkt merken. Anschließend mit polygon divider trennen und zurückrotieren, hierbei den Drehpunkt nicht vergessen! Hat man zb um 21 Grad gedreht, muss man um 339 Grad zurückdrehen. 
+
 __________________________________________________________________________________________________________
 Fragestellung: 
 Gewisse klassifizierte Label sollen in einer Karte vor anderen dargestellt werden. (z.B. "Bohrsondierung" immer vor "GOK, damit man die wichtigen Klassen zuerst sieht). 
