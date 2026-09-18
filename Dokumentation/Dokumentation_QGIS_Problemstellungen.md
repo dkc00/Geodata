@@ -6,6 +6,16 @@ Diese Datei dient der übersichtlichen Dokumentation von (gelösten) Problemstel
 
 __________________________________________________________________________________________________________
 Fragestellung: 
+
+Ein Polygon soll in x gleich große Bereiche unterteilt werden (gleiche Querschnittsfläche).
+
+Lösung: 
+Man könnte unsauber eigene Linien durch das Polygon ziehen und dann mit Vector overlay -> Split with lines arbeiten, besser ist jedoch das Plugin 
+"Polygon Divider". Dieses einfach über Plugins herunterladen und anschließend als "Input Layer" das gewünschte Shapefile auswählen, einen Output-Pfad eingeben und bei "Number of Divisions" die Anzahl der Teilungen eintragen. Fertig! 
+(Das Shapefile sollte das Projekt-KBS aufweisen, damit es nicht zu Problemen kommt.)
+
+__________________________________________________________________________________________________________
+Fragestellung: 
 Gewisse klassifizierte Label sollen in einer Karte vor anderen dargestellt werden. (z.B. "Bohrsondierung" immer vor "GOK, damit man die wichtigen Klassen zuerst sieht). 
 
 Lösung:
