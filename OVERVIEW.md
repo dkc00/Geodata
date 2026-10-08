@@ -1,9 +1,10 @@
-In dieser Overview-Datei wird jedes Skript genauer erläutert. Hierbei liegt ein Fokus auf der Anwendung des Skripts, Problemen bei der Umsetzung und genutzten Bibliotheken, Methoden etc. Es wird empfohlen, direkt mit Strg+F z.B. nach "QgsRasterLayer", "KBS" oder "matplotlib" zu suchen, um schnell den passenden Code zu finden.
+In dieser Overview-Datei wird jedes Skript genauer erläutert. Hierbei liegt ein Fokus auf der Anwendung des Skripts, Problemen bei der Umsetzung und genutzten Bibliotheken, Methoden etc. Es wird empfohlen, direkt mit Strg+F z.B. nach "QgsRasterLayer", "KBS" oder "matplotlib" bzw. dem fachlichen Problem (z.B. Ganglinien) zu suchen, um schnell den passenden Code zu finden.
 
 Aktuelle Skripte/Tools: 
 
 PyQGIS: 
 
+- Fotos mittels SQLite3 aus GeoPackage exportieren 
 - Alle TIFs eines Ordners mergen (z.B. DGM oder TK25-Blattschnitte) und automatisiert als Raster in QGIS einladen 
 - Stabile und performante, zeitsparende Rasterrechner-Alternative 
 - Szenariorechnungen von Wasserstandsänderungen im GIS abgleichen und Flurstücksnummern von Flächen ausgeben, die
@@ -230,6 +231,11 @@ Längsschnitt_CAD.py
 Das folgende Skript nutzt FreeCAD zum Erstellen eines simplen Grabenlängsschnittes zur Visualisierung der Vermessungsergebnisse. Es werden Werte für Sohle, GOK und Wasserstand eingetragen sowie den Maßnahmenstandort zb eines Staubauwerks. Dies wurde im Rahmen eines Wasserrechtsverfahrens in Niedersachsen für die Antragsunterlagen benötigt. 
 Im FreeCAD-Programm ist es als FCMacro zu nutzen (Makro -> Makros). Eigentlich ist es aber nur ein technischer Plot mit typischer x- und y-Achse. Im Gegensatz zum Querschnitt des Grabens hätte man das wahrscheinlich auch in R 
 oder "normalem" Python z.B. Matplotlib oder Seaborn umsetzen können. Bei häufiger Benutzung kann das Skript in Zukunft strukturell ausgebaut werden, damit es für einen potentiellen Nutzer einfacher zu bedienen ist. Aktuell muss leider noch einiges an gemessenen Höhen etc. im Code verändert werden. Der Weg zum antragsreifen Längsschnitt gestaltet sich somit als Ausprobieren.
+
+fotoexport_geopackage.py
+Das folgende Skript dient dem Export von Fotos aus einem GeoPackage. Es muss der Dateipfad des GeoPackages, der gewünschte Output-Ordner und 
+der Table-Name der Fotos angegeben werden. Speichert alle als BLOB in der Datei enthaltenen Fotos in einen Zielordner, arbeitet mit SQLite3, os und re. Wurde für die Ergebnisse einer Geländevermessung in Mecklenburg-Vorpommern benötigt.
+
 ____________________________
 Jupyter-Notebooks:
 
