@@ -1,3 +1,17 @@
+"""
+
+Das folgende Skript kann in der Python-Konsole von QGIS (PyQGIS) genutzt werden, um das DGM1 zu korrigieren. Hierbei wurden im vorliegenden Projekt auf Basis von GNSS-Vermessungen und einem Abgleich der Daten mit den 
+Rasterzellen des DGM1 zuverlässige sowie unzuverlässige DGM-Bereiche ausfindig gemacht. Diese wurden als Polygon im GIS erstellt und anschließend gerastert (z.B. v.to.rast), wobei eine Rasterzellengrüße von 1x1m 
+sowie ein Wert von 1 für jede Zelle des Rasters gewählt wurde. Es wird im Skript abgeglichen, wo der jeweilige DGM-Bereich den Wert 1 aufweist, daher ist dieses Detail wichtig.
+Für beide wurde im Vorfeld der Median der Abweichung berechnet. Diese Werte werden bei unzuverlaessig_median bzw. zuverlaessig_median eingetragen. 
+Das Skript dient anschließend als Rasterrechner und subtrahiert den unzuverlaessig_median - Wert für den entsprechenden Bereich, sowie den zuverlaessig_median für den anderen. Alle DGM-Flächen außerhalb der beiden Bereiche
+werden nicht verändert. Es wird also eine DGM-Korrektur abhängig von der gewählten Klasse durchgeführt (z.B. Klasse 1: Offenland, Weg und Siedlung, Klasse 2: Dichte Vegetation und Wald). 
+
+Angewendet auf eine 400 ha große Projektfläche in Mecklenburg-Vorpommern mit insgesamt 500+ Punkten als Datengrundlage.
+
+"""
+
+
 from qgis.core import QgsProject, QgsRasterLayer
 import numpy as np
 from osgeo import gdal
@@ -7,6 +21,10 @@ unreliable_name = "UnzuverlaessigeDGMBereiche_Raster"
 reliable_name = "ZuverlaessigeDGMBereiche_Raster"
 
 output_path = r"..."  # ANPASSEN
+
+unzuverlaessig_median = 0.22
+zuverlaessig_median = 0.03
+
 
 # HIERNACH MUSS NICHTS MEHR GEÄNDERT WERDEN
 
@@ -84,10 +102,10 @@ reliable_mask = align_mask(reliable_layer, "reliable")
 
 result = dgm.copy()
 
-result[unreliable_mask & valid_dgm] -= 0.22
+result[unreliable_mask & valid_dgm] -= unzuverlaessig_median
 
 reliable_only = reliable_mask & ~unreliable_mask & valid_dgm
-result[reliable_only] -= 0.03
+result[reliable_only] -= zuverlaessig_median
 
 driver = gdal.GetDriverByName("GTiff")
 out_ds = driver.Create(
