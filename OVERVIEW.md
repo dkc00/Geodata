@@ -4,6 +4,7 @@ Aktuelle Skripte/Tools:
 
 PyQGIS: 
 
+- Separate DGM-Korrektur nach Flächenklassifizierung (z.B. Offenland/Siedlung und dichte Vegetation/Waldfläche)
 - Fotos mittels SQLite3 aus GeoPackage exportieren 
 - Alle TIFs eines Ordners mergen (z.B. DGM oder TK25-Blattschnitte) und automatisiert als Raster in QGIS einladen 
 - Stabile und performante, zeitsparende Rasterrechner-Alternative 
@@ -235,6 +236,15 @@ oder "normalem" Python z.B. Matplotlib oder Seaborn umsetzen können. Bei häufi
 fotoexport_geopackage.py
 Das folgende Skript dient dem Export von Fotos aus einem GeoPackage. Es muss der Dateipfad des GeoPackages, der gewünschte Output-Ordner und 
 der Table-Name der Fotos angegeben werden. Speichert alle als BLOB in der Datei enthaltenen Fotos in einen Zielordner, arbeitet mit SQLite3, os und re. Wurde für die Ergebnisse einer Geländevermessung in Mecklenburg-Vorpommern benötigt.
+
+dgm_korrektur_nach_klassen.py 
+Das folgende Skript kann in der Python-Konsole von QGIS (PyQGIS) genutzt werden, um das DGM1 zu korrigieren. Hierbei wurden im vorliegenden Projekt auf Basis von GNSS-Vermessungen und einem Abgleich der Daten mit den 
+Rasterzellen des DGM1 zuverlässige sowie unzuverlässige DGM-Bereiche ausfindig gemacht. Diese wurden als Polygon im GIS erstellt und anschließend gerastert (z.B. v.to.rast), wobei eine Rasterzellengrüße von 1x1m 
+sowie ein Wert von 1 für jede Zelle des Rasters gewählt wurde. Es wird im Skript abgeglichen, wo der jeweilige DGM-Bereich den Wert 1 aufweist, daher ist dieses Detail wichtig.
+Für beide wurde im Vorfeld der Median der Abweichung berechnet. Diese Werte werden bei unzuverlaessig_median bzw. zuverlaessig_median eingetragen. 
+Das Skript dient anschließend als Rasterrechner und subtrahiert den unzuverlaessig_median - Wert für den entsprechenden Bereich, sowie den zuverlaessig_median für den anderen. Alle DGM-Flächen außerhalb der beiden Bereiche
+werden nicht verändert. Es wird also eine DGM-Korrektur abhängig von der gewählten Klasse durchgeführt (z.B. Klasse 1: Offenland, Weg und Siedlung, Klasse 2: Dichte Vegetation und Wald). 
+Angewendet auf eine 400 ha große Projektfläche in Mecklenburg-Vorpommern mit insgesamt 500+ Punkten als Datengrundlage.
 
 ____________________________
 Jupyter-Notebooks:
