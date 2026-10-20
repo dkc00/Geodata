@@ -55,6 +55,7 @@ Python:
 
 R:
 
+- Erstellung einer Differenzenkarten zweier Flurabstands-Szenarien
 - Berechnung von zu verfüllenden Grabenvolumina auf Basis von Vermessungsdaten
 - Raster mit verschiedenen Extents verrechnen (hier DGM und interpolierte Grundwasseroberfläche)
 - Processing von modellierten Wasserstandsdaten: Rasterisieren, Hochskalieren, Extent an anderes Raster anpassen, neue Karte generieren
@@ -366,4 +367,9 @@ arcegmo_rasterisieren.R
 Vektorlayer nach bestimmtem Eintrag rasterisieren und Auflösung anpassen. Wurde für ArcEGMO-Grundwasserneubildungsdaten aus Brandenburg für anschließende hydrologische Berechnungen genutzt. 
 
 Grabenvolumen.R
-Berechnung der Grabenvolumina, welche im Rahmen von Erdarbeiten verfüllt werden sollen. Auf Basis der Trapezformel. Angewendet für die Ausführungsplanung eines Projektgebiets in Brandenburg.
+Berechnung der Grabenvolumina, welche im Rahmen von Erdarbeiten verfüllt werden sollten. Auf Basis der Trapezformel. Angewendet für die Ausführungsplanung eines Projektgebiets in Brandenburg.
+
+differenzenkarte_flurabstaende.R
+Simples Skript, um eine Differenzenkarte von zwei Flurabstandsszenarien zu berechnen. Im gegebenen Fall wurden die zugrunde liegenden Rasterdateien von unterschiedlichen
+Bearbeitern erstellt, mit unterschiedlichem extent und KBS. Außerdem lagen die Rasterzellen nicht direkt übereinander, weshalb sie mit der project-Methode von terra bilinear interpoliert wurden. 
+
